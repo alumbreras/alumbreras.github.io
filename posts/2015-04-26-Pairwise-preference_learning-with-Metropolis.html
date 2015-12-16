@@ -44,26 +44,29 @@
 
 <p>(draft)</p>
 <h4 id="theory">Theory</h4>
-<p>Imagine we observe a set of pairwise preferences from a user. We denote this set by <span class="math">\(\mathcal{D} = \left \{ \mathbf{x}_i \succ \mathbf{x}_j \right \}\)</span> where <span class="math">\(1 \leq i \leq m\)</span> and <span class="math">\(1 \leq j \leq m\)</span>. Let us assume that the pairwise preferences depend on a latent utility <span class="math">\(f_i\)</span> given to every item <span class="math">\(i \in X\)</span> so that item <span class="math">\(i\)</span> is prefered over item <span class="math">\(j\)</span> iff utility of <span class="math">\(i\)</span> is bigger than utility of <span class="math">\(j\)</span>.</p>
-<p>We want to know the posterior distribution of <span class="math">\(\mathbf{f}\)</span>, that is, the probability distribution of the utilities <span class="math">\(\mathbf{f}\)</span> after observing the data. For this we need a prior distribution over <span class="math">\(\mathbf{f}\)</span> and a likelihood function of the data given the utilities <span class="math">\(\mathbf{f}\)</span>.</p>
-<p><strong>Likelihood</strong><br />If we knew these utility function, and assuming some noise <span class="math">\(\lambda\)</span> over the observed choices, we could model the likelihood of a pairwise choice as: <span class="math">\[
+<p>Imagine we observe a set of pairwise preferences from a user. We denote this set by <span class="math inline">\(\mathcal{D} = \left \{ \mathbf{x}_i \succ \mathbf{x}_j \right \}\)</span> where <span class="math inline">\(1 \leq i \leq m\)</span> and <span class="math inline">\(1 \leq j \leq m\)</span>. Let us assume that the pairwise preferences depend on a latent utility <span class="math inline">\(f_i\)</span> given to every item <span class="math inline">\(i \in X\)</span> so that item <span class="math inline">\(i\)</span> is prefered over item <span class="math inline">\(j\)</span> iff utility of <span class="math inline">\(i\)</span> is bigger than utility of <span class="math inline">\(j\)</span>.</p>
+<p>We want to know the posterior distribution of <span class="math inline">\(\mathbf{f}\)</span>, that is, the probability distribution of the utilities <span class="math inline">\(\mathbf{f}\)</span> after observing the data. For this we need a prior distribution over <span class="math inline">\(\mathbf{f}\)</span> and a likelihood function of the data given the utilities <span class="math inline">\(\mathbf{f}\)</span>.</p>
+<p><strong>Likelihood</strong><br />
+If we knew these utility function, and assuming some noise <span class="math inline">\(\lambda\)</span> over the observed choices, we could model the likelihood of a pairwise choice as: <span class="math display">\[
 p(i \succ j | f) = \Phi(\frac{f_i - f_j}{\lambda})
-\]</span> where <span class="math">\(\Phi\)</span> is the probit function.</p>
-<p><strong>Prior</strong><br />We put a Gaussian prior over the utilities so that the <span class="math">\(m\)</span> utilities are drawn from the same Gaussian distribution. <span class="math">\[
+\]</span> where <span class="math inline">\(\Phi\)</span> is the probit function.</p>
+<p><strong>Prior</strong><br />
+We put a Gaussian prior over the utilities so that the <span class="math inline">\(m\)</span> utilities are drawn from the same Gaussian distribution. <span class="math display">\[
 p(f) = \mathcal{N}(f | 0, \mathbf{K})
 \]</span></p>
-<p>Note that this is actually a Gaussian Process, since if we take any subset of utilities <span class="math">\(f_s\)</span>: <span class="math">\[
+<p>Note that this is actually a Gaussian Process, since if we take any subset of utilities <span class="math inline">\(f_s\)</span>: <span class="math display">\[
 p(f_s) = \mathcal{N}(f_s | 0, \mathbf{K_s})
 \]</span></p>
-<p><strong>Posterior</strong><br />The posterior distribution is given by Bayes rule: <span class="math">\[
+<p><strong>Posterior</strong><br />
+The posterior distribution is given by Bayes rule: <span class="math display">\[
 p(f | \mathbf{X}) = \frac{\prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})}
 {\int_f \prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})}
-\]</span> but we cannot solve the integral in the denominator. Instead, we will take samples from: <span class="math">\[
+\]</span> but we cannot solve the integral in the denominator. Instead, we will take samples from: <span class="math display">\[
 p(f | \mathbf{X}) \propto \prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})
 \]</span> and we will do it with the very simple <a href="http://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">Metropolis-Hastings</a>.</p>
 <h4 id="practice-with-r">Practice with R</h4>
 <p>First, let us generate some toy data:</p>
-<pre class="sourceCode r"><code class="sourceCode r">############################
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">############################
 <span class="co"># Data (manual generation)</span>
 ############################
 <span class="kw">library</span>(ggplot2)
@@ -96,12 +99,12 @@ for(i in <span class="dv">1</span>:npairs){
   if (<span class="kw">runif</span>(<span class="dv">1</span>) &gt;<span class="st"> </span>probs[i]){
     pairs[i,] &lt;-<span class="st"> </span><span class="kw">rev</span>(pairs[i,])
   }
-}</code></pre>
-<p>Let us design the covariance matrix <span class="math">\(\mathbf{K}\)</span> in such a way that covariance between items is proportional to items similarity. We need a similarity metric such as:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># kernel function to build the covariance matrix of the prior</span>
-kernel &lt;-<span class="st"> </span>function(x1,x2) {<span class="kw">exp</span>(-(x1-x2)^<span class="dv">2</span>)}</code></pre>
+}</code></pre></div>
+<p>Let us design the covariance matrix <span class="math inline">\(\mathbf{K}\)</span> in such a way that covariance between items is proportional to items similarity. We need a similarity metric such as:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># kernel function to build the covariance matrix of the prior</span>
+kernel &lt;-<span class="st"> </span>function(x1,x2) {<span class="kw">exp</span>(-(x1-x2)^<span class="dv">2</span>)}</code></pre></div>
 <p>And now we build the covariance:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Covariance matrix</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Covariance matrix</span>
 Sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, L, L)
 for(i in <span class="dv">1</span>:L){
   for (j in i:L){
@@ -111,16 +114,17 @@ for(i in <span class="dv">1</span>:L){
 }
 
 <span class="co"># Plot covariance matrix</span>
-<span class="kw">corrplot</span>(Sigma, <span class="dt">method=</span><span class="st">&quot;shade&quot;</span>)</code></pre>
+<span class="kw">corrplot</span>(Sigma, <span class="dt">method=</span><span class="st">&quot;shade&quot;</span>)</code></pre></div>
 <div class="figure">
-<img src="../images/2015-04-26-Sigma.png" />
+<img src="../images/2015-04-26-Sigma.png" alt />
+
 </div>
 <p>Now we can build our prior:</p>
-<pre class="sourceCode r"><code class="sourceCode r">prior &lt;-<span class="st"> </span>function(f) { <span class="kw">dmvnorm</span>(f, <span class="kw">rep</span>(<span class="dv">0</span>,L), Sigma, <span class="dt">log=</span><span class="ot">TRUE</span>) }</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prior &lt;-<span class="st"> </span>function(f) { <span class="kw">dmvnorm</span>(f, <span class="kw">rep</span>(<span class="dv">0</span>,L), Sigma, <span class="dt">log=</span><span class="ot">TRUE</span>) }</code></pre></div>
 <p>The likelihood is:</p>
-<pre class="sourceCode r"><code class="sourceCode r">likelihood &lt;-<span class="st"> </span>function(x1, x2, f) { <span class="kw">log</span>(<span class="kw">pnorm</span>((f[x1]-f[x2])/lambda)) }</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">likelihood &lt;-<span class="st"> </span>function(x1, x2, f) { <span class="kw">log</span>(<span class="kw">pnorm</span>((f[x1]-f[x2])/lambda)) }</code></pre></div>
 <p>The posterior is proportional the the likelihood times the prior:</p>
-<pre class="sourceCode r"><code class="sourceCode r">posterior &lt;-<span class="st"> </span>function(pairs, f){
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">posterior &lt;-<span class="st"> </span>function(pairs, f){
   npairs &lt;-<span class="st"> </span><span class="kw">dim</span>(pairs)[<span class="dv">1</span>]
   like &lt;-<span class="st"> </span><span class="dv">0</span>
   <span class="co"># total likelihood</span>
@@ -130,9 +134,9 @@ for(i in <span class="dv">1</span>:L){
   <span class="co"># prior</span>
   like &lt;-<span class="st"> </span>like +<span class="st"> </span><span class="kw">prior</span>(f)
   <span class="kw">return</span>(like)
-}</code></pre>
+}</code></pre></div>
 <p>A Metropolis-Hasting implementation with its proposal distribution:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Proposal distribution</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Proposal distribution</span>
 step &lt;-<span class="st"> </span><span class="fl">0.0001</span> <span class="co"># tune it so that around 20% of samples are accepted</span>
 rproposal &lt;-<span class="st"> </span>function(x){x +<span class="st"> </span><span class="kw">mvrnorm</span>(<span class="dv">1</span>, <span class="kw">rep</span>(<span class="dv">0</span>,L), <span class="kw">diag</span>(L)*step)}
 
@@ -152,9 +156,9 @@ metropolis &lt;-<span class="st"> </span>function(nsamples, pairs){
     }
   }
   <span class="kw">return</span>(chain)
-}</code></pre>
+}</code></pre></div>
 <p>And finally we use our Metropolis-Hastings to infer the utility function of the items based on the observed choices:</p>
-<pre class="sourceCode r"><code class="sourceCode r">chain &lt;-<span class="st"> </span><span class="kw">metropolis</span>(<span class="dv">10000</span>, pairs)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">chain &lt;-<span class="st"> </span><span class="kw">metropolis</span>(<span class="dv">10000</span>, pairs)
 
 burnIn &lt;-<span class="st"> </span><span class="kw">dim</span>(chain)[<span class="dv">1</span>]*<span class="fl">0.5</span>
 chain &lt;-<span class="st"> </span>chain[<span class="dv">1</span>:burnIn,]
@@ -175,7 +179,7 @@ x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">10<
 <span class="kw">qplot</span>(x, means) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>L, <span class="dt">ymax=</span>U)) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;items&quot;</span>) +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;f&quot;</span>) +<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>)) +
-<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Posterior of the utility function (credible intervals at 50%)&quot;</span>)</code></pre>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Posterior of the utility function (credible intervals at 50%)&quot;</span>)</code></pre></div>
 <p><img src="../images/2015-04-26-posterior.png" width="800px"></p>
 
 <div class="panel panel-default">

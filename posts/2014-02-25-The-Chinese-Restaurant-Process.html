@@ -42,21 +42,21 @@
 
 <small><a href="../posts/2014-02-25-The-Chinese-Restaurant-Process.html">Posted on February 25, 2014</a></small>
 
-<p>The <a href="http://en.wikipedia.org/wiki/Chinese_restaurant_process">Chinese Restaurant Process</a> is a prior for the likelihoods of clustered data. Let <span class="math">\(\mathbf{z}\)</span> be the cluster assignments of users. Let <span class="math">\(K\)</span> be the number of clusters and let <span class="math">\(\boldsymbol{\pi}\)</span> be a vector of size <span class="math">\(K\)</span>, indicating the probability of being assigned to cluster <span class="math">\(k\)</span>. If we put a Dirichlet prior on <span class="math">\(\boldsymbol{\pi}\)</span> , we have:</p>
-<p><span class="math">\[
+<p>The <a href="http://en.wikipedia.org/wiki/Chinese_restaurant_process">Chinese Restaurant Process</a> is a prior for the likelihoods of clustered data. Let <span class="math inline">\(\mathbf{z}\)</span> be the cluster assignments of users. Let <span class="math inline">\(K\)</span> be the number of clusters and let <span class="math inline">\(\boldsymbol{\pi}\)</span> be a vector of size <span class="math inline">\(K\)</span>, indicating the probability of being assigned to cluster <span class="math inline">\(k\)</span>. If we put a Dirichlet prior on <span class="math inline">\(\boldsymbol{\pi}\)</span> , we have:</p>
+<p><span class="math display">\[
 \begin{align}
 \mathbf{z} &amp;\sim \text{Multinomial}(\boldsymbol{\pi})\notag\\
 \boldsymbol{\pi} &amp;\sim \text{Dirichlet}(\alpha)
 \end{align}
 \]</span></p>
-<p>Assuming that <span class="math">\(\alpha\)</span> is a fixed parameter, the joint probability of <span class="math">\(\mathbf{z}\)</span> and <span class="math">\(\boldsymbol{\pi}\)</span> is: <span class="math">\[
+<p>Assuming that <span class="math inline">\(\alpha\)</span> is a fixed parameter, the joint probability of <span class="math inline">\(\mathbf{z}\)</span> and <span class="math inline">\(\boldsymbol{\pi}\)</span> is: <span class="math display">\[
 \begin{align}
 p(\mathbf{z}, \boldsymbol{\pi}) = 
 p(\mathbf{z} | \boldsymbol{\pi})p(\boldsymbol{\pi} | \alpha)
 \end{align}
 \]</span></p>
-<p>If we integrate out <span class="math">\(\mathbf{\pi}\)</span>, we get the marginal probability of <span class="math">\(\mathbf{z}\)</span>:</p>
-<p><span class="math">\[
+<p>If we integrate out <span class="math inline">\(\mathbf{\pi}\)</span>, we get the marginal probability of <span class="math inline">\(\mathbf{z}\)</span>:</p>
+<p><span class="math display">\[
 \begin{align}
 p(\mathbf{z}) &amp;=
 \int_{\boldsymbol{\pi}} 
@@ -68,8 +68,8 @@ p(\mathbf{z}) &amp;=
    \prod_{j=1}^K \pi_j^{\alpha-1}
 \end{align}
 \]</span></p>
-<p>Renaming <span class="math">\(\alpha+n_i\)</span> as <span class="math">\(\alpha_i'\)</span>, multiplying and dividing by <span class="math">\(B(\boldsymbol{\alpha'})\)</span>, and rearranging the elements so that it is visually clear, we get:</p>
-<p><span class="math">\[
+<p>Renaming <span class="math inline">\(\alpha+n_i\)</span> as <span class="math inline">\(\alpha_i'\)</span>, multiplying and dividing by <span class="math inline">\(B(\boldsymbol{\alpha'})\)</span>, and rearranging the elements so that it is visually clear, we get:</p>
+<p><span class="math display">\[
 \begin{align}
 p(\mathbf{z})=
 \frac{
@@ -83,7 +83,7 @@ B(\alpha)
 \end{align}
 \]</span></p>
 <p>where the value of the integral is 1, since the factor inside is a Dirichlet density function. Expanding the definition of the Beta function, we get:</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 \begin{align}
 p(\mathbf{z})=
 \frac{
@@ -100,16 +100,16 @@ p(\mathbf{z})=
 }
 \end{align}
 \]</span></p>
-<p>Note that the presence of the counts <span class="math">\(n_i\)</span> makes it impossible to factorize <span class="math">\(p(\mathbf{z})\)</span> into the product of the individual <span class="math">\(z\)</span>. However, we can derive the conditional probability of one <span class="math">\(z_u\)</span> given all the other assignments:</p>
-<p><span class="math">\[
+<p>Note that the presence of the counts <span class="math inline">\(n_i\)</span> makes it impossible to factorize <span class="math inline">\(p(\mathbf{z})\)</span> into the product of the individual <span class="math inline">\(z\)</span>. However, we can derive the conditional probability of one <span class="math inline">\(z_u\)</span> given all the other assignments:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_u = j| \mathbf{z_{-u}}) =
 \frac{p(\mathbf{z})}
 {p(\mathbf{z_{-u}})}
 \end{align}
 \]</span></p>
-<p>To compute the denominator we assume cluster assignments are exchangeable, that is, the joint distribution <span class="math">\(p(\mathbf{z})\)</span> is the same regardless the order in which clusters are assigned. This allows us to assume that <span class="math">\(z_u\)</span> is the last assignment, therefore obtaining <span class="math">\(p(\mathbf{z_{-u}})\)</span> by considering how was the equation <span class="math">\(p(\mathbf{z})\)</span> before <span class="math">\(z_u\)</span> was assigned to cluster <span class="math">\(j\)</span>.</p>
-<p><span class="math">\[
+<p>To compute the denominator we assume cluster assignments are exchangeable, that is, the joint distribution <span class="math inline">\(p(\mathbf{z})\)</span> is the same regardless the order in which clusters are assigned. This allows us to assume that <span class="math inline">\(z_u\)</span> is the last assignment, therefore obtaining <span class="math inline">\(p(\mathbf{z_{-u}})\)</span> by considering how was the equation <span class="math inline">\(p(\mathbf{z})\)</span> before <span class="math inline">\(z_u\)</span> was assigned to cluster <span class="math inline">\(j\)</span>.</p>
+<p><span class="math display">\[
 \begin{align}
 p(\mathbf{z_{-u}}) = 
 \frac
@@ -130,8 +130,8 @@ p(\mathbf{z_{-u}}) =
 }
 \end{align}
 \]</span></p>
-<p>Plugging <span class="math">\(p(\mathbf{z}_{-u})\)</span> and <span class="math">\(p(\mathbf{z})\)</span> into <span class="math">\(p(z_u | \mathbf{z}_{-u})\)</span>, we get:</p>
-<p><span class="math">\[
+<p>Plugging <span class="math inline">\(p(\mathbf{z}_{-u})\)</span> and <span class="math inline">\(p(\mathbf{z})\)</span> into <span class="math inline">\(p(z_u | \mathbf{z}_{-u})\)</span>, we get:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -187,8 +187,8 @@ p(z_i = j| \mathbf{z_{-u}})
 }
 \end{align}
 \]</span></p>
-<p>Assuming that all <span class="math">\(\alpha_i\)</span> have the same value <span class="math">\(\alpha\)</span>, and since the sum of all <span class="math">\(n_i\)</span> is <span class="math">\(U\)</span>:</p>
-<p><span class="math">\[
+<p>Assuming that all <span class="math inline">\(\alpha_i\)</span> have the same value <span class="math inline">\(\alpha\)</span>, and since the sum of all <span class="math inline">\(n_i\)</span> is <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -209,8 +209,8 @@ K\alpha_j +U -1
 }
 \end{align}
 \]</span></p>
-<p>and finally exploiting the fact that <span class="math">\(a \Gamma(a) = \Gamma(a+1)\)</span>:</p>
-<p><span class="math">\[
+<p>and finally exploiting the fact that <span class="math inline">\(a \Gamma(a) = \Gamma(a+1)\)</span>:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -219,8 +219,8 @@ p(z_i = j| \mathbf{z_{-u}})
 {K \alpha + U -1}
 \end{align}
 \]</span></p>
-<p>we can reparametrize <span class="math">\(\alpha\)</span> as <span class="math">\(\alpha/K\)</span>. Then we have the standard result:</p>
-<p><span class="math">\[
+<p>we can reparametrize <span class="math inline">\(\alpha\)</span> as <span class="math inline">\(\alpha/K\)</span>. Then we have the standard result:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -229,9 +229,9 @@ p(z_i = j| \mathbf{z_{-u}})
 {\alpha + U -1}
 \end{align}
 \]</span></p>
-<p>where <span class="math">\(n_j\)</span> is the number of users in cluster <span class="math">\(j\)</span> before the assignment of <span class="math">\(z_u\)</span>.</p>
-<p>The Chinese Restaurant Process is the consequence of considering <span class="math">\(K \rightarrow \infty\)</span>. For clusters where <span class="math">\(n_j&gt;0\)</span>, we have:</p>
-<p><span class="math">\[
+<p>where <span class="math inline">\(n_j\)</span> is the number of users in cluster <span class="math inline">\(j\)</span> before the assignment of <span class="math inline">\(z_u\)</span>.</p>
+<p>The Chinese Restaurant Process is the consequence of considering <span class="math inline">\(K \rightarrow \infty\)</span>. For clusters where <span class="math inline">\(n_j&gt;0\)</span>, we have:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -240,8 +240,8 @@ p(z_i = j| \mathbf{z_{-u}})
 {\alpha + U -1}
 \end{align}
 \]</span></p>
-<p>and the probability of assigning <span class="math">\(z_u\)</span> to any of the (infinite) empty clusters is:</p>
-<p><span class="math">\[
+<p>and the probability of assigning <span class="math inline">\(z_u\)</span> to any of the (infinite) empty clusters is:</p>
+<p><span class="math display">\[
 \begin{align}
 p(z_i = j| \mathbf{z_{-u}}) 
 &amp;\propto
@@ -254,7 +254,7 @@ K\frac
 \end{align}
 \]</span></p>
 <p>which written in a compact equation is:</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 \begin{align}
 p(z_u = j | \mathbf{z_{-u}}, \alpha) = 
 \begin{cases}
