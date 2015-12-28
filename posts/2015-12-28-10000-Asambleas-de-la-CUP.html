@@ -45,14 +45,14 @@
 <p align="center">
 <img src="../images/vega_cup.gif" width="700px">
 </p>
-<p>¿Cuál era la probabilidad de que la ultima votación de la asamblea de la CUP acabara en empate? Las reacciones van de la risa a la incredulidad paranoica. Algunos hasta se han animado con los cálculos con mayor o menor acierto e incluso a algún matemático afiliado al PP le han podido las prisas y ha calificado el resultado de imposible.</p>
-<p>El resumen de la historia es que la probabilidad de obtener 1515 síes era cercana al 1,4%, pero que aún así era el número más probable (o al menos uno de los más probables).</p>
-<p>Primero vamos con la versión cuñada y luego nos ponemos con un modelo más realista.</p>
-<h4 id="modelo-cuñado-la-urna-de-baños">Modelo cuñado: la urna de Baños</h4>
+<p>¿Cuál era la probabilidad de que la ultima votación de la asamblea de la CUP acabara en empate? Las reacciones van de la risa a la incredulidad paranoica. Algunos hasta se han animado con los cálculos con mayor o menor acierto e incluso a algún matemático afiliado al PP le han podido las prisas y ha calificado el resultado de imposible. El debate se ha dividido entre los que dicen que la probabilidad era de 0.033% y los que dicen que es de 1.4%.</p>
+<p>El resumen de la historia es que la probabilidad de obtener 1515 síes era cercana al 1,4%, y que aún así era el número más probable (o al menos uno de los más probables).</p>
+<p>Primero vamos con la versión del 0.033%, defendida por Salvador Cardús y Mario Bilbao, y luego iremos con la del 1.4% defendida en las redes por Roger Guimerà, Ricardo Gallir y Xavier Sala-i-Martí (que en frio dijo 0.033 pero luego corrigió).</p>
+<h4 id="modelo-incorrecto-del-0.033-la-urna-de-baños">Modelo incorrecto del 0.033%: la urna de Baños</h4>
 <p align="center">
 <img src="../images/2015-12-28-cunyao_prob.jpeg" width="300px">
 </p>
-<p>La probabilidad cuñada asigna la misma probabilidad a cualquiera de los resultados. Bajo este modelo, sería igual de factible el empate que un 100% de síes o que un 100% de noes. Este modelo es equivocado porque asume que el número lo decide Antonio Baños sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.</p>
+<p><strong>Este modelo no tiene sentido</strong>. Los que defienden este porcentaje asignan la misma probabilidad a cualquiera de los resultados. Bajo este modelo, sería igual de factible el empate que un 100% de síes o que un 100% de noes. Este modelo es equivocado porque asume que el número lo decide Antonio Baños sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.</p>
 <p>Para demostrarlo, voy a simular a Antonio Baños por ordenador y voy a hacerle repetir el experimento en 100000 asambleas.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/</span>
 
@@ -81,7 +81,7 @@ probabilidad_empate &lt;-<span class="st"> </span>empates/M
 <img src="../images/2015-12-28-CUP_banyos.png" width="800px">
 </p>
 <p>donde la probabilidad de empate (y de cualquier otro resultado) sería de 1 sobre 3030 posibilidades, 1/3030, o un 0.033%. Lo cual, por cierto, no es <em>imposible</em>, de hecho es más que la probabilidad de que te toque el Gordo.</p>
-<h4 id="modelo-serio-3030-cupaires-indecisos.">Modelo serio: 3030 cupaires indecisos.</h4>
+<h4 id="modelo-correcto-del-1.4-3030-cupaires-indecisos.">Modelo correcto del 1.4%: 3030 cupaires indecisos.</h4>
 <p>Pero la aburrida realidad es que Baños no se pone en bikini a sacar una papeleta de una urna sino que 3030 cupaires depositan un sí o un no. En este caso, la intución nos dice que algunos resultados extremos como 0 a favor y 3030 en contra son menos probables que 1000 a favor y 2030 en contra. Es decir, intuitivamente vemos que hay resultados más probables que otros. Matemáticamente decimos que <strong>no es una distribución uniforme</strong>.</p>
 <p>Para ver como se distribute la probabilidad sobre los posibles resultados, esta vez simulamos 3030 cupaires participando en 100000 asambleas. Para simularlas tengo que imaginar un modelo sobre cómo se comporta cada cupaire individual. Dado que el debate estaba muy ajustado, los cupaires son parecidos a monedas lanzadas al aire.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/</span>
