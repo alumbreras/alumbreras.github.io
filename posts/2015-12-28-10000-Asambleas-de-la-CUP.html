@@ -113,13 +113,44 @@ probabilidad_empate &lt;-<span class="st"> </span>empates/M
 <img src="../images/2015-12-28-CUP.png" width="800px">
 </p>
 <p>donde resulta que lo que tenemos es una distribución normal (la culpa es del <a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central">Teorema del Límite Central</a>) donde el número más frecuente es el 1515, que ha ocurrido un 1,47% de las veces. Sí, es poco probable, <strong>pero es el más probable</strong>.</p>
-<h4 id="cómo-decae-la-probabilidad-de-empate-si-el-debate-se-aleja-del-5050">Cómo decae la probabilidad de empate si el debate se aleja del 50/50?</h4>
-<p>Hasta aquí hemos asumido que los cupaires están completamente divividos. En realidad, si nos pusiéramos a un 45/55 la probabilidad de empate caería rotundamente.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="kw">seq</span>(<span class="fl">0.4</span>,<span class="fl">0.6</span>,<span class="fl">0.001</span>)
-<span class="kw">plot</span>(x, <span class="kw">dbinom</span>(<span class="dv">1515</span>, <span class="dv">3030</span>, <span class="dt">prob =</span> x), <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Probabilidad empate (sobre 1)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;equilibrio&quot;</span>)</code></pre></div>
+<h4 id="modelo-más-razonable-aún-20-de-cupaires-indecisos">Modelo más razonable aún: 20% de cupaires indecisos</h4>
+<p><a href="http://www.eldiario.es/piedrasdepapel/probable-empate-Asamblea-CUP_6_467263286.html">Antoni-Ítalo</a> propone asumir que el 80% de los cupaires ya venían decididos de casa y que sólo había un 20% de indecisos. Esto va a ser clave, ya que las posibilidades se van a reducir y por lo tanto las probabilidades serán mucho mayores para cada posible resultado. Repetimos la simulación:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># N cupaires</span>
+N &lt;-<span class="st"> </span><span class="dv">3030</span>
+
+<span class="co"># 80% ya llegan con el voto decidido.</span>
+si_fijos &lt;-<span class="st"> </span><span class="dv">1212</span> <span class="co"># 3030*0.4</span>
+no_fijos &lt;-<span class="st"> </span><span class="dv">1212</span> <span class="co"># 3030*0.4</span>
+
+indecisos &lt;-<span class="st"> </span>N -<span class="st"> </span>si_fijos -<span class="st"> </span>no_fijos
+
+<span class="co"># con un debate muy ajustado</span>
+probabilitat_si &lt;-<span class="st"> </span><span class="fl">0.5</span>
+probabilitat_no &lt;-<span class="st"> </span><span class="dv">1</span> -<span class="st"> </span>probabilitat_si
+
+<span class="co"># Simula muchas, muchas asambleas</span>
+M &lt;-<span class="st"> </span><span class="dv">100000</span>
+asambleas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="dv">0</span>,M,<span class="dv">2</span>))
+<span class="kw">names</span>(asambleas) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sies&quot;</span>, <span class="st">&quot;noes&quot;</span>)
+for (i in <span class="dv">1</span>:M){
+  votos &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;si&quot;</span>, <span class="st">&quot;no&quot;</span>), indecisos, <span class="dt">replace=</span><span class="ot">TRUE</span>, <span class="dt">prob=</span><span class="kw">c</span>(probabilitat_si,probabilitat_no))
+  sies &lt;-<span class="st"> </span><span class="kw">sum</span>(votos==<span class="st">&quot;si&quot;</span>) +<span class="st"> </span>si_fijos
+  noes &lt;-<span class="st"> </span><span class="kw">sum</span>(votos==<span class="st">&quot;no&quot;</span>) +<span class="st"> </span>no_fijos
+  asambleas[i,] &lt;-<span class="st"> </span><span class="kw">c</span>(sies, noes)
+}
+<span class="kw">hist</span>(asambleas$sies, <span class="dt">breaks =</span> <span class="dv">100</span>)
+<span class="kw">hist</span>(asambleas$sies, <span class="dt">breaks =</span> <span class="dv">100</span>, <span class="dt">probability=</span><span class="ot">TRUE</span>, 
+     <span class="dt">xlab=</span><span class="st">&quot;Numero de sies&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;probabilidad (sobre 1)&quot;</span>, 
+     <span class="dt">main=</span><span class="st">&quot;100000 asambleas de la CUP&quot;</span>)
+
+<span class="co"># probabilidad de empate</span>
+empates &lt;-<span class="st"> </span><span class="kw">sum</span>(asambleas$sies==<span class="dv">1515</span>)
+probabilidad_empate &lt;-<span class="st"> </span>empates/M
+<span class="kw">cat</span>(<span class="st">&quot;Probabilidad de empate:&quot;</span>, probabilidad_empate*<span class="dv">100</span>)</code></pre></div>
 <p align="center">
-<img src="../images/equilibrio.png" width="800px">
+<img src="../images/2015-12-28-CUP.png" width="800px">
 </p>
+<p>donde ahora la probabilidad de empate sube al 3.187%.</p>
 <h4 id="todos-los-modelos-son-malos.-pero-algunos-son-útiles-george-box">Todos los modelos son malos. Pero algunos son útiles (George Box)</h4>
 <p>En cualquier caso, estamos asumiendo que el voto de un cupaire no afecta el voto de otro cupaire y estamos obviando dinámicas sociológicas de grupo, el efecto de las corrientes internas y una serie de fenómenos que podrían hacer el empate incluso más probable (o menos). Pero no hay duda de que la probabilidad estaba más cerca del 1.4% que del 0.03%.</p>
 
