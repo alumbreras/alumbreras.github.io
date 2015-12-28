@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Alberto Lumbreras - 100000 asambleas de la CUP</title>
+
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <h1 style="color:rgba(153, 153, 153, 0.0);">Alberto Lumbreras
+                        <small>
+                            <font size="4" style="color:rgba(153, 153, 153, 0.0);">[PhD Student in Computer Science]</font>
+                        </small>
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <br />
+                    <ul class="nav nav-stacked affix" data-spy="affix" data-offset-top="0">
+                        <li><a href="../"><i class="fa fa-home fa-lg fa-fw"></i> Home</a></li>
+                        <li><a href="../publications.html"><i class="fa fa-list fa-lg fa-fw"></i> Publications</a></li>
+                        <li><a href="../posts.html"><i class="fa fa-pencil fa-lg fa-fw"></i> Posts</a></li>
+                        <!-- <li><a href="/about.html"><i class="fa fa-male fa-lg fa-fw"></i> About</a></li> -->
+                        <li><a href="http://github.com/alumbreras"><i class="fa fa-github fa-lg fa-fw"></i> GitHub</a></li>
+                        <li><a href="https://twitter.com/albertlumbreras"><i class="fa fa-twitter fa-lg fa-fw"></i> Twitter</a></li>
+                        <li><a href="http://es.linkedin.com/in/albertolumbreras"><i class="fa fa-linkedin fa-lg fa-fw"></i> LinkedIn</a></li> 
+
+                    </ul>
+                </div>
+                <div class="col-md-10" style="top: -22px;">
+                    <h3>100000 asambleas de la CUP</h3>
+
+<small><a href="../posts/2015-12-28-10000-Asambleas-de-la-CUP.html">Posted on December 28, 2015</a></small>
+
+<p align="center">
+<img src="../images/vega_cup.gif" width="700px">
+</p>
+<p>¿Cuál era la probabilidad de que la ultima votación de la asamblea de la CUP acabara en empate? Las reacciones van de la risa a la incredulidad paranoica. Algunos hasta se han animado con los cálculos con mayor o menor acierto e incluso a algún matemático afiliado al PP le han podido las prisas y ha calificado el resultado de imposible.</p>
+<p>El resumen de la historia es que la probabilidad de obtener 1515 síes era cercana al 1,4%, pero que aún así era el número más probable (o al menos uno de los más probables).</p>
+<p>Primero vamos con la versión cuñada y luego nos ponemos con un modelo más realista.</p>
+<h4 id="modelo-cuñado-la-urna-de-baños">Modelo cuñado: la urna de Baños</h4>
+<p align="center">
+<img src="../images/2015-12-28-cunyao_prob.jpeg" width="300px">
+</p>
+<p>La probabilidad cuñada asigna la misma probabilidad a cualquiera de los resultados. Bajo este modelo, sería igual de factible el empate que un 100% de síes o que un 100% de noes. Este modelo es equivocado porque asume que el número lo decide Antonio Baños sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.</p>
+<p>Para demostrarlo, voy a simular a Antonio Baños por ordenador y voy a hacerle repetir el experimento en 100000 asambleas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/</span>
+
+<span class="co"># Un Antonio Banos</span>
+N &lt;-<span class="st"> </span><span class="dv">1</span>
+
+<span class="co"># una urna con 3030 papeletas numeradas</span>
+papeletas &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">3030</span>
+
+<span class="co"># Simula muchas, muchas asambleas</span>
+M &lt;-<span class="st"> </span><span class="dv">100000</span>
+asambleas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="dv">0</span>,M,<span class="dv">1</span>))
+<span class="kw">names</span>(asambleas) &lt;-<span class="st"> &quot;papeleta&quot;</span>
+for (i in <span class="dv">1</span>:M){
+  asambleas[i,] &lt;-<span class="st"> </span><span class="kw">sample</span>(papeletas, N)
+}
+<span class="kw">hist</span>(asambleas$papeleta, <span class="dt">breaks =</span> <span class="dv">100</span>, <span class="dt">probability=</span><span class="ot">TRUE</span>, 
+     <span class="dt">xlab=</span><span class="st">&quot;Papeleta ganadora&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;probabilidad (sobre 1)&quot;</span>, 
+     <span class="dt">main=</span><span class="st">&quot;100000 asambleas de la CUP&quot;</span>)
+
+<span class="co"># probabilidad de empate</span>
+empates &lt;-<span class="st"> </span><span class="kw">sum</span>(asambleas$papeleta==<span class="dv">1515</span>)
+probabilidad_empate &lt;-<span class="st"> </span>empates/M
+<span class="kw">cat</span>(<span class="st">&quot;Probabilidad de empate:&quot;</span>, probabilidad_empate*<span class="dv">100</span>)</code></pre></div>
+<p align="center">
+<img src="../images/2015-12-28-CUP_banyos.png" width="800px">
+</p>
+<p>donde la probabilidad de empate (y de cualquier otro resultado) sería de 1 sobre 3030 posibilidades, 1/3030, o un 0.033%. Lo cual, por cierto, no es <em>imposible</em>, de hecho es más que la probabilidad de que te toque el Gordo.</p>
+<h4 id="modelo-serio-3030-cupaires-indecisos.">Modelo serio: 3030 cupaires indecisos.</h4>
+<p>Pero la aburrida realidad es que Baños no se pone en bikini a sacar una papeleta de una urna sino que 3030 cupaires depositan un sí o un no. En este caso, la intución nos dice que algunos resultados extremos como 0 a favor y 3030 en contra son menos probables que 1000 a favor y 2030 en contra. Es decir, intuitivamente vemos que hay resultados más probables que otros. Matemáticamente decimos que <strong>no es una distribución uniforme</strong>.</p>
+<p>Para ver como se distribute la probabilidad sobre los posibles resultados, esta vez simulamos 3030 cupaires participando en 100000 asambleas. Para simularlas tengo que imaginar un modelo sobre cómo se comporta cada cupaire individual. Dado que el debate estaba muy ajustado, los cupaires son parecidos a monedas lanzadas al aire.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/</span>
+
+<span class="co"># N cupaires</span>
+N &lt;-<span class="st"> </span><span class="dv">3030</span>
+
+<span class="co"># con un debate muy ajustado</span>
+probabilitat_si &lt;-<span class="st"> </span><span class="fl">0.5</span>
+probabilitat_no &lt;-<span class="st"> </span><span class="dv">1</span> -<span class="st"> </span>probabilitat_si
+
+<span class="co"># Simula muchas, muchas asambleas</span>
+M &lt;-<span class="st"> </span><span class="dv">100000</span>
+asambleas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">matrix</span>(<span class="dv">0</span>,M,<span class="dv">2</span>))
+<span class="kw">names</span>(asambleas) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sies&quot;</span>, <span class="st">&quot;noes&quot;</span>)
+for (i in <span class="dv">1</span>:M){
+  votos &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(<span class="st">&quot;si&quot;</span>, <span class="st">&quot;no&quot;</span>), N, <span class="dt">replace=</span><span class="ot">TRUE</span>, <span class="dt">prob=</span><span class="kw">c</span>(probabilitat_si,probabilitat_no))
+  sies &lt;-<span class="st"> </span><span class="kw">sum</span>(votos==<span class="st">&quot;si&quot;</span>)
+  noes &lt;-<span class="st"> </span><span class="kw">sum</span>(votos==<span class="st">&quot;no&quot;</span>)
+  asambleas[i,] &lt;-<span class="st"> </span><span class="kw">c</span>(sies, noes)
+}
+<span class="kw">hist</span>(asambleas$sies, <span class="dt">breaks =</span> <span class="dv">100</span>)
+
+<span class="co"># probabilidad de empate</span>
+empates &lt;-<span class="st"> </span><span class="kw">sum</span>(asambleas$sies==<span class="dv">1515</span>)
+probabilidad_empate &lt;-<span class="st"> </span>empates/M
+<span class="kw">cat</span>(<span class="st">&quot;Probabilidad de empate:&quot;</span>, probabilidad_empate*<span class="dv">100</span>)</code></pre></div>
+<p align="center">
+<img src="../images/2015-12-28-CUP.png" width="800px">
+</p>
+<p>donde resulta que lo que tenemos es una distribución normal (la culpa es del <a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central">Teorema del Límite Central</a>) donde el número más frecuente es el 1515, que ha ocurrido un 1,47% de las veces. Sí, es poco probable, <strong>pero es el más probable</strong>.</p>
+<h4 id="cómo-decae-la-probabilidad-de-empate-si-el-debate-se-aleja-del-5050">Cómo decae la probabilidad de empate si el debate se aleja del 50/50?</h4>
+<p>Hasta aquí hemos asumido que los cupaires están completamente divividos. En realidad, si nos pusiéramos a un 45/55 la probabilidad de empate caería rotundamente.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="kw">seq</span>(<span class="fl">0.4</span>,<span class="fl">0.6</span>,<span class="fl">0.001</span>)
+<span class="kw">plot</span>(x, <span class="kw">dbinom</span>(<span class="dv">1515</span>, <span class="dv">3030</span>, <span class="dt">prob =</span> x), <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Probabilidad empate (sobre 1)&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;equilibrio&quot;</span>)</code></pre></div>
+<p align="center">
+<img src="../images/equilibrio.png" width="800px">
+</p>
+<h4 id="todos-los-modelos-son-malos.-pero-algunos-son-útiles-george-box">Todos los modelos son malos. Pero algunos son útiles (George Box)</h4>
+<p>En cualquier caso, estamos asumiendo que el voto de un cupaire no afecta el voto de otro cupaire y estamos obviando dinámicas sociológicas de grupo, el efecto de las corrientes internas y una serie de fenómenos que podrían hacer el empate incluso más probable (o menos). Pero no hay duda de que la probabilidad estaba más cerca del 1.4% que del 0.03%.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="pull-left">
+            Tags: <a href="../tags/monte-carlo.html">monte-carlo</a>
+        </div>
+        <div class="social pull-right">
+            <span class="twitter">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.albertolumbreras.net/posts/2015-12-28-10000-Asambleas-de-la-CUP.html" data-via="albertlumbreras" data-dnt="true">Tweet</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'albertolumbreras';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+    </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+
+  
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-62494759-1', 'auto');
+            ga('send', 'pageview');
+            
+            </script>
+        
+    </body>
+</html>
