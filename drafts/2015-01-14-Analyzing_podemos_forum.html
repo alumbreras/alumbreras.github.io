@@ -65,7 +65,7 @@
 <img src="../images/2015-01-14-podemos_coparticipation_matrix.png" width="600px">
 </p>
 <p>This matrix is less sparse (7.13%). We might do a couple of things with this matrix. We could perform blockmodeling to detect groups of people that tend to participate with the same other groups or we could transform it to a social graph, detect communities and see what it looks like.</p>
-<h3 id="social-graph-of-co-participations">Social graph of co-participations</h3>
+<h4 id="social-graph-of-co-participations">Social graph of co-participations</h4>
 <p>I built a graph where an edge between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> means that user <span class="math inline">\(u\)</span> co-participated in a thread with <span class="math inline">\(v\)</span>. Then I applied a <a href="http://igraph.org/r/doc/cluster_leading_eigen.html">community detection algorithm</a> and colored the nodes according to their community.</p>
 <p align="center">
 <img src="../images/2015-01-14-podemos_coparticipation_graph.png" width="600px">
