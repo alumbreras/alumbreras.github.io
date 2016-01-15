@@ -62,11 +62,11 @@
 </p>
 <!---OLD: if the original neighborhood has more than $M$ vertices we will keep only the $M$ that are closest in time to the post $p$.-->
 <p>To reduce our space of possible neighborhoods we will introduce the concept of <em>temporal neighborhood</em>: if post $p was written at time <span class="math inline">\(t\)</span>, the temporal neighborhood (of radius <span class="math inline">\(R\)</span>) of a <span class="math inline">\(p\)</span> is the set of <span class="math inline">\(R\)</span> posts in its <em>spacial neighborhood</em> that were written in a time closest to <span class="math inline">\(t\)</span> (and where closeness is computed as <span class="math inline">\(|t_i-t|\)</span>) and where the posts in the shortest path from each neighbour and <span class="math inline">\(p\)</span> belong also to the <em>temporal neighborhood</em>.</p>
-<p>With this in mind, we count the <em>temporal neighborhoods</em> of every user’s posts. For a spacial neighborhood of radius <span class="math inline">\(1\)</span> and a temporal neighborhood of radius <span class="math inline">\(4\)</span> we obtain:</p>
+<p>With this in mind, we count the <em>temporal neighborhoods</em> of every user’s posts. To make it funnier (and more fine-grained), we will also put a color (white) on the root post. For a spacial neighborhood of radius <span class="math inline">\(1\)</span> and a temporal neighborhood of radius <span class="math inline">\(4\)</span> we obtain:</p>
 <p align="center">
 <img src="../images/2016-01-15-motifs_1_4.png" width="600px">
 </p>
-<p>We can play the the spacial and the temporal radius. Let’s see what happens if we set both radius to <span class="math inline">\(4\)</span>. And to make it more fun (and more fine-grained), we will also put a color on the root post:</p>
+<p>We can play the the spacial and the temporal radius. Let’s see what happens if we set both radius to <span class="math inline">\(4\)</span>:</p>
 <p align="center">
 <img src="../images/2016-01-15-motifs_4_4.png" width="600px">
 </p>
