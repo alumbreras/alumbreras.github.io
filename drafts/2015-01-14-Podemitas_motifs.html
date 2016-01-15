@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Alberto Lumbreras - Analyzing one month of discussion in Podemos reddit</title>
+
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <h1 style="color:rgba(153, 153, 153, 0.0);">Alberto Lumbreras
+                        <small>
+                            <font size="4" style="color:rgba(153, 153, 153, 0.0);">[PhD Student in Computer Science]</font>
+                        </small>
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <br />
+                    <ul class="nav nav-stacked affix" data-spy="affix" data-offset-top="0">
+                        <li><a href="../"><i class="fa fa-home fa-lg fa-fw"></i> Home</a></li>
+                        <li><a href="../publications.html"><i class="fa fa-list fa-lg fa-fw"></i> Publications</a></li>
+                        <li><a href="../posts.html"><i class="fa fa-pencil fa-lg fa-fw"></i> Posts</a></li>
+                        <!-- <li><a href="/about.html"><i class="fa fa-male fa-lg fa-fw"></i> About</a></li> -->
+                        <li><a href="http://github.com/alumbreras"><i class="fa fa-github fa-lg fa-fw"></i> GitHub</a></li>
+                        <li><a href="https://twitter.com/albertlumbreras"><i class="fa fa-twitter fa-lg fa-fw"></i> Twitter</a></li>
+                        <li><a href="http://es.linkedin.com/in/albertolumbreras"><i class="fa fa-linkedin fa-lg fa-fw"></i> LinkedIn</a></li> 
+
+                    </ul>
+                </div>
+                <div class="col-md-10" style="top: -22px;">
+                    <h3>Analyzing one month of discussion in Podemos reddit</h3>
+
+<small><a href="../drafts/2015-01-14-Podemitas_motifs.html">Posted on January 14, 2015</a></small>
+
+<p>In this post, I will cluster Podemos forum users according to the graphs around their posts. Intuitively, we should find which groups of users tend to participate (more than the average) in cascades, which ones tend to participate (more than the average) in stars, and son on.</p>
+<h4 id="forum-description">Forum description</h4>
+<p>As in the previous post, I will use the threads written on January 2015 on the <a href="https://www.reddit.com/r/podemos">Reddit subforum of Podemos</a>. The podemos forum (a.k.a subreddit) contains 995 discussion threads that started on January. These threads contain a total of 12912 posts written by 1218 users.</p>
+<h4 id="motifs">Motifs</h4>
+<p>Let us built a matrix where rows represent users and columns represent threads, and where every position <span class="math inline">\((u,t)\)</span> in the matrix indicates whether the user <span class="math inline">\(u\)</span> participated in the thread <span class="math inline">\(t\)</span>.</p>
+<p align="center">
+<img src="../images/2015-01-14-podemos_participation_matrix.png" width="600px">
+</p>
+<p>The matrix is very sparse (only 0.58% of the positions are filled). The white horizontal line corresponds to the articifical <code>̀root</code> user (since we don’t know the user who posted the root post, we considered all of them are written by the same <code>̀root</code> user). We see also another very active user in the upper part of the matrix. Around 0.4 there is also a quite white vertical line that represents a thread where a lot of users participated (maybe one of the threads where Podemos members voted something; the dataset does not give as a <code>url</code> to the original thread so that we can check it). A smaller vertical line on the bottom part indicates a group of users that participated only on that thread.</p>
+<p><strong>Question</strong>: what if we get the matrix corresponding to the first <span class="math inline">\(N\)</span> posts of every thread and then <em>remove everyone but the most active users</em> (consider that they are decorative and have no effect on the dynamic)? Could we predict the final length (or whether the thread will be <code>short</code>, <code>medium</code>, or <code>long</code> size)? We could use a linear regression or some non-linear predictor to see what happens.</p>
+<h4 id="co-participation-matrix">Co-participation matrix</h4>
+<p>Now do the same with the co-participation matrix. A co-participation matrix is a square matrix that says whether user <span class="math inline">\(u\)</span> has participated (at least once) in the same thread than user <span class="math inline">\(v\)</span>.</p>
+<p align="center">
+<img src="../images/2015-01-14-podemos_coparticipation_matrix.png" width="600px">
+</p>
+<p>This matrix is less sparse (7.13%). We might do a couple of things with this matrix. We could perform blockmodeling to detect groups of people that tend to participate with the same other groups or we could transform it to a social graph, detect communities and see what it looks like.</p>
+<h4 id="social-graph-of-co-participations">Social graph of co-participations</h4>
+<p>I built a graph where an edge between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> means that user <span class="math inline">\(u\)</span> co-participated in a thread with <span class="math inline">\(v\)</span>. Then I applied a <a href="http://igraph.org/r/doc/cluster_leading_eigen.html">community detection algorithm</a> and colored the nodes according to their community.</p>
+<p align="center">
+<img src="../images/2015-01-14-podemos_coparticipation_graph.png" width="600px">
+</p>
+<p>There algorithm told us there are four communities of 678, 189, 348 and 3 members and that the overall <a href="https://en.wikipedia.org/wiki/Modularity_%28networks%29">modularity</a> is 0.27 (a random graph would have modularity 0). An analysis of <a href="http://igraph.org/r/doc/components.html">connected components</a> told us there is only one big component, that is, there are no isolated communities.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="pull-left">
+            Tags: 
+        </div>
+        <div class="social pull-right">
+            <span class="twitter">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.albertolumbreras.net/drafts/2015-01-14-Podemitas_motifs.html" data-via="albertlumbreras" data-dnt="true">Tweet</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'albertolumbreras';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+    </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+
+  
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-62494759-1', 'auto');
+            ga('send', 'pageview');
+            
+            </script>
+        
+    </body>
+</html>
