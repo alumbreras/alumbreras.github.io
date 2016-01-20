@@ -85,10 +85,20 @@ This plot suggests a <span class="math inline">\(k\)</span> between 3 and 5. I w
 </p>
 To see it more clearly, let’s plot a PCA projection over the first two components:
 <p align="center">
-<img src="../images/2016-01-15-PCA.png" width="700px">
+<img src="../images/2016-01-15-PCA.png" width="800px">
 </p>
 <h3 id="making-sense-of-it">Making sense of it</h3>
-<p>Let us make a closer inspection on the characteristics of each group to understand what are these groups and to see whether the results make sense.</p>
+Let us make a closer inspection on the characteristics of each group to understand what are these groups and to see whether the results make sense. Let’s go take a look again at the PCA (with another library):
+<p align="center">
+<img src="../images/2016-01-15-PCA2.png" width="800px">
+</p>
+<p>We detect the following roles:</p>
+<ul>
+<li>Spotters (pink): ignored people?</li>
+<li>Common Answerers (yellow): common people that tend to reply to the root.</li>
+<li>Chain Common Bifurcators (green): this people participates deeper in the discussion.</li>
+</ul>
+<p>(TODO: plot profile lines to complement the PCA view. Whiskers plots!!!)</p>
 
 <div class="panel panel-default">
     <div class="panel-body">
