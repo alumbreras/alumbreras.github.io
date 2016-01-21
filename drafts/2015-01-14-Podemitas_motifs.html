@@ -77,7 +77,7 @@
 <p>Since we want to make the analyse independent of the number of posts, we will normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. The features represent now <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
 We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,10\)</span> clusters and looked at the Within-Cluster Sum of Squares.
 <p align="center">
-<img src="../images/2016-01-15-elbow.png" width="600px">
+<img src="../images/2016-01-15-elbow2.png" width="600px">
 </p>
 This plot suggests a <span class="math inline">\(k\)</span> between 3 and 5. I will choose 5 to keep thinks simple. I run the k-means and then plot the scatter matrix of evert pair of variables, where colors correspond to the clusters.
 <p align="center">
@@ -95,13 +95,16 @@ Let us make a closer inspection on the characteristics of each group to understa
 <p align="center">
 <img src="../images/2016-01-15-whiskers.png" width="800px">
 </p>
-<p>We detect the following roles:</p>
+<p>Let’s now formalize the detected groups:</p>
 <ul>
-<li>Spotters (pink): ignored people?</li>
-<li>Common Answerers (yellow): common people that tend to reply to the root.</li>
-<li>Chain Common Bifurcators (green): this people participates deeper in the discussion.</li>
+<li><strong>Spotters (pink)</strong>: this people seems to be ignore by their peers. A lot of them are probably newbies.</li>
+<li><strong>Common Answerers</strong> (yellow): this people prefer to participate by answering to the root posts raised some interest (CA3 motif)</li>
+<li><strong>Chain Common Bifurcators</strong> (green): this people participates deeper in the discussion.</li>
+<li><strong>Dynamizers</strong> (blue) (High CCB CIA SA): they are seen at the begining of chains and in bifurcations, suggesting that they are people that know the community and that are not ignored by their peers.</li>
+<li><strong>Common People</strong>: this group of people represents the average person. They do not stand out in any feature.</li>
 </ul>
-<p>(TODO: plot profile lines to complement the PCA view. Whiskers plots!!!)</p>
+<h4 id="which-roles-participate-in-which-threads">Which roles participate in which threads</h4>
+<p>Once we assigned a role to every user, let’s see what is the proportion of roles in every thread. We will</p>
 
 <div class="panel panel-default">
     <div class="panel-body">
