@@ -61,7 +61,7 @@
 <img src="../images/2015-01-15-large_neighborhood.png" width="300px"> <img src="../images/2015-01-15-short_neighborhood.png" width="300px">
 </p>
 <!---OLD: if the original neighborhood has more than $M$ vertices we will keep only the $M$ that are closest in time to the post $p$.-->
-<p>To reduce our space of possible neighborhoods we will introduce the concept of <em>temporal neighborhood</em>: if post $p was written at time <span class="math inline">\(t\)</span>, the temporal neighborhood (of radius <span class="math inline">\(R\)</span>) of a <span class="math inline">\(p\)</span> is the set of <span class="math inline">\(R\)</span> posts in its <em>spacial neighborhood</em> that were written in a time closest to <span class="math inline">\(t\)</span> (and where closeness is computed as <span class="math inline">\(|t_i-t|\)</span>) and where the posts in the shortest path from each neighbour and <span class="math inline">\(p\)</span> belong also to the <em>temporal neighborhood</em>.</p>
+<p>To reduce our space of possible neighborhoods we will introduce the concept of <em>temporal neighborhood</em>: if post <span class="math inline">\(p\)</span> was written at time <span class="math inline">\(t\)</span>, the temporal neighborhood (of radius <span class="math inline">\(R\)</span>) of a <span class="math inline">\(p\)</span> is the set of <span class="math inline">\(R\)</span> posts in its <em>spacial neighborhood</em> that were written in a time closest to <span class="math inline">\(t\)</span> (and where closeness is computed as <span class="math inline">\(|t_i-t|\)</span>) and where the posts in the shortest path from each neighbour and <span class="math inline">\(p\)</span> belong also to the <em>temporal neighborhood</em>.</p>
 <p>With this in mind, we count the <em>temporal neighborhoods</em> of every user’s posts. To make it funnier (and more fine-grained), we will also put a color (white) on the root post. For a spacial neighborhood of radius <span class="math inline">\(1\)</span> and a temporal neighborhood of radius <span class="math inline">\(4\)</span> we obtain:</p>
 <p align="center">
 <img src="../images/2016-01-15-motifs_1_4.png" width="600px">
@@ -72,30 +72,36 @@
 </p>
 <p>where I named the neighborhoods to help the intuition.</p>
 <p>(<strong>Question</strong>: how come <em>spot</em> is the most frequent? How is it possible to have no neighbors at all? Or what might be wrong?)</p>
-<h4 id="types-of-conversationalists">Types of conversationalists</h4>
-<p>Given the neighborhoods in which each user participates, we will analyze whether there exists different types of users or all users look similar. Since</p>
-<p>Since we want to make the analyse independent of the number of posts, we will normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. The features represent now <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
-We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,10\)</span> clusters and looked at the Within-Cluster Sum of Squares.
+<h4 id="clustering-users-with-respect-to-their-neighborhoods">Clustering users with respect to their neighborhoods</h4>
+<p>Given the neighborhoods in which each user participates, we will analyze whether there exists different types of users or all users look similar.</p>
+<p>Since we want to make the analyse independent of the number of posts, we will normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. Features now represent <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
+We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,25\)</span> clusters and looked at the <em>Within-Cluster Sum of Squares</em>.
 <p align="center">
 <img src="../images/2016-01-15-elbow2.png" width="600px">
 </p>
-This plot suggests a <span class="math inline">\(k\)</span> between 3 and 5. I will choose 5 to keep thinks simple. I run the k-means and then plot the scatter matrix of evert pair of variables, where colors correspond to the clusters.
+We choose 5 clusters to keep thinks simple. We run the k-means and then plot the scatter matrix of every pair of variables, where colors correspond to the clusters.
 <p align="center">
-<img src="../images/2016-01-15-ggpairs.png" width="700px">
+<img src="../images/2016-01-15-ggpairs.png" width="600px">
 </p>
-To see it more clearly, let’s plot a PCA projection over the first two components:
+To see it more clearly, let’s plot a couple of PCA projections (with two different libraries) over the first two components:
 <p align="center">
-<img src="../images/2016-01-15-PCA.png" width="800px">
+<img src="../images/2016-01-15-PCA.png" width="600px">
+</p>
+<p align="center">
+<img src="../images/2016-01-15-PCA2.png" width="600px">
+</p>
+And finally let’s visualize a the distribution of each cluster for every feature:
+<p align="center">
+<img src="../images/2016-01-15-whiskers.png" width="600px">
 </p>
 <h3 id="making-sense-of-it">Making sense of it</h3>
-Let us make a closer inspection on the characteristics of each group to understand what are these groups and to see whether the results make sense. Let’s go take a look again at the PCA (with another library):
-<p align="center">
-<img src="../images/2016-01-15-PCA2.png" width="800px">
-</p>
-<p align="center">
-<img src="../images/2016-01-15-whiskers.png" width="800px">
-</p>
-<p>Let’s now formalize the detected groups:</p>
+<p>From the plots above, let’s try to describe every grooup:</p>
+<h4 id="spotters-salient-motif-spot">Spotters (salient motif: <em>spot</em>)</h4>
+<h4 id="answerers-salient-motif-ca3">Answerers (salient motif: <em>CA3</em>)</h4>
+<h4 id="bifurcators-salient-motif-ca3">Bifurcators (salient motif: <em>CA3</em>)</h4>
+<h4 id="catalyzers-salient-motif-ccb-cia-sa">Catalyzers (salient motif: <em>CCB</em> <em>CIA</em> <em>SA</em>)</h4>
+<h4 id="common-people">Common People</h4>
+<h4 id="lurkers">Lurkers</h4>
 <ul>
 <li><strong>Spotters (pink)</strong>: this people seems to be ignore by their peers. A lot of them are probably newbies.</li>
 <li><strong>Common Answerers</strong> (yellow): this people prefer to participate by answering to the root posts raised some interest (CA3 motif)</li>
@@ -107,7 +113,7 @@ Let us make a closer inspection on the characteristics of each group to understa
 <p>Once we assigned a role to every user, let’s see what is the proportion of roles in every thread. We will</p>
 <h4 id="do-roles-have-an-effect-on-thread-length">Do roles have an effect on thread length?</h4>
 <p align="center">
-<img src="../images/2016-01-15-cluster_vs_length.png" width="600">
+<img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600">
 </p>
 
 <div class="panel panel-default">
