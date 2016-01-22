@@ -90,28 +90,36 @@ To see it more clearly, let’s plot a couple of PCA projections (with two diffe
 <p align="center">
 <img src="../images/2016-01-15-PCA2.png" width="600px">
 </p>
-And finally let’s visualize a the distribution of each cluster for every feature:
+Now let’s visualize a the distribution of each cluster for every feature:
 <p align="center">
 <img src="../images/2016-01-15-whiskers.png" width="600px">
 </p>
+And finally let’s see whether some groups prefer longer or shorter threads:
+<p align="center">
+<img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600px">
+</p>
 <h3 id="making-sense-of-it">Making sense of it</h3>
-<p>From the plots above, let’s try to describe every grooup:</p>
-<h4 id="spotters">Spotters</h4>
-<p>Dark blue. Salient motif: <em>spot</em> Spotters are seen isolated, without neighborhoods. This doesn’t seem to have sense and needs more analysis.</p>
-<h4 id="answerers-and-bifurcators">Answerers and bifurcators</h4>
-<p>Green. Salient motif: <em>CA3</em> <em>SA</em> Answerers are seen replying to the main post along with other people (CA3) and sometimes getting even some reply (SA). But they have a special tendency to participate in bifurcations, which means deeper in the conversation.</p>
-<h4 id="catalyzers">Catalyzers</h4>
-<p>Pink. Salient motif: <em>CIA</em> Catalyzers are seen answering to the root and then being followed by a chain.</p>
-<h4 id="common-people">Common People</h4>
-<p>Light blue. No salient motif. Common people do not stand out on any kind of neighborhood. Since they are among the active users (like all the analyzed users) they might not play any central role but they might be necessary for the health of the forum.</p>
-<h4 id="lurkers">Lurkers</h4>
+<p>From the plots above, let’s try to describe every group:</p>
+<p><strong>Spotters</strong> Dark blue. Salient motif: <em>spot</em></p>
+<p>Spotters are seen isolated, without neighborhoods. This doesn’t seem to have sense and needs more analysis.</p>
+<p><strong>Answerers and bifurcators</strong> Green. Salient motif: <em>CA3</em> <em>SA</em></p>
+<p>Answerers are seen replying to the main post along with other people (CA3) and sometimes getting even some reply (SA). But they have a special tendency to participate in bifurcations, which means deeper in the conversation.</p>
+<p><strong>Catalyzers</strong> Pink. Salient motif: <em>CIA</em></p>
+<p>Catalyzers are seen answering to the root and then being followed by a chain.</p>
+<p><strong>Common People</strong> Light blue. No salient motif.</p>
+<p>Common people do not stand out on any kind of neighborhood. Since they are among the active users (like all the analyzed users) they might not play any central role but they might be necessary for the health of the forum.</p>
+<p><strong>Lurkers</strong> Less than 10 posts during the observation period.</p>
 <p>All users with less than ten posts in this dataset are considered as lurkers. No explicit role is assigned to them since we have not enough data.</p>
 <h3 id="participations-of-roles-in-threads">Participations of roles in threads</h3>
-<p>Once we assigned a role to every user, let’s see what is the proportion of roles in every thread.</p>
-<p>TODO: Do roles have an effect on thread length?</p>
+Once we assigned a role to every user, let’s see what is the proportion of roles in every thread.
 <p align="center">
-<img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600">
+<img src="../images/2016-01-15-thread_role_composition.png" width="600px">
 </p>
+<p>Future:</p>
+<ul>
+<li>co-participation of roles</li>
+<li>roles as predictors of thread length</li>
+</ul>
 
 <div class="panel panel-default">
     <div class="panel-body">
