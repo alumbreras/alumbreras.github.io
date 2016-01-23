@@ -74,13 +74,12 @@
 <p>(<strong>Question</strong>: how come <em>spot</em> is the most frequent? How is it possible to have no neighbors at all? Or what might be wrong?)</p>
 <h4 id="clustering-users-with-respect-to-their-neighborhoods">Clustering users with respect to their neighborhoods</h4>
 <p>Given the neighborhoods in which each user participates, we will analyze whether there exists different types of users or all users look similar.</p>
-<p>Since we want to make the analyse independent of the number of posts, we will normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. Features now represent <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
-We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,25\)</span> clusters and looked at the <em>Within-Cluster Sum of Squares</em>.
+<p>We want to make the analyse independent of the number of posts, and for that we normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. Features now represent <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
+We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,25\)</span> clusters and look at the <em>Within-Cluster Sum of Squares</em>.
 <p align="center">
 <a href="../images/2016-01-15-elbow2.png"> <img src="../images/2016-01-15-elbow2.png" width="600px"> </a>
 </p>
-<p>We choose 5 clusters to keep thinks simple. We run the k-means and then plot the scatter matrix of every pair of variables, where colors correspond to the clusters.</p>
-htlm:
+<p>We choose 5 clusters to keep thinks simple. We re-run the k-means for <span class="math inline">\(k=5\)</span> (see the <a href="../images/2016-01-15-ggpairs.png">colored scatter matrix</a>) and then plot the scatter matrix of every pair of variables, where colors correspond to the clusters.</p>
 <p align="center">
 <a href="../images/2016-01-15-ggpairs.png"> <img src="../images/2016-01-15-ggpairs.png" width="600px"> </a>
 </p>
