@@ -83,20 +83,18 @@ We choose 5 clusters to keep thinks simple. We re-run the k-means for <span clas
 <p align="center">
 <a href="../images/2016-01-15-PCA.png"> <img src="../images/2016-01-15-PCA.png" width="450px"> </a> <a href="../images/2016-01-15-PCA2.png"> <img src="../images/2016-01-15-PCA2.png" width="450px"> </a>
 </p>
-Now let’s visualize a the distribution of each cluster for every feature:
+PCA only let us see a low-dimensional projection of our data. To explore the data in all the original dimensions we can use whisker plots:
 <p align="center">
 <a href="../images/2016-01-15-whiskers.png"> <img src="../images/2016-01-15-whiskers.png" width="600px"> </a>
-</p>
-And finally let’s see whether some groups prefer longer or shorter threads:
-<p align="center">
-<a href="../images/2016-01-15-whiskers_roles_vs_length.png"> <img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600px"> </a>
 </p>
 <h3 id="making-sense-of-it">Making sense of it</h3>
 <p>From the plots above, let’s try to describe every group:</p>
 <p><strong>Spotters</strong> Dark blue. Salient motif: <em>spot</em></p>
 <p>Spotters are seen isolated, without neighborhoods. This doesn’t seem to have sense and needs more analysis.</p>
-<p><strong>Answerers and bifurcators</strong> Green. Salient motif: <em>CA3</em> <em>SA</em></p>
-<p>Answerers are seen replying to the main post along with other people (CA3) and sometimes getting even some reply (SA). But they have a special tendency to participate in bifurcations, which means deeper in the conversation.</p>
+<p><strong>Bifurcators</strong> Red. Salient motif: <em>CCB</em></p>
+<p>Bifurcators have a special tendency to participate in bifurcations that are placed deeper in the conversation.</p>
+<p><strong>Answerers</strong> Green. Salient motif: <em>CA3</em> <em>SA</em></p>
+<p>Answerers are seen replying to the main post along with other people (CA3) and sometimes getting even some reply (SA).</p>
 <p><strong>Catalyzers</strong> Pink. Salient motif: <em>CIA</em></p>
 <p>Catalyzers are seen answering to the root and then being followed by a chain.</p>
 <p><strong>Common People</strong> Light blue. No salient motif.</p>
@@ -104,7 +102,11 @@ And finally let’s see whether some groups prefer longer or shorter threads:
 <p><strong>Lurkers</strong> Less than 10 posts during the observation period.</p>
 <p>All users with less than ten posts in this dataset are considered as lurkers. No explicit role is assigned to them since we have not enough data.</p>
 <h3 id="participations-of-roles-in-threads">Participations of roles in threads</h3>
-Once we assigned a role to every user, let’s see what is the proportion of roles in every thread.
+Although we focused on structural motifs (neighborhoods), it’s interesting to see whether there is some roles tend to participate in longer or shorter threads. If we plot a scatter plot of participation role (the role of the post author) vs thread length, we observe that <em>lurkers</em> and <em>spotters</em> are observed in shorter threads, through the means are not very different.
+<p align="center">
+<a href="../images/2016-01-15-whiskers_roles_vs_length.png"> <img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600px"> </a>
+</p>
+We can also plot the proportion of roles in every thread:
 <p align="center">
 <a href="../images/2016-01-15-thread_role_composition.png"> <img src="../images/2016-01-15-thread_role_composition.png" width="600px"> </a>
 </p>
