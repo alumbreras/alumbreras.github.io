@@ -51,17 +51,19 @@
 <h2 id="theory">Theory</h2>
 <p>Imagine we observe a set of pairwise preferences from a user. We denote this set by <span class="math inline">\(\mathcal{D} = \left \{ \mathbf{x}_i \succ \mathbf{x}_j \right \}\)</span> where <span class="math inline">\(1 \leq i \leq m\)</span> and <span class="math inline">\(1 \leq j \leq m\)</span>. Let us assume that the pairwise preferences depend on a latent utility <span class="math inline">\(f_i\)</span> given to every item <span class="math inline">\(i \in X\)</span> so that item <span class="math inline">\(i\)</span> is prefered over item <span class="math inline">\(j\)</span> iff utility of <span class="math inline">\(i\)</span> is bigger than utility of <span class="math inline">\(j\)</span>.</p>
 <p>We want to know the posterior distribution of <span class="math inline">\(\mathbf{f}\)</span>, that is, the probability distribution of the utilities <span class="math inline">\(\mathbf{f}\)</span> after observing the data. For this we need a prior distribution over <span class="math inline">\(\mathbf{f}\)</span> and a likelihood function of the data given the utilities <span class="math inline">\(\mathbf{f}\)</span>.</p>
-<p><strong>Likelihood:</strong> If we knew these utility function, and assuming some noise <span class="math inline">\(\lambda\)</span> over the observed choices, we could model the likelihood of a pairwise choice as: <span class="math display">\[
+<h3 id="likelihood">Likelihood</h3>
+<p>If we knew these utility function, and assuming some noise <span class="math inline">\(\lambda\)</span> over the observed choices, we could model the likelihood of a pairwise choice as: <span class="math display">\[
 p(i \succ j | f) = \Phi(\frac{f_i - f_j}{\lambda})
 \]</span> where <span class="math inline">\(\Phi\)</span> is the probit function.</p>
 <h3 id="prior">Prior</h3>
-<p><strong>Prior:</strong> We put a Gaussian prior over the utilities so that the <span class="math inline">\(m\)</span> utilities are drawn from the same Gaussian distribution. <span class="math display">\[
+<p>We put a Gaussian prior over the utilities so that the <span class="math inline">\(m\)</span> utilities are drawn from the same Gaussian distribution. <span class="math display">\[
 p(f) = \mathcal{N}(f | 0, \mathbf{K})
 \]</span></p>
 <p>Note that this is actually a Gaussian Process, since if we take any subset of utilities <span class="math inline">\(f_s\)</span>: <span class="math display">\[
 p(f_s) = \mathcal{N}(f_s | 0, \mathbf{K_s})
 \]</span></p>
-<p><strong>Posterior:</strong> The posterior distribution is given by Bayes rule: <span class="math display">\[
+<h3 id="posterior">Posterior</h3>
+<p>The posterior distribution is given by Bayes rule: <span class="math display">\[
 p(f | \mathbf{X}) = \frac{\prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})}
 {\int_f \prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})}
 \]</span> but we cannot solve the integral in the denominator. Instead, we will take samples from: <span class="math display">\[
