@@ -53,7 +53,7 @@
 <p>¿Cuál era la probabilidad de que la ultima votación de la asamblea de la CUP acabara en empate? Las reacciones van de la risa a la incredulidad paranoica. Algunos hasta se han animado con los cálculos con mayor o menor acierto e incluso a algún matemático afiliado al PP le han podido las prisas y ha calificado el resultado de imposible. El debate se ha dividido entre los que dicen que la probabilidad era de 0.033% y los que dicen que es de 1.4%.</p>
 <p>El resumen de la historia es que la probabilidad de obtener 1515 síes era cercana al 1,4%, y que aún así era el número más probable (o al menos uno de los más probables).</p>
 <p>Primero vamos con la versión del 0.033%, defendida por <a href="http://www.lavanguardia.com/politica/20151228/301071423295/probabilidad-empate-cup.html">Salvador Cardús y Mario Bilbao</a>, y luego iremos con la del 1.4% defendida en las redes por <a href="http://blocs.mesvilaweb.cat/rguimera/?p=267996">Roger Guimerà</a>, <a href="https://gallir.wordpress.com/2015/12/28/las-probabilidades-del-empate-de-la-cup/">Ricardo Gallir</a> y Xavier Sala-i-Martí (que en frio dijo 0.033 pero luego corrigió).</p>
-<h4 id="modelo-incorrecto-del-0.033-la-urna-de-baños">Modelo incorrecto del 0.033%: la urna de Baños</h4>
+<h2 id="modelo-incorrecto-del-0.033-la-urna-de-baños">Modelo incorrecto del 0.033%: la urna de Baños</h2>
 <p align="center">
 <img src="../images/2015-12-28-cunyao_prob.jpeg" width="300px">
 </p>
@@ -86,7 +86,7 @@ probabilidad_empate &lt;-<span class="st"> </span>empates/M
 <img src="../images/2015-12-28-CUP_banyos.png" width="800px">
 </p>
 <p>donde la probabilidad de empate (y de cualquier otro resultado) sería de 1 sobre 3030 posibilidades, 1/3030, o un 0.033%. Lo cual, por cierto, no es <em>imposible</em>, de hecho es más que la probabilidad de que te toque el Gordo.</p>
-<h4 id="modelo-correcto-del-1.4-3030-cupaires-indecisos.">Modelo correcto del 1.4%: 3030 cupaires indecisos.</h4>
+<h2 id="modelo-correcto-del-1.4-3030-cupaires-indecisos.">Modelo correcto del 1.4%: 3030 cupaires indecisos.</h2>
 <p>Pero la aburrida realidad es que Baños no se pone en bikini a sacar una papeleta de una urna sino que 3030 cupaires depositan un sí o un no. En este caso, la intución nos dice que algunos resultados extremos como 0 a favor y 3030 en contra son menos probables que 1000 a favor y 2030 en contra. Es decir, intuitivamente vemos que hay resultados más probables que otros. Matemáticamente decimos que <strong>no es una distribución uniforme</strong>.</p>
 <p>Para ver como se distribute la probabilidad sobre los posibles resultados, esta vez simulamos 3030 cupaires participando en 100000 asambleas. Para simularlas tengo que imaginar un modelo sobre cómo se comporta cada cupaire individual. Dado que el debate estaba muy ajustado, los cupaires son parecidos a monedas lanzadas al aire.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/</span>
@@ -118,7 +118,7 @@ probabilidad_empate &lt;-<span class="st"> </span>empates/M
 <img src="../images/2015-12-28-CUP.png" width="800px">
 </p>
 <p>donde resulta que lo que tenemos es una distribución normal (la culpa es del <a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central">Teorema del Límite Central</a>) donde el número más frecuente es el 1515, que ha ocurrido un 1,47% de las veces. Sí, es poco probable, <strong>pero es el más probable</strong>.</p>
-<h4 id="modelo-más-razonable-aún-20-de-cupaires-indecisos">Modelo más razonable aún: 20% de cupaires indecisos</h4>
+<h2 id="modelo-más-razonable-aún-20-de-cupaires-indecisos">Modelo más razonable aún: 20% de cupaires indecisos</h2>
 <p><a href="http://www.eldiario.es/piedrasdepapel/probable-empate-Asamblea-CUP_6_467263286.html">Antoni-Ítalo</a> propone asumir que el 80% de los cupaires ya venían decididos de casa y que sólo había un 20% de indecisos. Esto va a ser clave, ya que las posibilidades se van a reducir y por lo tanto las probabilidades serán mucho mayores para cada posible resultado. Repetimos la simulación:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># N cupaires</span>
 N &lt;-<span class="st"> </span><span class="dv">3030</span>
@@ -156,7 +156,7 @@ probabilidad_empate &lt;-<span class="st"> </span>empates/M
 <img src="../images/2015-12-28-CUP_indecisos.png" width="800px">
 </p>
 <p>donde ahora la probabilidad de empate sube al 3.187%.</p>
-<h4 id="todos-los-modelos-son-malos.-pero-algunos-son-útiles-george-box">Todos los modelos son malos. Pero algunos son útiles (George Box)</h4>
+<h2 id="todos-los-modelos-son-malos.-pero-algunos-son-útiles-george-box">Todos los modelos son malos. Pero algunos son útiles (George Box)</h2>
 <p>En cualquier caso, estamos asumiendo que el voto de un cupaire no afecta el voto de otro cupaire y estamos obviando dinámicas sociológicas de grupo, el efecto de las corrientes internas y una serie de fenómenos que podrían hacer el empate incluso más probable (o menos). Pero no hay duda de que la probabilidad estaba más cerca del 1.4% que del 0.03%.</p>
 
 <div class="panel panel-default">
