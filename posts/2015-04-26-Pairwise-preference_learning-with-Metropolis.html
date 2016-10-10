@@ -47,7 +47,7 @@
 <small><a href="../posts/2015-04-26-Pairwise-preference_learning-with-Metropolis.html">Posted on April 26, 2015</a></small>
 
 <p>(draft)</p>
-<h4 id="theory">Theory</h4>
+<h2 id="theory">Theory</h2>
 <p>Imagine we observe a set of pairwise preferences from a user. We denote this set by <span class="math inline">\(\mathcal{D} = \left \{ \mathbf{x}_i \succ \mathbf{x}_j \right \}\)</span> where <span class="math inline">\(1 \leq i \leq m\)</span> and <span class="math inline">\(1 \leq j \leq m\)</span>. Let us assume that the pairwise preferences depend on a latent utility <span class="math inline">\(f_i\)</span> given to every item <span class="math inline">\(i \in X\)</span> so that item <span class="math inline">\(i\)</span> is prefered over item <span class="math inline">\(j\)</span> iff utility of <span class="math inline">\(i\)</span> is bigger than utility of <span class="math inline">\(j\)</span>.</p>
 <p>We want to know the posterior distribution of <span class="math inline">\(\mathbf{f}\)</span>, that is, the probability distribution of the utilities <span class="math inline">\(\mathbf{f}\)</span> after observing the data. For this we need a prior distribution over <span class="math inline">\(\mathbf{f}\)</span> and a likelihood function of the data given the utilities <span class="math inline">\(\mathbf{f}\)</span>.</p>
 <p><strong>Likelihood</strong><br />
