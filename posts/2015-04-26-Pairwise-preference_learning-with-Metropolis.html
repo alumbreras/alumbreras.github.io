@@ -69,7 +69,7 @@ p(f | \mathbf{X}) = \frac{\prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 
 \]</span> but we cannot solve the integral in the denominator. Instead, we will take samples from: <span class="math display">\[
 p(f | \mathbf{X}) \propto \prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})
 \]</span> and we will do it with the very simple <a href="http://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">Metropolis-Hastings</a>.</p>
-<h4 id="practice-with-r">Practice with R</h4>
+<h3 id="practice-with-r">Practice with R</h3>
 <p>First, let us generate some toy data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">############################
 <span class="co"># Data (manual generation)</span>
@@ -140,6 +140,7 @@ for(i in <span class="dv">1</span>:L){
   like &lt;-<span class="st"> </span>like +<span class="st"> </span><span class="kw">prior</span>(f)
   <span class="kw">return</span>(like)
 }</code></pre></div>
+<h4 id="section"></h4>
 <p>A Metropolis-Hasting implementation with its proposal distribution:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Proposal distribution</span>
 step &lt;-<span class="st"> </span><span class="fl">0.0001</span> <span class="co"># tune it so that around 20% of samples are accepted</span>
