@@ -66,7 +66,7 @@ p(f | \mathbf{X}) = \frac{\prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 
 \]</span> but we cannot solve the integral in the denominator. Instead, we will take samples from: <span class="math display">\[
 p(f | \mathbf{X}) \propto \prod_{(i,j) \in \mathcal{D}}  p(i \succ j | f) p(f | 0, \mathbf{K})
 \]</span> and we will do it with the very simple <a href="http://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">Metropolis-Hastings</a>.</p>
-<h3 id="practice-with-r">Practice with R</h3>
+<h2 id="practice-with-r">Practice with R</h2>
 <p>First, let us generate some toy data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">############################
 <span class="co"># Data (manual generation)</span>
