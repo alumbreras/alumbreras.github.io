@@ -1,0 +1,95 @@
+code {
+    color: black;
+}
+
+pre code {
+    color: black;
+}
+
+/*Alignment tweaks for social sharing buttons*/
+/* This gets Google to fall into place */
+.social {
+    font-size: 1px;
+}
+ 
+/* This gets Facebook to fall into place */
+.social .fb-like {
+    font-size: 1px;
+    display: inline-block;
+}
+ 
+/* Set an optional width for your button wrappers */
+.social span {
+    display: inline-block;
+    width: 110px;
+}
+ 
+/* Adjust the widths individually if you like */
+.social .google {
+    width: 65px;
+}
+
+.social .facebook {
+    width: 85px;
+}
+
+.social .twitter {
+    width: 95px;
+}
+
+.col-md-10 {
+    margin-left: 17%;
+}
+
+
+// prevents the navbar from shifting horizontally when scroll appears
+//html { 
+//  overflow-y: scroll; 
+//  overflow-x: scroll;
+//}
+
+h2,.h2 {
+	font-size:120%;
+	line-height:1.5em;
+	margin:1.5em 0 1.5em 0;
+	font-weight:bold;
+	font-family: 'lucida grande', sans-serif;
+}
+
+h3,.h3 {
+	font-size:100%;
+	line-height:1.25em;
+	font-weight:bold;
+	font-family: 'lucida grande', sans-serif;
+	font-variant:small-caps;
+}
+
+h4,.h4 {
+	font-size:100%;
+	font-weight:bold;
+}
+
+h5,.h5 {
+	font-size:100%;
+	font-weight:bold;
+}
+h6,.h6 {
+	font-size:100%;
+	font-weight:bold;
+}
+
+
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+  ul.posts li {
+    line-height: 1.75em;
+  }
+
+  ul.posts span {
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+  }
