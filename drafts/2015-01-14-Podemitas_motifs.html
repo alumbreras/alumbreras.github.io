@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Alberto Lumbreras - Analyzing the neighborhoods of user posts</title>
+
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+	
+	<!-- They sent me this by e-mail to acess to the newest version of Font Awesome icons --> 
+        <script src="https://use.fontawesome.com/803e22ffe4.js"></script>
+
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <h1 style="color:rgba(153, 153, 153, 0.0);">Alberto Lumbreras
+                        <small>
+                            <font size="4" style="color:rgba(153, 153, 153, 0.0);">[PhD Student in Computer Science]</font>
+                        </small>
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <br />
+                    <ul class="nav nav-stacked affix" data-spy="affix" data-offset-top="0">
+                        <li><a href="../"><i class="fa fa-home fa-lg fa-fw"></i> Home</a></li>
+                        <li><a href="../publications.html"><i class="fa fa-list fa-lg fa-fw"></i> Publications</a></li>
+                        <li><a href="../posts.html"><i class="fa fa-pencil fa-lg fa-fw"></i> Posts</a></li>
+                        <!-- <li><a href="/about.html"><i class="fa fa-male fa-lg fa-fw"></i> About</a></li> -->
+                        <li><a href="https://github.com/alumbreras?tab=repositories"><i class="fa fa-github fa-lg fa-fw"></i> Code</a></li>
+                        <li><a href="https://twitter.com/albertlumbreras"><i class="fa fa-twitter fa-lg fa-fw"></i> Twitter</a></li>
+                        <li><a href="http://es.linkedin.com/in/albertolumbreras"><i class="fa fa-linkedin fa-lg fa-fw"></i> LinkedIn</a></li> 
+                        <li><a href="../files/alumbreras_cv.pdf"><i class="fa fa-file-pdf-o fa-lg fa-fw" aria-hidden="true"></i> CV</a></li> 
+
+                    </ul>
+                </div>
+                <div class="col-md-10" style="top: -22px;">
+                    <h1>Analyzing the neighborhoods of user posts</h1>
+
+<small><a href="../drafts/2015-01-14-Podemitas_motifs.html">Posted on January 14, 2015</a></small>
+
+<p>In this post (work in progress), I will cluster Podemos forum users according to the graphs around their posts. The idea is to find which groups of users tend to participate (more than the average) in cascades, which ones tend to participate (more than the average) in stars, and son on.</p>
+<p>As in the previous post, I will use the threads written on January 2015 on the <a href="https://www.reddit.com/r/podemos">Reddit subforum of Podemos</a>. The podemos forum (a.k.a subreddit) contains 995 discussion threads that started on January. These threads contain a total of 12912 posts written by 1218 users.</p>
+<h4 id="discussion-trees">Discussion trees</h4>
+<p>A very natural to represent a conversation thread is a tree where vertices represent posts and edges represent replies from some post to another. Let us see some of the discussions of our dataset:</p>
+<p align="center">
+<img src="../images/2015-01-15-tree1.png" width="300px"> <img src="../images/2015-01-15-tree2.png" width="300px"> <img src="../images/2015-01-15-tree12.png" width="300px">
+</p>
+<p align="center">
+<img src="../images/2015-01-15-tree38.png" width="300px"> <img src="../images/2015-01-15-tree40.png" width="300px"> <img src="../images/2015-01-15-tree41.png" width="300px">
+</p>
+<h4 id="motifs-in-discussion-trees">Motifs in discussion trees</h4>
+<p>Imagine we take one post <span class="math inline">\(p\)</span> as well as it neighborhood of posts and we create a graph from that. I will call this subgraph a <code>motif</code>. I would like to count, for every user, the different motifs around their posts given a neighborhood radius <span class="math inline">\(R\)</span>. Unfortunatelly this concept of neighborhood based on distances has an infinite number of possible graphs. Both trees in the below image represent two possible neighborhoods of the red vertex (the white vertex represents the root post of the thread):</p>
+<p align="center">
+<img src="../images/2015-01-15-large_neighborhood.png" width="300px"> <img src="../images/2015-01-15-short_neighborhood.png" width="300px">
+</p>
+<!---OLD: if the original neighborhood has more than $M$ vertices we will keep only the $M$ that are closest in time to the post $p$.-->
+<p>To reduce our space of possible neighborhoods we will introduce the concept of <em>temporal neighborhood</em>: if post <span class="math inline">\(p\)</span> was written at time <span class="math inline">\(t\)</span>, the temporal neighborhood (of radius <span class="math inline">\(R\)</span>) of a <span class="math inline">\(p\)</span> is the set of <span class="math inline">\(R\)</span> posts in its <em>spacial neighborhood</em> that were written in a time closest to <span class="math inline">\(t\)</span> (and where closeness is computed as <span class="math inline">\(|t_i-t|\)</span>) and where the posts in the shortest path from each neighbour and <span class="math inline">\(p\)</span> belong also to the <em>temporal neighborhood</em>.</p>
+<p>With this in mind, we count the <em>temporal neighborhoods</em> of every user’s posts. To make it funnier (and more fine-grained), we will also put a color (white) on the root post. For a spacial neighborhood of radius <span class="math inline">\(1\)</span> and a temporal neighborhood of radius <span class="math inline">\(4\)</span> we obtain:</p>
+<p align="center">
+<img src="../images/2016-01-15-motifs_1_4.png" width="600px">
+</p>
+<p>We can play the the spacial and the temporal radius. Let’s see what happens if we set both radius to <span class="math inline">\(4\)</span>:</p>
+<p align="center">
+<img src="../images/2016-01-15-motifs_4_4.png" width="600px">
+</p>
+<p>where I named the neighborhoods to help the intuition.</p>
+<p>(<strong>Question</strong>: how come <em>spot</em> is the most frequent? How is it possible to have no neighbors at all? Or what might be wrong?)</p>
+<h4 id="clustering-users-with-respect-to-their-neighborhoods">Clustering users with respect to their neighborhoods</h4>
+<p>Given the neighborhoods in which each user participates, we will analyze whether there exists different types of users or all users look similar.</p>
+<p>We want to make the analyse independent of the number of posts, and for that we normalize each user feature vector so that features indicate the percentage of posts in this kind of neighborhood. Moreover, some neighborhoods are much more common than others due to the nature of the forums. Thus, we normalize and scale the features so that every feature has a global mean 0 and variance 1. Features now represent <em>z-scores</em>, that is, how many standard deviations is this user feature away from the mean.</p>
+We will use a simple <em>k-means</em> to find the clusters. To decide the number of clusters, we run <em>k-means</em> for <span class="math inline">\(k=2,...,25\)</span> clusters and look at the <em>Within-Cluster Sum of Squares</em>.
+<p align="center">
+<a href="../images/2016-01-15-elbow2.png"> <img src="../images/2016-01-15-elbow2.png" width="600px"> </a>
+</p>
+We choose 5 clusters to keep thinks simple. We re-run the k-means for <span class="math inline">\(k=5\)</span> (see the <a href="../images/2016-01-15-ggpairs.png">colored scatter matrix</a>) and then plot the scatter matrix of every pair of variables, where colors correspond to the clusters. Let’s plot a couple of PCA projections (with two different libraries) over the first two components:
+<p align="center">
+<a href="../images/2016-01-15-PCA.png"> <img src="../images/2016-01-15-PCA.png" width="450px"> </a> <a href="../images/2016-01-15-PCA2.png"> <img src="../images/2016-01-15-PCA2.png" width="450px"> </a>
+</p>
+PCA only let us see a low-dimensional projection of our data. To explore the data in all the original dimensions we can use whisker plots:
+<p align="center">
+<a href="../images/2016-01-15-whiskers.png"> <img src="../images/2016-01-15-whiskers.png" width="600px"> </a>
+</p>
+<h3 id="making-sense-of-it">Making sense of it</h3>
+<p>From the plots above, let’s try to describe every group:</p>
+<p><strong>Spotters</strong></p>
+<ul>
+<li>Light blue. Salient motif: <em>spot</em></li>
+<li>Spotters are seen isolated, without neighborhoods. This doesn’t seem to have sense and needs more analysis.</li>
+</ul>
+<p><strong>Bifurcators</strong></p>
+<ul>
+<li>Red. Salient motif: <em>CCB</em></li>
+<li>Bifurcators have a special tendency to participate in bifurcations that are placed deeper in the conversation.</li>
+</ul>
+<p><strong>Answerers</strong></p>
+<ul>
+<li>Green. Salient motif: <em>CA3</em> <em>SA</em></li>
+<li>Answerers are seen replying to the main post along with other people (CA3) and sometimes getting even some reply (SA).</li>
+</ul>
+<p><strong>Catalyzers</strong></p>
+<ul>
+<li>Pink. Salient motif: <em>CIA</em></li>
+<li>Catalyzers are seen answering to the root and then being followed by a chain.</li>
+</ul>
+<p><strong>Common People</strong></p>
+<ul>
+<li>Light blue. No salient motif.</li>
+<li>Common people do not stand out on any kind of neighborhood. Since they are among the active users (like all the analyzed users) they might not play any central role but they might be necessary for the health of the forum.</li>
+</ul>
+<p><strong>Lurkers</strong></p>
+<ul>
+<li>Less than 10 posts during the observation period.</li>
+<li>All users with less than ten posts in this dataset are considered as lurkers. No explicit role is assigned to them since we have not enough data.</li>
+</ul>
+<h3 id="participations-of-roles-in-threads">Participations of roles in threads</h3>
+Although we focused on structural motifs (neighborhoods), it’s interesting to see whether there is some roles tend to participate in longer or shorter threads. If we plot a scatter plot of participation role (the role of the post author) vs thread length, we observe that <em>lurkers</em> and <em>spotters</em> are observed in shorter threads, through the means are not very different.
+<p align="center">
+<a href="../images/2016-01-15-whiskers_roles_vs_length.png"> <img src="../images/2016-01-15-whiskers_roles_vs_length.png" width="600px"> </a>
+</p>
+We can also plot the proportion of roles in every thread and the proportion of roles in the first 10 posts of every thread:
+<p align="center">
+<a href="../images/2016-01-15-thread_role_composition.png"> <img src="../images/2016-01-15-thread_role_composition.png" width="450px"> </a> <a href="../images/2016-01-15-thread_role_composition_nfirst.png"> <img src="../images/2016-01-15-thread_role_composition_nfirst.png" width="450px"> </a>
+</p>
+<h3 id="co-participation-network-of-roles">Co-participation network of roles</h3>
+<p>Future: - [] co-participation of roles - [] roles as predictors of thread length</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="pull-left">
+            Tags: 
+        </div>
+        <div class="social pull-right">
+            <span class="twitter">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.albertolumbreras.net/drafts/2015-01-14-Podemitas_motifs.html" data-via="albertlumbreras" data-dnt="true">Tweet</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'albertolumbreras';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+    </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+                </div>
+            </div>
+        </div>
+
+  
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-62494759-1', 'auto');
+            ga('send', 'pageview');
+            
+            </script>
+        
+    </body>
+</html>
