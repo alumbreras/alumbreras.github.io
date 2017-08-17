@@ -1,6 +1,7 @@
 ---
 layout: post
 title: La maldición de la multidimensionalidad
+date: 15-09-2017
 ---
 
 La **maldición de la dimensionalidad** es el efecto por el cual muchos problemas matemáticos se vuelven difíciles cuando tratamos con muchas dimensiones. En este artículo explicamos por qué en altas dimensiones una caja con un melón contiene más aire que melón, por qué la vida se complica con muchas dimensiones y cuáles son algunos efectos de la maldición en estadística y en aprendizaje automático. 

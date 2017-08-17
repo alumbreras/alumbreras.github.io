@@ -1,9 +1,9 @@
 ---
-layout: post
 title: Preference elicitation with Metropolis-Hastings
 tags: tutorials, bayesian statistics, bayesian inference, metropolis-hastings
+layout: post
+date: 26-04-2015
 ---
-(draft)
 
 ## Theory 
 Imagine we observe a set of pairwise preferences from a user. 
