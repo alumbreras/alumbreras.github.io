@@ -1,10 +1,8 @@
 ---
 layout: post
 title: La maldición de la multidimensionalidad
-level: basic
-summary: En universos de más de tres dimensiones una caja con un melón contiene más aire que melón. La realidad multidimensional es contra-intuitiva. ¿Qué consecuencias tiene este hecho en estadística y en aprendizaje automático? 
-type: articulo
 ---
+
 La **maldición de la dimensionalidad** es el efecto por el cual muchos problemas matemáticos se vuelven difíciles cuando tratamos con muchas dimensiones. En este artículo explicamos por qué en altas dimensiones una caja con un melón contiene más aire que melón, por qué la vida se complica con muchas dimensiones y cuáles son algunos efectos de la maldición en estadística y en aprendizaje automático. 
 
 ## Moscas multidimensionales
