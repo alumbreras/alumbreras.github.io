@@ -149,7 +149,7 @@ Vamos a analizar que pasa con dos de las distribuciones de probabilidad más con
 
 *  Distribución uniforme
 
-La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones s$d_1 \times d_2s$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo. En otras palabras, es más probable que una gota caiga en el algún punto del borde que justo en el centro.
+La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones $$d_1 \times d_2$$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo. En otras palabras, es más probable que una gota caiga en el algún punto del borde que justo en el centro.
 
 Podemos pensar en una granada (la fruta). Imaginemos que le vamos quitando las pepitas de fuera hacia dentro, rotando la granada en nuestras manos. En las primeras rotaciones obtendremos más pepitas que en las últimas!
 
