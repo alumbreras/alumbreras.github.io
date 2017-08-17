@@ -143,7 +143,7 @@ $$
 <img src="/assets/typical_set.png" alt="Unidimensional" style="width:400px;height:400px;">
 </p>
 
-En la imagen se muestra un ejemplo (inventado) de densidad ($\pi(q)$), volumen (de cada cachito del espacio, dq) y su producto.
+En la imagen se muestra un ejemplo (inventado) de densidad ($$\pi(q)$$), volumen (de cada cachito del espacio, dq) y su producto.
 Vamos a analizar que pasa con dos de las distribuciones de probabilidad más conocidas: la Uniforme y la Gaussiana.
 
 
