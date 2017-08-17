@@ -7,7 +7,7 @@ date: 15-09-2017
 La **maldición de la dimensionalidad** es el efecto por el cual muchos problemas matemáticos se vuelven difíciles cuando tratamos con muchas dimensiones. En este artículo explicamos por qué en altas dimensiones una caja con un melón contiene más aire que melón, por qué la vida se complica con muchas dimensiones y cuáles son algunos efectos de la maldición en estadística y en aprendizaje automático. 
 
 ## Moscas multidimensionales
-Minsky es un robot unidimensional que vive en un universo contenido en un segmento de 1 metro. Un día, el robot ve una mosca que vuela hacia delante y hacia atrás en el segmento. Minsky decide cazarla con su cazamoscas, que tiene una longitud de $ l = 0.8 $, Como Minsky no tiene ni idea donde estará la mosca en un momento dado, lanza su cazamoscas a boleo. La probabilidad de cazar la mosca es igual al porcentaje de espacio que es capaz de cubrir con su matamoscas:
+Minsky es un robot unidimensional que vive en un universo contenido en un segmento de 1 metro. Un día, el robot ve una mosca que vuela hacia delante y hacia atrás en el segmento. Minsky decide cazarla con su cazamoscas, que tiene una longitud de $$l = 0.8$$, Como Minsky no tiene ni idea donde estará la mosca en un momento dado, lanza su cazamoscas a boleo. La probabilidad de cazar la mosca es igual al porcentaje de espacio que es capaz de cubrir con su matamoscas:
 
 $$
 p = \frac{l}{1} = 0.8
@@ -19,7 +19,7 @@ $$
 </p>
 
 
-Imaginemos que Minsky vive ahora un espacio bi-dimensional, un plano de dimensiones 1 m $\times$ 1 m, y que su cazamoscas es de 0.8 m $\times$ 0.8 m. La probabilidad de cazar la mosca es ahora:
+Imaginemos que Minsky vive ahora un espacio bi-dimensional, un plano de dimensiones 1 m $$\times$$ 1 m, y que su cazamoscas es de 0.8 m $$\times$$ 0.8 m. La probabilidad de cazar la mosca es ahora:
 
 $$
 p = \frac{l^2}{1} = 0.8^2 
@@ -58,7 +58,7 @@ Esta imágen ilustra la misma idea. A medida que subimos en dimensiones, el segm
 
 ## Goteras multidimensionales
 
-Vamos a por un segundo ejemplo donde jugaremos con esferas en lugar de cubos. Imaginemos que tenemos goteras por todo el techo en nuestro comedor de dimensiones 1 m $\times$ 1 m y que queremos recoger todo el agua posible. Para ello ponemos un barreño 1 m de diámetro. El porcentaje de agua que caerá fuera del barreño es el cociente entre la superficie del barreño y la superficie del comedor. Esto es:
+Vamos a por un segundo ejemplo donde jugaremos con esferas en lugar de cubos. Imaginemos que tenemos goteras por todo el techo en nuestro comedor de dimensiones 1 m $$\times$$ 1 m y que queremos recoger todo el agua posible. Para ello ponemos un barreño 1 m de diámetro. El porcentaje de agua que caerá fuera del barreño es el cociente entre la superficie del barreño y la superficie del comedor. Esto es:
 
 $$
 p =   \frac{\pi R^2}{1} = \frac{\pi 0.5^2}{1} = \frac{\pi}{4} \approx 0.78
@@ -73,7 +73,7 @@ $$
 
 Es decir, sólo un 22% del agua caerá fuera (puntos rojos)
 
-¿Qué pasa en $d$-dimensiones?
+¿Qué pasa en $$d$$-dimensiones?
 
 $$
 p =   
@@ -113,7 +113,7 @@ $$
 3~\text{pesos} \times 3~\text{alturas} = 3^2
 $$
 
-donde $D$ es el número de atributos (o dimensiones). Con unas decenas de ejemplos empezaré a ser capaz de ver qué combinaciones de atributos tienen a ser de perros y qué combinaciones tienden a ser de gatos. 
+Con unas decenas de ejemplos empezaré a ser capaz de ver qué combinaciones de atributos tienen a ser de perros y qué combinaciones tienden a ser de gatos. 
 
 Ahora, para poder mejorar mi clasificador, me dan cuatro atributos más: tamaño de las orejas, longitud de la cola, cantidad de pelo, y número de horas durmiendo... A priori parece útil, pero si no me dan más ejemplos no me están haciendo ningún favor. Mi espacio de ha crecido brutalmente! Ahora el número de combinaciones es:
 
@@ -149,7 +149,7 @@ Vamos a analizar que pasa con dos de las distribuciones de probabilidad más con
 
 *  Distribución uniforme
 
-La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones $d_1 \times d_2$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo.
+La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones s$d_1 \times d_2s$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo.
 
 Ojo, no es que una gotas tenga más probabilidad de caer en el borde que en el centro. Es que la región del borde tiene más volumen, más espacio! 
 
