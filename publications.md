@@ -35,10 +35,9 @@ Toret J. (coord.), Aguilera M., Aragón P., Calleja A., Lumbreras A., Marín Ó 
 Ed.: Universitat Oberta de Catalunya
 
 
-
 ## PhD Thesis
 
-[Automatic Role Detection in Online Forums (2016)](https://tel.archives-ouvertes.fr/tel-01439342/)
+[Automatic Role Detection in Online Forums](https://tel.archives-ouvertes.fr/tel-01439342/) (2016)
 Supervised by: Bertrand Jouve, Julien Velcin, Marie Guégan
 
 
