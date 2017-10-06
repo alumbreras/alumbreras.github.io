@@ -34,14 +34,10 @@ Social Knowledge Discovery and Utilization Workshop  (2012)
 *Toret J. (coord.), Aguilera M., Aragón P., Calleja A., Lumbreras A., Marín Ó* 
 Ed.: Universitat Oberta de Catalunya (2012)  
 
-
-## PhD Thesis
-
 [Automatic Role Detection in Online Forums](https://tel.archives-ouvertes.fr/tel-01439342/)
 *Supervised by: Bertrand Jouve, Julien Velcin, Marie Guégan*
 PhD Thesis. Université Lyon 2 - Technicolor (2016).
 
-## Masther's Thesis
 [Towards Trust-Aware Recommender Systems.](http://albertolumbreras.net/files/Lumbreras_MasterThesis.pdf)  
 Masther’s Thesis. Master on Artificial Intelligence. Universitat Politècnica de Catalunya. (2012)
 *Supervised by: Ricard Gavaldà.*
