@@ -5,17 +5,17 @@ title: Publications
 
 ## Publications
 
-_Role detection in online forums based on growth models for trees_  
-*Lumbreras A., Jouve B., Velcin J., Guégan M.* 
+_Role detection in online forums based on growth models for trees_<br>
+*Lumbreras A., Jouve B., Velcin J., Guégan M.* <br>
 Social Network Analysis and Mining (2017)
 
-[Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](https://github.com/alumbreras/Dual-DPGMM/blob/master/doc/ComputStat%20submission/dualview_clustering_camera.pdf)  
-*Lumbreras A., Guégan M., Velcin J., Jouve B.*
+[Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](https://github.com/alumbreras/Dual-DPGMM/blob/master/doc/ComputStat%20submission/dualview_clustering_camera.pdf)
+*Lumbreras A., Guégan M., Velcin J., Jouve B.* <br>
 Computational Statistics (2016)  
 [[code](https://github.com/alumbreras/Dual-DPGMM)]
 [[printed version](http://link.springer.com/article/10.1007/s00180-016-0668-0)]
 
-[Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://arxiv.org/ftp/arxiv/papers/1309/1309.7187.pdf)  
+[Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://arxiv.org/ftp/arxiv/papers/1309/1309.7187.pdf)
 *Lumbreras A., Lanagan J., Velcin J.,  Jouve B.*
 Modèles et Analyses Réseau : Approches Mathématiques et Informatiques (2013)
 
