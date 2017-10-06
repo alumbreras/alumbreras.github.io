@@ -12,9 +12,9 @@ Computational Statistics
 [[printed version](http://link.springer.com/article/10.1007/s00180-016-0668-0)]
 
 
-_Structural-temporal neighbourhoods of posts to characterize conversations in online forums_  
- Lumbreras A., Jouve B., Velcin J., Guégan M. (2016)  
-IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM) (*submitted*)
+_Role detection in online forums based on growth models for trees_  
+Lumbreras A., Jouve B., Velcin J., Guégan M. (2017)  
+Social Network Analysis and Mining
 
 [Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://arxiv.org/ftp/arxiv/papers/1309/1309.7187.pdf)  
 Lumbreras A., Lanagan J., Velcin J.,  Jouve B. (2013)  
@@ -37,11 +37,10 @@ Ed.: Universitat Oberta de Catalunya
 
 
 
-## Patents
+## PhD Thesis
 
-_Methods and systems for clustering-based recommendations_  
-Lumbreras A., Guégan M., Velcin J., Jouve B. (2015)  
-Filled July 2015. Patent pending.
+[Automatic Role Detection in Online Forums (2016)](https://tel.archives-ouvertes.fr/tel-01439342/)
+Supervised by: Bertrand Jouve, Julien Velcin, Marie Guégan
 
 
 ## Masther's Thesis
