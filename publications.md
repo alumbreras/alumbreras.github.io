@@ -20,7 +20,7 @@ Computational Statistics (2016)   <br>
 
 [Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://lipn.univ-paris13.fr/marami2013/MARAMI13/Programme_2.html) <br>
 *Lumbreras A., Lanagan J., Velcin J.,  Jouve B.* <br>
-Modèles et Analyses Réseau : Approches Mathématiques et Informatiques (2013)
+Modèles et Analyses Réseau : Approches Mathématiques et Informatiques (2013)<br>
 [[paper](http://arxiv.org/ftp/arxiv/papers/1309/1309.7187.pdf)]
 
 [An insight into the Analysis of Roles in IMDb.](http://complexity-in-social-systems.u-cergy.fr/?page_id=326)   <br>
