@@ -20,7 +20,7 @@ under the supervision of <a href="http://blogs.univ-tlse2.fr/jouve/">Bertrand Jo
 and <a href="http://mediamining.univ-lyon2.fr/people/velcin/">Julien Velcin</a> (2013-2016). 
 I did my thesis (on machine learning and social network analysis) at <a href="http://www.technicolor.com/">Technicolor R&D </a> (Rennes).</p> 
 
-<p>Previously, I got a MSc in Artificial Intelligence from <a href="http://www.upc.edu/?set_language=en">Universitat Politècnica de Catalunya</a> (Barcelona)
+<p>Before that, I got a MSc in Artificial Intelligence from <a href="http://www.upc.edu/?set_language=en">Universitat Politècnica de Catalunya</a> (Barcelona)
 and wrote a <a href="http://www.albertolumbreras.net/files/Lumbreras_MasterThesis.pdf">Master’s Thesis</a> on Trust-Aware Recommender Systems 
 advised by <a href="http://www.lsi.upc.edu/~gavalda/">Ricard Gavaldà</a> (2012).</p>
 
