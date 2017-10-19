@@ -16,7 +16,7 @@ PhD Thesis. Université Lyon 2 - Technicolor (2016) <br>
 [Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](http://link.springer.com/article/10.1007/s00180-016-0668-0) <br>
 *Lumbreras A., Guégan M., Velcin J., Jouve B.* <br>
 Computational Statistics (2016)   <br>
-[[code](https://github.com/alumbreras/Dual-DPGMM)] [[preprint](https://github.com/alumbreras/Dual-DPGMM/blob/master/doc/ComputStat%20submission/dualview_clustering_camera.pdf) ]
+[[preprint](https://github.com/alumbreras/Dual-DPGMM/blob/master/doc/ComputStat%20submission/dualview_clustering_camera.pdf) ][[code](https://github.com/alumbreras/Dual-DPGMM)]
 
 [Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://lipn.univ-paris13.fr/marami2013/MARAMI13/Programme_2.html) <br>
 *Lumbreras A., Lanagan J., Velcin J.,  Jouve B.* <br>
