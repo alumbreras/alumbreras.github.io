@@ -8,11 +8,11 @@ layout: default
 ## Alberto Lumbreras
 
 
-<p> I am a postdoctoral researcher in the <a href = "http://sc.enseeiht.fr/Signal & Communications Group">Signal & Communications Group</a>
+<p> I am a CNRS postdoctoral researcher in the <a href = "http://sc.enseeiht.fr/Signal & Communications Group">Signal & Communications Group</a>
 at the <a href="https://www.irit.fr/?lang=fr">Institut de Recherche en Informatique de Toulouse</a>. 
-I work in the <a href="https://www.irit.fr/~Cedric.Fevotte/factory/">FACTORY</a> project 
+I work in the <a href="http://projectfactory.irit.fr/">FACTORY</a> project 
 coordinated by <a href="https://www.irit.fr/~Cedric.Fevotte/">Cédric Févotte</a>. 
-My current research is focused on Machine Learning and Matrix Factorization.
+My current research is focused on Monte Carlo inference methods for Non-Negative Matrix Factorization.
 
 <p>Previously, I did a PhD in Computer Science in the <a href="http://eric.univ-lyon2.fr/">ERIC Lab</a> 
 at <a href="http://www.univ-lyon2.fr/">Université Lyon 2</a> 
