@@ -5,7 +5,7 @@ title: Publications
 
 ## Publications
 
-[Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization]<br>
+Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization<br>
 *Filstroff L., Lumbreras A., Févotte C.* <br> 
 International Conference on Machine Learning (2018) *(to appear)*
 
@@ -20,7 +20,7 @@ PhD Thesis. Université Lyon 2 - Technicolor (2016) <br>
 [Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](http://link.springer.com/article/10.1007/s00180-016-0668-0) <br>
 *Lumbreras A., Guégan M., Velcin J., Jouve B.* <br>
 Computational Statistics (2016)   <br>
-[[pdf](http://albertolumbreras.net/files/Lumbreras_et_al_2013_1.pdf)] [[presentation](http://albertolumbreras.net/files/Lumbreras_et_al_2017_CompStats.pdf)][[code](https://github.com/alumbreras/Dual-DPGMM)]
+[[pdf](http://albertolumbreras.net/files/Lumbreras_et_al_2017_CompStats.pdf)][[code](https://github.com/alumbreras/Dual-DPGMM)]
 
 [Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://lipn.univ-paris13.fr/marami2013/MARAMI13/Programme_2.html) <br>
 *Lumbreras A., Lanagan J., Velcin J.,  Jouve B.* <br>
