@@ -47,13 +47,19 @@
 \settowidth{\spacebox}{8888888888}			% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
+
 \newcommand{\MyName}[2]{ % Name 
 		 \huge \usefont{OT1}{phv}{b}{n} \textcolor{headings}{#1}
 		 \par \normalsize \normalfont \textcolor{subheadings}{#2}
 		\par \normalsize \normalfont}
 
 \newcommand{\MySummary}[1]{\usefont{OT1}{phv}{m}{n} {#1}}
-\newcommand{\NewPart}[1]{\section*{ \color{headings} \textsc{#1}}}
+
+\newcommand{\NewPart}[1]{   
+\vspace{-0.4cm}             
+\section*{ \color{headings} \textsc{#1}}
+\vspace{-0.25cm}	    
+}
 
 \newcommand{\PersonalEntry}[2]{
 		\noindent\hangindent=2em\hangafter=0 % Indentation
@@ -71,7 +77,7 @@
         \end{minipage}        
  }
         
-\newcommand{\workEntry}[6]{		                    
+\newcommand{\workEntry}[6]{	
        %\begin{minipage}{0.08\linewidth}
         %\includegraphics[width=1.2cm] {#5}
 		%\end{minipage}%  

@@ -2,36 +2,44 @@
 % https://xamat.github.io/cv.pdf		
 \usepackage{enumitem}
 \usepackage[none]{hyphenat}
+%\usepackage{hyperref}
+\usepackage{fontawesome}
 
+    
 \begin{document}
 
 \begin{minipage}[t]{.65\linewidth}
-   \MyName{Alberto~Lumbreras}{PhD. Researcher | Machine Learning | Data Science.}
+   \MyName{Alberto~Lumbreras}{Researcher, PhD | Machine Learning | Data Science}
 \end{minipage}%  
-\begin{minipage}[t]{0.3\linewidth}   
-   \hfill alberto.lumbreras@gmail.com  
-      
-   \hfill http://albertolumbreras.com
-      
-   \hfill (+33) 634 26 67 94  
+\begin{minipage}[t]{0.3\linewidth}  
+\raggedright
+\small{\faEnvelopeO}~alberto.lumbreras@gmail.com   
+\small{\faGlobe}~http://albertolumbreras.net    
+\small{\faGithub}~http://github.com/alumbreras
+\small{\faPhone}~(+33) 634 26 67 94
+\normalsize
+ %\par
  \vspace{0.3cm} 
 
 \end{minipage}
 \par
+\begin{minipage}{0.9\linewidth}
 \MySummary{
-\textit{Researcher with more than 10 years of international experience both in industry and academia.}
+\textit{Researcher with more than 10 years of international experience, both in industry and academia. Oriented to applied research, from social network analysis to recommender systems, with a solid background in statistical machine learning.}}
+\end{minipage}
+
 %\par
 %\textit{Research areas}: Machine Learning, Bayesian statistics, Social Network Analysis, Recommender Systems.
-}
 
+ \vspace{0.1cm} 
 \NewPart{Experience}{}
 \noindent
 
 \workEntry{Centre National de la Recherche Scientifique}{2016 -}{Postdoctoral Researcher}{
 %\hspace{0cm}
 \begin{itemize}[leftmargin=*]
-\item Novel models and statistical methods (Monte Carlo algorithms, Variational Inference) for Machine Learning, specially for Matrix Factorization with applications such as text semantic analysis, Recommender Systems or Social Network Analysis. 
-\item 2 open source R packages for Matrix Factorization. 
+\item Novel models and statistical methods (Monte Carlo algorithms, Variational Inference) for Machine Learning, specially for matrix factorization with applications such as text semantic analysis, recommender systems or social network analysis. 
+\item 2 R packages for matrix factorization. 
 \item 1 PhD thesis co-supervised.
 \end{itemize}
 } {IMG/CNRS}{Toulouse (France)}
@@ -40,7 +48,7 @@
 \sepspace
 \workEntry{LinkProved}{2016 -}{Data Science Consultant}{
 \begin{itemize}[leftmargin=*]
-\item Consulting for start-up focused on product recommendations. Technical orientation and prototyping in Python for Topic Detection, User modeling and Recommender Systems.
+\item Consulting for a start-up focused on product recommendations. Technical orientation and prototyping in Python for topic detection, user modeling and recommender systems.
 \end{itemize}}{Toulouse }{Toulouse (France)}
 
 
@@ -53,8 +61,8 @@
 \end{itemize}} {IMG/Technicolor}{Rennes (France)}
 
 \vspace{0.25cm}
-\workEntry{Université Paul Sabatier}{*}{Teaching Assistant}{\begin{itemize}[leftmargin=*]
-\item Teaching in the practical sessions of two Computer Science courses. One on databases, and another on UML, Object Oriented Programming, Test-Driven Development and Java. 
+\workEntry{Université Paul Sabatier}{\color{white}*}{Teaching Assistant}{\begin{itemize}[leftmargin=*]
+\item Teaching in the practical sessions of two Computer Science courses: one on databases; another on UML, Object Oriented Programming, Test-Driven Development and Java. 
 \item 1 master thesis supervised (Master in Data Mining and Knowledge Extraction).
 \end{itemize}
 } {IMG/CNRS}{Toulouse (France)}
@@ -65,17 +73,17 @@
 Research Engineer}{
 Laboratory of Relational Algorithmics, Complexity and Learning (LARCA)
 \begin{itemize}[leftmargin=*]
-\item Novel algorithms for Social Network Analysis, Web Mining, Recommender Systems, Sentiment Analysis, and Stream Data Mining.
-\item Industrial partnetship (Datknosys): Implemented  a stream mining solution for sentiment analysis in Twitter. The solution was based in the popular MOA software. Worked in collaboration with the MOA authors and with the Datknosys team to integrate this solution into their platform. 
+\item Novel algorithms for social network analysis, web mining, recommender systems, sentiment analysis, and stream data mining.
+\item Industrial partnership (Datknosys): Implemented a stream mining solution for sentiment analysis in Twitter. The solution was based in the popular MOA software. Worked in collaboration with the MOA authors and with the Datknosys team to integrate this solution into their platform. 
 \end{itemize}}{IMG/UPC}{Barcelona (Spain)}
 
 
 \sepspace
 
-\workEntry{Telefónica Investigación y Desarrollo}{2004 - 2010}{Research Engineer}{
+\workEntry{Telefónica Research}{2004 - 2010}{Research Engineer}{
 \begin{itemize}[leftmargin=*]
 \item Participation in all phases of research and innovation projects, both internal and in collaboration with several Telefónica Business Units. Projects ranged from mobile peer-to-peer to recommender systems. 
-\item Lead some small teams (up to 5 persons).
+\item Lead some small teams (up to 5 people).
 \item Participation in multiple European projects with international partners.
 \item 13th Webby Awards (2009): Best New Business Opportunity in the Integrated Mobile area. Lead a small team of developers in Vancouver, in collaboration with the Center of Digital Media, and elaborated a business plan for a spin-off. We were honored with a Webby Award. (\url{https://www.webbyawards.com/winners/movisphere/})
 \item  Member of Telefónica's Ambassadors for Innovation, an internal network of employees which aimed to boost innovation in the company.
@@ -87,10 +95,10 @@ Laboratory of Relational Algorithmics, Complexity and Learning (LARCA)
 \NewPart{Education}{}
 \noindent
 
-\EducationEntry{PhD., Computer Science}{2013 - 2016}{Université de Lyon}{Thesis: Automatic Role Detection in Online Forums } {IMG/lyon}
+\EducationEntry{PhD, Computer Science}{2013 - 2016}{Université de Lyon}{Thesis: Automatic Role Detection in Online Forums } {IMG/lyon}
 
 \sepspace
-\EducationEntry{Master, Artificial Intelligence}{2010 - 2012}{Universitat Politècnica de Catalunya}{Master Thesis: Towards Trust-Aware Recommender Systems. } {IMG/UPC}
+\EducationEntry{Master, Artificial Intelligence}{2010 - 2012}{Universitat Politècnica de Catalunya}{Master Thesis: Towards Trust-Aware Recommender Systems} {IMG/UPC}
 
 \sepspace
 \EducationEntry{Engineer, Telecommunication}{1999 - 2005}{Universitat Politècnica de Catalunya}{PFC: Sistema experto en la detección y corrección de incidencias en nodos Grid} {IMG/UPC}
@@ -100,13 +108,13 @@ Laboratory of Relational Algorithmics, Complexity and Learning (LARCA)
 
 \noindent\SkillsEntry{Machine Learning:}{Recommender Systems, Social Network Analysis, Matrix Factorization,}
 
-\noindent\SkillsEntry{}{Text Mining, Natural Language Processing.}
+\noindent\SkillsEntry{}{Text Mining, Natural Language Processing}
 
-\noindent\SkillsEntry{Statistics:}{Bayesian Statistics, Monte Carlo methods, Variational Inference.}
+\noindent\SkillsEntry{Statistics:}{Bayesian Statistics, Monte Carlo methods, Variational Inference}
 
 \noindent\SkillsEntry{Tools:}{R, Rcpp, Python, C++, Java, MATLAB, SQL, NoSQL, Linux.}
 
-\noindent\SkillsEntry{Languages:}{ES, CA (native), FR, EN (profesional, C2).}
+\noindent\SkillsEntry{Languages:}{ES, CA (native), FR, EN (professional, C2).}
 
 
 \NewPart{Publications}{}
@@ -118,19 +126,41 @@ Some selected publications:
 \item Applying trust metrics based on user interactions to recommendation in social networks. \\\textit{IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (2012)} 
 \item Tecnopolítica: la potencia de las multitudes conectadas. El sistema red 15M, un nuevo paradigma de la política distribuida. \\\textit{Ed.: Universitat Oberta de Catalunya (2012)}
 \end{itemize}
+\vspace{-0.25cm}             
 
 \NewPart{Academic service}{}
 Reviewer for several top tier journals and conferences:
-\begin{itemize}
-\item Neural Information Processing Systems (NIPS).
-\item IEEE Transactions on Signal Processing (TSP).
+\begin{itemize}[leftmargin=*]
+\setlength\itemsep{0.0em}
+\item Neural Information Processing Systems (NIPS)
+\item IEEE Transactions on Signal Processing (TSP)
 \item IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
-\item  IEEE International Workshop on Machine Learning for Signal Processing (MLSP).
+\item  IEEE International Workshop on Machine Learning for Signal Processing (MLSP)
 \end{itemize}
 Participation in the organization of scientific workshops and conferences:
-\begin{itemize}
-\item Dynamic Networks workshop (Toulouse, 2016)
-\item European Conference on Machine Learning and Principles and Practice of Knowledge Discivery in Databases (ECML-PKDD, Barcelona 2010).
+\begin{itemize}[leftmargin=*]
+\setlength\itemsep{0.0em}
+\item \textit{Dynamic Networks workshop.} Institut d'Etudes des Systèmes Complexes de Toulouse (2016)
+\item \textit{Advanced mathematics for network analysis}. Institut d'Etudes des Systèmes Complexes de Toulouse (2016)
+\item \textit{European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases} (ECML-PKDD, Barcelona 2010)
 \end{itemize}
+\vspace{-0.25cm}             
 
-\end{document}
+\NewPart{References}{}
+\begin{tabular}{l l l }
+\noindent Cédric Févotte &CNRS, Senior Researcher 
+&\small{\faEnvelopeO}~ \normalsize cedric.fevotte@irit.fr \\
+\noindent Marie Guégan &Technicolor, Research Scientist 
+&\small{\faEnvelopeO}~ \normalsize marie.guegan@technicolor.com\\
+\noindent Enrique Garcia-Illera &Telefónica, Product Manager
+&\small{\faEnvelopeO}~ \normalsize enrique.garciaillera@telefonica.com
+\end{tabular}
+\end{document} 
+
+\faGithub {enrique.garciaillera@telefonica.com}
+\phone[mobile]{+33~634~266~794}       
+%\phone[fixed]{+33~531~986~660}
+\email{alberto.lumbreras@irit.fr}                               \homepage{www.albertolumbreras.net}                          \social[linkedin]{albertolumbreras}                        
+\social[twitter]{albertlumbreras}                            
+\social[github]{alumbreras}
+\faEnvelopeO https://github.com/alumbreras
