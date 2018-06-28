@@ -41,7 +41,7 @@ sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.
 Para demostrarlo, voy a simular a Antonio Baños por ordenador y voy a 
 hacerle repetir el experimento en 100000 asambleas.  
 
-{% highlight r %}
+```{r}
 # Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/
 
 # Un Antonio Banos
@@ -65,7 +65,7 @@ hist(asambleas$papeleta, breaks = 100, probability=TRUE,
 empates <- sum(asambleas$papeleta==1515)
 probabilidad_empate <- empates/M
 cat("Probabilidad de empate:", probabilidad_empate*100)
-{% endhighlight %}
+```
 
 <p align="center">
 <img src="/img/2015-12-28-CUP_banyos.png" width="800px">
@@ -92,7 +92,7 @@ Para simularlas tengo que imaginar un modelo sobre cómo se comporta
 cada cupaire individual. Dado que el debate estaba muy ajustado, los 
 cupaires son parecidos a monedas lanzadas al aire.
 
-{% highlight r %}
+```{r}
 # Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/
 
 # N cupaires
@@ -118,7 +118,7 @@ hist(asambleas$sies, breaks = 100)
 empates <- sum(asambleas$sies==1515)
 probabilidad_empate <- empates/M
 cat("Probabilidad de empate:", probabilidad_empate*100)
-{% endhighlight %}
+```
 
 <p align="center">
 <img src="/img/2015-12-28-CUP.png" width="800px">
@@ -135,7 +135,7 @@ que sólo había un 20% de indecisos. Esto va a ser clave, ya que las
 posibilidades se van a reducir y por lo tanto las probabilidades serán 
 mucho mayores para cada posible resultado. Repetimos la simulación:
 
-{% highlight r %}
+```{r}
 # N cupaires
 N <- 3030
 
@@ -168,7 +168,7 @@ hist(asambleas$sies, breaks = 100, probability=TRUE,
 empates <- sum(asambleas$sies==1515)
 probabilidad_empate <- empates/M
 cat("Probabilidad de empate:", probabilidad_empate*100)
-{% endhighlight %}
+```
 
 <p align="center">
 <img src="/img/2015-12-28-CUP_indecisos.png" width="800px">
