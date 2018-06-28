@@ -41,7 +41,7 @@ sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.
 Para demostrarlo, voy a simular a Antonio Baños por ordenador y voy a 
 hacerle repetir el experimento en 100000 asambleas.  
 
-``` r
+```{r}
 # Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/
 
 # Un Antonio Banos
