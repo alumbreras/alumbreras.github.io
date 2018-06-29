@@ -2,14 +2,9 @@
 layout: default
 ---
   
-<div>      
 <img src="./img/Alberto.jpg" class="img-rounded" style="float: right; margin: 65px 25px 25px 25px;" />
-</div>
 
-
-<div>
-
-<h2> Alberto Lumbreras </h2>
+## Alberto Lumbreras
 
 <p> I am a CNRS postdoctoral researcher in the <a href = "http://sc.enseeiht.fr/Signal & Communications Group">Signal & Communications Group</a>
 at the <a href="https://www.irit.fr/?lang=fr">Institut de Recherche en Informatique de Toulouse</a>. 
@@ -38,6 +33,3 @@ I am also a member of the <a href="http://datanalysis15m.wordpress.com/">Datanal
     <h5>contact:</h5>
 	<p>alberto.lumbreras (at) irit (dot) fr<br /> Toulouse, France</p>
 </div>
-
-</div>     
-
