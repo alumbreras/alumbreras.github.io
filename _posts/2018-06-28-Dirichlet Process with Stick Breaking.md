@@ -152,6 +152,6 @@ obtained from these $$G$$:
 	<center>
    <img src="{{ site.baseurl }}/assets/fig15_DP.png" width="50%"><img src="{{ site.baseurl }}/assets/fig16_DPsamples.png" width="50%">
     </center>
-    <figcaption>Fig.1 - Dirichlet Processes with different concentration parameters,
-    and samples from these Dirichlet Processes. Columns represent repetitions of the experiment.</figcaption>
+    <figcaption>Fig.1 - (Left) Distributions drawn from a Dirichlet Processes with different concentration parameters. (Right)
+   Samples from these distributions. Columns represent repetitions of the experiment.</figcaption>
 </figure>
