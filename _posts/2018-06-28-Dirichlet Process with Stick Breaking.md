@@ -121,7 +121,7 @@ for(alpha in alphas){
   }
 }
 
-# Plot the DP
+# Plot the distributon drawn by the DP
 df.G$alpha <- factor(df.G$alpha)
 p <- ggplot(df.G, aes(x=atom, y=pi)) + 
   geom_col(width=0.01)+
@@ -131,7 +131,7 @@ print(p)
 ggsave(p, filename = paste0("fig15_DP.png"), 
        height=16, width=16, units='cm')
 
-# Plot samples from the DP
+# Plot samples from the distribution
 df.samples$alpha <- factor(df.samples$alpha)
 p <- ggplot(df.samples, aes(x=sample)) + 
      #geom_density() +
