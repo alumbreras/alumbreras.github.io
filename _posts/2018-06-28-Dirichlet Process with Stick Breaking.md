@@ -6,9 +6,8 @@ tags: nonparametrics
 The Dirichlet Process is a prior over distributions. The basic definition relays on 
 measure theory and has some obscure definitions for most of people. Intuitevily, imagine
 we want to draw a distribution $$G$$ over the line of real numbers using some prior distribution $$P$$.
-Imagine we partition the line in a set of partitions, and then we draw a G.
 We say that $$P$$ is a Dirichlet Process if, for any possible partition of the line of real numbers,
-the vector of probabilities for each partition is distributed according to a Dirichlet distribution:
+$$(A_1, ..., A_m)$$, the probabilities over the partitions are distributed according to a Dirichlet distribution:
 
 $$
 G(A_1),...,G(A_m) \sim \text{Dirichlet}(\alpha(A_1),...,\alpha(A_k))
