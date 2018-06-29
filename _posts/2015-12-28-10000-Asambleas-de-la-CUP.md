@@ -41,7 +41,7 @@ sacando una papeleta de una urna llena de papeletas numeradas del 1 al 3030.
 Para demostrarlo, voy a simular a Antonio Baños por ordenador y voy a 
 hacerle repetir el experimento en 100000 asambleas.  
 
-```{r}
+```
 # Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/
 
 # Un Antonio Banos
@@ -92,7 +92,7 @@ Para simularlas tengo que imaginar un modelo sobre cómo se comporta
 cada cupaire individual. Dado que el debate estaba muy ajustado, los 
 cupaires son parecidos a monedas lanzadas al aire.
 
-```{r}
+```
 # Para reproducir este ejemplo, descargar el software (libre) de estadística R: https://cran.r-project.org/
 
 # N cupaires
@@ -135,7 +135,7 @@ que sólo había un 20% de indecisos. Esto va a ser clave, ya que las
 posibilidades se van a reducir y por lo tanto las probabilidades serán 
 mucho mayores para cada posible resultado. Repetimos la simulación:
 
-```{r}
+```
 # N cupaires
 N <- 3030
 
