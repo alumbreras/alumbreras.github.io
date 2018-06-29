@@ -4,7 +4,7 @@ body {
     /* font-family: Merriweather;*/ /* Shalir Mohamed */ 
     font-size: 15px;
     line-height: 1.428571429;
-    color: #333;
+    color: #000;
     background-color: #fff;
 }
 
@@ -12,6 +12,18 @@ body {
 nav {
     font-size: 14px;
 }
+
+
+a {
+    color: #5077bd;
+    text-decoration: none;
+}
+
+a:hover { 
+    color: #428bca;
+}
+
+
 
 code {
     color: black;

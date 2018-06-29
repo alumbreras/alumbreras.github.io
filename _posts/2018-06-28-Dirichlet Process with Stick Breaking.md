@@ -38,7 +38,7 @@ $$v_k$$ of the remaining stick
 	\pi_k = v_k \prod_{i=1}^{k-1}(1-v_i)
 	$$
 
-	where $$\prod_{l=1}^{k-1}(1-v_l)$$ is the remaining length of the stick at step $k$.
+	where $$\prod_{l=1}^{k-1}(1-v_l)$$ is the remaining length of the stick at step $$k$$.
 	At the end of the process we have a collection of segments whose length sum is 1.
 
 2. Draw infinite samples from a base distribution $$G_0$$:
