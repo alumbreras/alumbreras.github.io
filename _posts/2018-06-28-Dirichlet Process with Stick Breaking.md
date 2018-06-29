@@ -18,10 +18,10 @@ There are different ways to generate a distribution G. One of the most popular
 is the Stick Breaking construction. The trick is to realize that 
 
 $$
-G = \sum_k \beta_k \delta_{\theta_k}
+G = \sum_k \pi_k \delta_{\theta_k}
 $$
 
-where $$\beta_k$$ weights sum up to 1, and the deltas are distributed around the line
+where $$\pi_k$$ weights sum up to 1, and the deltas are distributed around the line
 of the real numbers according to some distribution. The stick breaking construction
 goes as follows:
 
@@ -103,7 +103,7 @@ for(alpha in alphas){
   for(xp in 1:3){
     cat("\n", alpha)
     
-    # Generate the DP
+    # Generate a distribution from the DP(alpha, G0)
     G <- DP_stick_breaking(n, alpha, G0)
     df.G <- bind_rows(df.G, 
                       list(xp = rep(xp, n), 
