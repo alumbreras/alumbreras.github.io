@@ -22,7 +22,8 @@ exclude: [
   'Gemfile.lock',
   'package.json',
   'README.md',
-  'vendor']
+  'vendor',
+  'drafts/']
 
 timezone: Europe/Berlin
 baseurl: '' # the subpath of your site, e.g. /blog/
