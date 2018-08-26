@@ -61,7 +61,7 @@ GEM
     hitimes (1.2.2)
     html-pipeline (1.9.0)
       activesupport (>= 2)
-      nokogiri (~> 1.4)
+      nokogiri (~> 1.7.1)
     html-proofer (2.6.4)
       activesupport (~> 4.2)
       addressable (~> 2.3)
