@@ -5,10 +5,10 @@ title: Publications
 
 ## Publications
 
-Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization<br>
+[Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization](http://proceedings.mlr.press/v80/filstroff18a.html)<br>
 *Filstroff L., Lumbreras A., Févotte C.* <br> 
-International Conference on Machine Learning (2018) *(to appear)* <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://arxiv.org/pdf/1801.01799.pdf)
+International Conference on Machine Learning (2018) <br>
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://proceedings.mlr.press/v80/filstroff18a/filstroff18a.pdf)
 <i class="fa fa-github fa-lg fa-fw"></i>
 <i class="fa fa-slideshare fa-lg fa-fw"></i>
 
@@ -54,6 +54,15 @@ Ed.: Universitat Oberta de Catalunya (2012)  <br>
 [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://tecnopolitica.net/sites/default/files/1878-5799-3-PB%20%282%29.pdf) 
 <i class="fa fa-github fa-lg fa-fw"></i>
 <i class="fa fa-slideshare fa-lg fa-fw"></i>
+
+-----
+
+[Generative models of online discussion threads](http://asonam.cpsc.ucalgary.ca/2018/Tutorials/asonam-generative-models_Andreas.pdf)<br>
+*Aragón P., Gómez V., Lumbreras A., Kaltenbrunner A.* <br>
+The 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining <br>
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://www.upf.edu/web/ai-ml/tutorial-asonam-2018)
+[<i class="fa fa-github fa-lg fa-fw"></i>](http://www.albertolumbreras.net/files/notebookR_asonam_out.html)
+[<i class="fa fa-slideshare fa-lg fa-fw"></i>](https://docs.google.com/presentation/d/1sHfJJKMrBTjN05J5qPf6LP6CqF5vwUX6kq0P7LCobmU/edit?ts=5b83b77b#slide=id.g3ef0d253a5_2_30)
 
 -----
 
