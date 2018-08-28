@@ -57,7 +57,7 @@ Ed.: Universitat Oberta de Catalunya (2012)  <br>
 
 -----
 
-[Generative models of online discussion threads](http://asonam.cpsc.ucalgary.ca/2018/Tutorials/asonam-generative-models_Andreas.pdf)<br>
+[Generative models of online discussion threads (Tutorial)](http://asonam.cpsc.ucalgary.ca/2018/Tutorials/asonam-generative-models_Andreas.pdf)<br>
 *Aragón P., Gómez V., Lumbreras A., Kaltenbrunner A.* <br>
 The 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining <br>
 [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://www.upf.edu/web/ai-ml/tutorial-asonam-2018)
