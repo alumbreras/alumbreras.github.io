@@ -1,2 +1,3 @@
 http://katbailey.github.io/
 https://github.com/josephmisiti/awesome-machine-learning/blob/master/blogs.md
+https://nicolewhite.github.io/

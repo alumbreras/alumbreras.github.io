@@ -23,7 +23,8 @@ exclude: [
   'package.json',
   'README.md',
   'vendor',
-  'drafts/']
+  'drafts/',
+  '*.Rmd']
 
 timezone: Europe/Berlin
 baseurl: '' # the subpath of your site, e.g. /blog/

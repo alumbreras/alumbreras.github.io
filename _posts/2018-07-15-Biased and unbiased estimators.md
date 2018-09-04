@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Biased and unbiased estimators
+title: Biased and unbiased estimatorssss
 tags: machine learning
 ---
 
