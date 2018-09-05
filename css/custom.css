@@ -165,3 +165,7 @@ html {
         overflow: hidden!important;
     }
 }
+
+img{
+    max-width:100%;
+}
