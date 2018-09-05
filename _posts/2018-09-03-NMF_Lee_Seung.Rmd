@@ -6,21 +6,15 @@ output: md_document
 ---
 
 ## Introduction
-[Nonnegative Matrix Factorization (NMF)](https://www.nature.com/articles/44565) is a technique that tries to approximate a 
-nonnegative matrix *V* (with \[F \times N\] dimensions) into the product of two smaller 
-(also nonnegative) matrices *W* (\[F \times K\]) and *H* (\[K \times N\]).
+[Nonnegative Matrix Factorization (NMF)](https://www.nature.com/articles/44565) is a technique that tries to approximate a nonnegative matrix *V* (with \[F \times N\] dimensions) into the product of two smaller (also nonnegative) matrices *W* (\[F \times K\]) and *H* (\[K \times N\]).
 
-For those familiar with PCA, NMF is a sort of PCA with nonnegative (and therefore more
-easy to interpret by humans) basis. Moreover, these basis do not need to be orthogonal.
+For those familiar with PCA, NMF is a sort of PCA with nonnegative (and therefore more easy to interpret by humans) basis. Moreover, these basis do not need to be orthogonal.
 
-One of my favorite applications of NMF is in recomender systems. If *V* contains some ratings of 
-users to movies (*F* users and *N* movies), *W* will contain the atraction of a each user to each topic, and *H* will contain the amount of each topic in each movie. This decomposition 
-is a compressed version of the original matrix. Moreover, once we have this information we can easily guess, by a simple multiplication, the rating of a user to an unrated movie. 
+One of my favorite applications of NMF is in recomender systems. If *V* contains some ratings of users to movies (*F* users and *N* movies), *W* will contain the atraction of a each user to each topic, and *H* will contain the amount of each topic in each movie. This decomposition is a compressed version of the original matrix. Moreover, once we have this information we can easily guess, by a simple multiplication, the rating of a user to an unrated movie. 
 
 ## Implementing a NMF algorithm
 
-The first NMF algorithm was derived by [Lee and Seung](https://papers.nips.cc/paper/1861-algorithms-for-non-negative-matrix-factorization.pdf). The thing is that, before
-deriving our NMF algorithm, we have to choose a distance metric to assess the quality of the approximation 
+The first NMF algorithm was derived by [Lee and Seung](https://papers.nips.cc/paper/1861-algorithms-for-non-negative-matrix-factorization.pdf). The thing is that, before deriving our NMF algorithm, we have to choose a distance metric to assess the quality of the approximation 
 
 \begin{equation}
 V \approx W H
@@ -59,7 +53,7 @@ $$
 
 
 Recall that the updates are supposed to minimize the KL divergence between the approximation
-and the true matrix. To monitorize this, let us code a function that computes
+and the true matrix. To monitorize this, let us code an R function that computes
 the KL divergence:
 
 ```{r computeKL}
@@ -190,7 +184,6 @@ V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
 # Plot some faces and their reconstrctions
 par(mfcol=c(2,10), mar=c(0, 1, 0, 0), oma=c(0,0,0,0))
-
 for(k in 1:K){
   plot_face(res$W[,k])
   plot_face(pca$x[,k])
@@ -223,12 +216,10 @@ Note that the quality of our reconstruction depends on the chosen number of late
 
 ## Final remarks
 
-The algorithm presented in this post was the one who triggered the interested in NMF in 1999.
-However, the story continued for the next years and until today, taking different research avenues. 
+The algorithm presented in this post was the one who triggered the interested in NMF in 1999. However, the story continued for the next years and until today, taking different research avenues. 
 
-In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. In another one, someone realized that there are some conections between some cost functions and some likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean $WH$. 
+In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. At some point, someone realized that there are some conections between cost functions and  likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean $WH$. 
+On the probabilistic side, Bayesians consider W and H as random latent variables, and instead of trying to find point extimators for $W,H$ they infer a posterior distribution over each of them. 
 
-In another avenue, people consider W and H as random latent variables, and instead of trying to find point extimators for $W,H$ they infer a posterior distribution over each of them. 
-
-Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference,...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
+Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
 

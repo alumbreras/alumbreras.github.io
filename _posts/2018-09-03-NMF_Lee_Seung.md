@@ -84,8 +84,7 @@ H_{kn} \leftarrow H_{kn}
 $$
 
 Recall that the updates are supposed to minimize the KL divergence
-between the approximation and the true matrix. To monitorize this, let
-us code a function that computes the KL divergence:
+between the approximation and the true matrix. To monitorize this, let us code an R function that computes the KL divergence:
 
     #' @title Compute the KL divergence 
     #' @param A first matrix
@@ -211,13 +210,13 @@ dictionary of a PCA:
     V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
     # Plot some faces and their reconstructions
-    par(mfcol=c(2,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+    par(mfcol=c(2,10), mar=c(0, 1, 0, 0), oma=c(0,0,0,0))
     for(k in 1:K){
       plot_face(res$W[,k])
       plot_face(pca$x[,k])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries.png)
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries.png)*Dictionaries obtained with NMF (above) and PCA (below)*
 
 Finally, let's see how good the reconstruction is, and let us compare
 with a PCA:
@@ -233,14 +232,15 @@ with a PCA:
     V_hat <- res$W %*% res$H
 
     # Plot some faces and their reconstructions
-    par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+    par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0))
     for(i in sample(ncol(V),10)){
       plot_face(V[,i])
       plot_face(V_hat[,i])
       plot_face(V_hat_pca[,i])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions.png)
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions.png)*Reconstructions obtained with NMF (above) and PCA (below)*
+
 Note that the quality of our reconstruction depends on the chosen number
 of latent dimensions or components *K* (the larger, the more expressive
 our dictionary basis), the convergence (we can try a bunch more of
@@ -250,24 +250,9 @@ for Poisson data, PCA for Gaussian data).
 Final remarks
 -------------
 
-The algorithm presented in this post was the one who triggered the
-interested in NMF in 1999. However, the story continued for the next
-years and until today, taking different research avenues.
+The algorithm presented in this post was the one who triggered the interested in NMF in 1999. However, the story continued for the next years and until today, taking different research avenues. 
 
-In one of these avenues researchers proposed NMF algorithms to minimize
-other cost functions and assuming other likelihoods beyond Poisson and
-Gaussian. In another one, someone realized that there are some
-conections between some cost functions and some likelihoods: for
-instance, the KL minimization in this post is equivalent to find the MLE
-estimator assuming our data come from a Poisson distribution with mean
-*W**H*.
+In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. At some point, someone realized that there are some conections between cost functions and  likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean *WH*. 
+On the probabilistic side, Bayesians consider W and H as random latent variables, and instead of trying to find point extimators for *W,H* they infer a posterior distribution over each of them. 
 
-In another avenue, people consider W and H as random latent variables,
-and instead of trying to find point extimators for *W*, *H* they infer a
-posterior distribution over each of them.
-
-Finally, scalability is another important issue nowadays: people are
-playing with optimization algorithms that use a subsample of the data at
-each iteration (Stochastic Gradient Descent, Stochastic Variational
-Inference,...) so that iterations are computationally cheaper while
-keeping good convergence properties in terms of number of iterations.
+Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
