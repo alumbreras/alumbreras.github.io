@@ -245,7 +245,7 @@ other cost functions and assuming other likelihoods beyond Poisson and
 Gaussian. At some point, someone realized that there are some conections
 between cost functions and likelihoods: for instance, the KL
 minimization in this post is equivalent to find the MLE estimator
-assuming our data come from a Poisson distribution with mean *W**H*. 
+assuming our data come from a Poisson distribution with mean *WH*. 
 
 On the probabilistic side, Bayesians consider W and H as random latent
 variables, and instead of trying to find point extimators for *W*, *H*
