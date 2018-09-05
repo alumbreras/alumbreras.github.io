@@ -142,7 +142,7 @@ for(i in sample(400,200)){
 ```
 
 Now we call our NMF algorithm using this dataset as input. Let say we want to use
-*K=10* latent dimensions, or dictionary basis.
+*K=100* latent dimensions, or dictionary basis.
 
 ```{r execute, include = TRUE}
 #V <- V[,1:10] #faces[,sample(400,100)]
@@ -154,7 +154,7 @@ H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N)
 res <- nmf_Lee(V, K, W, H, maxiters = 200)
 ```
 
-Did the algorithm convergence? The KL divergence is improving slowly after 100 iterations, so we will stop here.
+Did the algorithm converge? The KL divergence is improving slowly after 200 iterations, so we will stop here.
 
 ```{r convergence, include = TRUE}
 plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")

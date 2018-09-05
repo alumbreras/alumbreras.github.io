@@ -171,7 +171,7 @@ dataset consists of 10 black and white photos of each member of a group
 ![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset-1.png)
 
 Now we call our NMF algorithm using this dataset as input. Let say we
-want to use *K=10* latent dimensions, or dictionary basis.
+want to use *K=100* latent dimensions, or dictionary basis.
 
     F <- nrow(V)
     N <- ncol(V)
@@ -181,7 +181,7 @@ want to use *K=10* latent dimensions, or dictionary basis.
     res <- nmf_Lee(V, K, W, H, maxiters = 200)
 
 Did the algorithm convergence? The KL divergence is improving slowly
-after 100 iterations, so we will stop here.
+after 200 iterations, so we will stop here.
 
     plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 
@@ -205,8 +205,7 @@ dictionary of a PCA:
 
 ![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries-1.png)*Dictionaries obtained with NMF (above) and PCA (below)*
 
-Note that, while PCA tends to create "holistic" bases, NMF prefers bases that focus on different parts of the face, which makes NMF more easy to interpret. Finally, let's see how good the reconstruction is, and let us compare
-with a PCA:
+Note that, while PCA tends to create "holistic" bases, NMF prefers bases that focus on different parts of the face, which makes NMF more easy to interpret. Finally, let's see how good the reconstruction is, and let us compare with a PCA:
 
     # PCA
     mu    <- colMeans(V)
