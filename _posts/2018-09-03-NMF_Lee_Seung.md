@@ -171,8 +171,7 @@ dataset consists of 10 black and white photos of each member of a group
       image(t(m[112:1,]), asp=112/92, axes = FALSE, col=gray(0:255/255))
     }
 
-    # Plot some faces
-    par(mfrow=c(2,3), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+    par(mfrow=c(2,3), mar=c(1, 1, 1, 1), oma=c(0,0,0,0))
     for(i in sample(400,6)){
       plot_face(V[,i])
     }
@@ -217,7 +216,7 @@ dictionary of a PCA:
     V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
     # Plot some faces and their reconstructions
-    par(mfcol=c(2,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+    par(mfcol=c(2,10), mar=c(0, 1, 0, 0), oma=c(0,0,0,0))
     for(k in 1:K){
       plot_face(res$W[,k])
       plot_face(pca$x[,k])

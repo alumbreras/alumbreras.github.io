@@ -150,7 +150,7 @@ plot_face <- function(arr10304){
 }
 
 # Plot some faces
-par(mfrow=c(2,3), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+par(mfrow=c(2,3), mar=c(1, 1, 1, 1), oma=c(0,0,0,0))
 for(i in sample(400,6)){
   plot_face(V[,i])
 }
@@ -176,13 +176,14 @@ plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 ```
 
 Let's see how does our dictionary look like, and let's compare with the dictionary of a PCA:
-```{r dictionaries, include = TRUE}
+```{r dictionaries, fig.height=3, fig.width=10, include=TRUE}
 # PCA 
 pca   <- prcomp(V)
 V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
-# Plot some faces and their reconstructions
-par(mfcol=c(2,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+# Plot some faces and their reconstrctions
+par(mfcol=c(2,10), mar=c(0, 1, 0, 0), oma=c(0,0,0,0))
+
 for(k in 1:K){
   plot_face(res$W[,k])
   plot_face(pca$x[,k])
@@ -191,7 +192,7 @@ for(k in 1:K){
 
 Finally, let's see how good the reconstruction is, and let us compare with a PCA:
 
-```{r reconstructions, include = TRUE}
+```{r reconstructions, fig.height=5, fig.width=10, include=TRUE}
 # PCA
 mu    <- colMeans(V)
 pca   <- prcomp(V)
@@ -203,7 +204,7 @@ V_hat_pca  <- scale(V_hat_pca, center = -mu, scale = FALSE)
 V_hat <- res$W %*% res$H
 
 # Plot some faces and their reconstructions
-par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0))
 for(i in sample(ncol(V),10)){
   plot_face(V[,i])
   plot_face(V_hat[,i])
