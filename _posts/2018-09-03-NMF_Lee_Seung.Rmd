@@ -1,18 +1,20 @@
 ---
 title: "Non-negative Matrix Factorization (Lee and Seung algorithm)"
-output: html_notebook
+layout: post
+date: 03-09-2017
+output: md_document
 ---
 
 ## Introduction
 [Nonnegative Matrix Factorization (NMF)](https://www.nature.com/articles/44565) is a technique that tries to approximate a 
-nonnegative matrix $V$ (with $F \times N$ dimensions) into the product of two smaller 
-(also nonnegative) matrices $W$ ($F \times K$) and $H$ ($K \times N$).
+nonnegative matrix *V* (with \[F \times N\] dimensions) into the product of two smaller 
+(also nonnegative) matrices *W* (\[F \times K\]) and *H* (\[K \times N\]).
 
 For those familiar with PCA, NMF is a sort of PCA with nonnegative (and therefore more
 easy to interpret by humans) basis. Moreover, these basis do not need to be orthogonal.
 
-One of my favorite applications of NMF is in recomender systems. If $V$ contains some ratings of 
-users to movies ($F$ users and $N$ movies), $W$ will contain the atraction of a each user to each topic, and $H$ will contain the amount of each topic in each movie. This decomposition 
+One of my favorite applications of NMF is in recomender systems. If *V* contains some ratings of 
+users to movies (*F* users and *N* movies), *W* will contain the atraction of a each user to each topic, and *H* will contain the amount of each topic in each movie. This decomposition 
 is a compressed version of the original matrix. Moreover, once we have this information we can easily guess, by a simple multiplication, the rating of a user to an unrated movie. 
 
 ## Implementing a NMF algorithm
@@ -20,15 +22,21 @@ is a compressed version of the original matrix. Moreover, once we have this info
 The first NMF algorithm was derived by [Lee and Seung](https://papers.nips.cc/paper/1861-algorithms-for-non-negative-matrix-factorization.pdf). The thing is that, before
 deriving our NMF algorithm, we have to choose a distance metric to assess the quality of the approximation 
 
-$$V \approx W H$$
+\begin{equation}
+V \approx W H
+\end{equation}
+
 Lee and Seung considered two cost functions. The Euclidean and the generalized Kullback-Leiberg (KL), also known as the I-divergence. In this post we will work with the (generalized) KL divergence. We want to find the decomposition that  minimizes the KL divergence
-$$
-\underset{W,H}{\operatorname{argmin}} D_{KL}(V || WH)\\
-$$
+
+\begin{equation}
+\underset{W,H}{\operatorname{argmin}} D_{KL}(V || WH)
+\end{equation}
+
 where the KL divergence is defined as
-$$
+
+\begin{equation}
 D_{KL}(A || B) = \sum_{ij} \left( A_{ij} \log \frac{A_{ij}}{B_{ij} } - A_{ij}  + B_{ij}\right)
-$$
+\end{equation}
 
 The idea is to optimize W given H, then H given W and so on until the algorithm converges. A typical option is Gradient Descent, but convergence can be slow. Instead, Lee and Seung proposed Minorize-Maximization (MM) strategy. The idea of MM is to use an *auxiliary function*. We say that $G(h, h')$ is an auxiliary function of $F(h)$ if $G(h, h')$ is equal or greater than $F(h)$ everywhere and $G(h, h) = F(h)$. Note that, when the first parameter is fixed $G(h, h')$ is a curve. The first parameter tell us the point where it touches $F$. If we can design such a function, we can find the $h_{min}$ at each step and then updating the curve to $G(h_{min}, h')$ until we reach a minimum.  
 
@@ -38,18 +46,18 @@ The idea is to optimize W given H, then H given W and so on until the algorithm 
 
 In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung provide an auxiliary function which can be easily minimized. Doing this for $W$ and $H$ we obtain the classic NMF updates:
 
-$$
+\begin{equation}
 W_{fk} \leftarrow W_{fk} \frac{\sum_{n} H_{kn} \frac{V_{fn}}{[WH]_{fn}}}{\sum_n H_{kn}},
 \qquad
 H_{kn} \leftarrow H_{kn} \frac{\sum_{f} W_{fk} \frac{V_{fn}}{[WH]_{fn}}}{\sum_f W_{fk}}
-$$
+\end{equation}
 
 
 Recall that the updates are supposed to minimize the KL divergence between the approximation
 and the true matrix. To monitorize this, let us code a function that computes
 the KL divergence:
 
-```{r}
+```{r computeKL}
 #' @title Compute the KL divergence 
 #' @param A first matrix
 #' @param B second matrix
@@ -69,8 +77,9 @@ KL_divergence_Lee <- function(A, B){
 }
 ```
 
-Now we can write the algorithm, which iteratively updates W and H until convergence:
-```{r}
+Now we can write the algorithm, which iteratively updates *W* and *H* until convergence:
+
+```{r NMF}
 #' @title NMF with Lee and Saung multiplicative updates
 #' @param V matrix to factorize
 #' @param K number of latent factors (or dimensions)
@@ -78,9 +87,6 @@ Now we can write the algorithm, which iteratively updates W and H until converge
 #' @param H initial H matrix
 #' @param maxiters maximum number of iterations
 #' @details The number of iterations is set to maxiters.
-#' In the future, there should be a convergence check in case
-#' the KL converges before maxiters
-#' TODO: make faster updates
 nmf_Lee <- function(V, K, W, H, maxiters = 100){
   F <- nrow(V)
   N <- ncol(V)
@@ -119,7 +125,7 @@ nmf_Lee <- function(V, K, W, H, maxiters = 100){
 To play with our code, let us download the ATT Faces dataset. The dataset consists
 of 10 black and white photos of each member of a group 40 individuals. 400 images in total.
 
-```{r}
+```{r dataset, include = TRUE}
 library(pixmap)
 
 url <- "http://www.cl.cam.ac.uk/Research/DTG/attarchive/pub/data/att_faces.zip"
@@ -144,7 +150,7 @@ plot_face <- function(arr10304){
 }
 
 # Plot some faces
-par(mfrow=c(1,3), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+par(mfrow=c(2,3), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
 for(i in sample(400,6)){
   plot_face(V[,i])
 }
@@ -152,51 +158,68 @@ for(i in sample(400,6)){
 ```
 
 Now we call our NMF algorithm using this dataset as input. Let say we want to use
-$K=10$ latent dimensions, or dictionary basis.
-```{r}
-V <- faces# faces[,sample(400,100)]
+*K=10* latent dimensions, or dictionary basis.
+
+```{r execute, include = TRUE}
+V <- V[,1:10] #faces[,sample(400,100)]
 F <- nrow(V)
 N <- ncol(V)
 K = 10
 W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
 H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
-res <- nmf_Lee(V, K, W, H, maxiters = 100)
+res <- nmf_Lee(V, K, W, H, maxiters = 10)
 ```
 
 Did the algorithm convergence? The KL divergence is improving slowly after 100 iterations, so we will stop here.
-```{r}
+```{r convergence, include = TRUE}
 plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 ```
 
-Let's see how does our dictionary look like:
-```{r}
-# Plot some faces and their reconstructions
-par(mfcol=c(1,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
-for(k in 1:K){
-  plot_face(res$W[,k])
-}
-```
-
-Finally, let's see how good the reconstruction is
-```{r}
-V_hat <- res$W %*% res$H
+Let's see how does our dictionary look like, and let's compare with the dictionary of a PCA:
+```{r dictionaries, include = TRUE}
+# PCA 
+pca   <- prcomp(V)
+V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
 # Plot some faces and their reconstructions
 par(mfcol=c(2,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
-for(i in sample(ncol(V),10)){
-  plot_face(V[,i])
-  plot_face(V_hat[,i])
+for(k in 1:K){
+  plot_face(res$W[,k])
+  plot_face(pca$x[,k])
 }
 ```
 
-Funny, but not amazing. This can be due to many reasons:
+Finally, let's see how good the reconstruction is, and let us compare with a PCA:
 
- * Bad (too small) choice of $K$: K is the size of our base. The larger, the easiest it is to generate any point in the space. 
- * Convergence: We can be patient and make more than 100 iterations.
- * Bad model: KL a reasonable choice when our data comes from a Poisson distribution. Maybe other cost functions are more appropiae for this data.
+```{r reconstructions, include = TRUE}
+# PCA
+mu    <- colMeans(V)
+pca   <- prcomp(V)
+Kpca <- 10
+V_hat_pca  <- pca$x[,1:Kpca] %*% t(pca$rotation[,1:Kpca])
+V_hat_pca  <- scale(V_hat_pca, center = -mu, scale = FALSE)
+
+# NMF reconstruction
+V_hat <- res$W %*% res$H
+
+# Plot some faces and their reconstructions
+par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
+for(i in sample(ncol(V),10)){
+  plot_face(V[,i])
+  plot_face(V_hat[,i])
+  plot_face(V_hat_pca[,i])
+}
+```
+Note that the quality of our reconstruction depends on the chosen number of latent dimensions or components $K$ (the larger, the more expressive our dictionary basis), the convergence (we can try a bunch more of iterations) and the quality of the model to the data (KL is appropiate for Poisson data, PCA for Gaussian data).
 
 ## Final remarks
 
-The algorithm presented in this post was the one who triggered the interested in NMF.
-However, the story continued for the next years and until today, taking different research avenues. In one of these avenues researchers propose NMF algorithms to minimize other cost functions. In another one, someone realized that there are some conections between some cost functions and some likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean $WH$. In another avenue, people consider W and H as random latent variables, and instead of trying to find point extimators for W,H they infer a posterior distribution over each of them. Scalability is, of course, another important issue nowadays: algorithms such as Stochastic Variational Inference and Stochastic Gradient Descent are are being proposed to deal with huge matrices.  
+The algorithm presented in this post was the one who triggered the interested in NMF in 1999.
+However, the story continued for the next years and until today, taking different research avenues. 
+
+In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. In another one, someone realized that there are some conections between some cost functions and some likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean $WH$. 
+
+In another avenue, people consider W and H as random latent variables, and instead of trying to find point extimators for $W,H$ they infer a posterior distribution over each of them. 
+
+Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference,...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
 

@@ -1,0 +1,2 @@
+Put images in 
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset.png)
