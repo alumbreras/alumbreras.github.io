@@ -72,16 +72,16 @@ In our case, *F*(*h*) is a KL divergence. In their paper, Lee and Seung
 provide an auxiliary function which can be easily minimized. Doing this
 for *W* and *H* we obtain the classic NMF updates:
 
-\begin{equation}
+$$
 W_{fk} \leftarrow W_{fk}
 \frac
-{\sum_{n} H_{kn} \frac{V_{fn}}{[WH]_{fn}}}
+{\sum_n H_{kn} \frac{V_{fn}}{[WH]_{fn}}}
 {\sum_n H_{kn}},
 \qquad 
 H_{kn} \leftarrow H_{kn} 
-\frac{\sum_{f} W_{fk} \frac{V_{fn}}{[WH]_{fn}}}
+\frac{\sum_f W_{fk} \frac{V_{fn}}{[WH]_{fn}}}
 {\sum_f W_{fk}}
-\end{equation}
+$$
 
 Recall that the updates are supposed to minimize the KL divergence
 between the approximation and the true matrix. To monitorize this, let
@@ -188,28 +188,16 @@ dataset consists of 10 black and white photos of each member of a group
 Now we call our NMF algorithm using this dataset as input. Let say we
 want to use *K=10* latent dimensions, or dictionary basis.
 
-    V <- V[,1:10] #faces[,sample(400,100)]
-    F <- nrow(V)
-    N <- ncol(V)
-    K = 10
-    W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
-    H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
-    res <- nmf_Lee(V, K, W, H, maxiters = 10)
+	F <- nrow(V)
+	N <- ncol(V)
+	K = 10
+	W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
+	H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
+	res <- nmf_Lee(V, K, W, H, maxiters = 200))
 
-    ## 
-    ##  iteration: 1 / 10
-    ##  iteration: 2 / 10
-    ##  iteration: 3 / 10
-    ##  iteration: 4 / 10
-    ##  iteration: 5 / 10
-    ##  iteration: 6 / 10
-    ##  iteration: 7 / 10
-    ##  iteration: 8 / 10
-    ##  iteration: 9 / 10
-    ##  iteration: 10 / 10
 
 Did the algorithm convergence? The KL divergence is improving slowly
-after 100 iterations, so we will stop here.
+after 200 iterations, so we will stop here.
 
     plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 
