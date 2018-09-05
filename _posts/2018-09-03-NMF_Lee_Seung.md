@@ -252,7 +252,10 @@ Final remarks
 
 The algorithm presented in this post was the one who triggered the interested in NMF in 1999. However, the story continued for the next years and until today, taking different research avenues. 
 
+
 In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. At some point, someone realized that there are some conections between cost functions and  likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean *WH*. 
+
 On the probabilistic side, Bayesians consider W and H as random latent variables, and instead of trying to find point extimators for *W,H* they infer a posterior distribution over each of them. 
+
 
 Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
