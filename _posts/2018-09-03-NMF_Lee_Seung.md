@@ -173,7 +173,6 @@ dataset consists of 10 black and white photos of each member of a group
 Now we call our NMF algorithm using this dataset as input. Let say we
 want to use *K=10* latent dimensions, or dictionary basis.
 
-    #V <- V[,1:10] #faces[,sample(400,100)]
     F <- nrow(V)
     N <- ncol(V)
     K = 100
