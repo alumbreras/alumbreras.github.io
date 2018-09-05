@@ -73,10 +73,16 @@ provide an auxiliary function which can be easily minimized. Doing this
 for *W* and *H* we obtain the classic NMF updates:
 
 \begin{equation}
-W_{fk} \leftarrow W_{fk} \frac{\sum_{n} H_{kn} \frac{V_{fn}}{[WH]_{fn}}}{\sum_n H_{kn}},
-\qquad
-H_{kn} \leftarrow H_{kn} \frac{\sum_{f} W_{fk} \frac{V_{fn}}{[WH]_{fn}}}{\sum_f W_{fk}}
+W_{fk} \leftarrow W_{fk}
+\frac
+{\sum_{n} H_{kn} \frac{V_{fn}}{[WH]_{fn}}}
+{\sum_n H_{kn}},
+\qquad 
+H_{kn} \leftarrow H_{kn} 
+\frac{\sum_{f} W_{fk} \frac{V_{fn}}{[WH]_{fn}}}
+{\sum_f W_{fk}}
 \end{equation}
+
 Recall that the updates are supposed to minimize the KL divergence
 between the approximation and the true matrix. To monitorize this, let
 us code a function that computes the KL divergence:

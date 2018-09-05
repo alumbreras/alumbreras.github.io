@@ -46,11 +46,16 @@ The idea is to optimize W given H, then H given W and so on until the algorithm 
 
 In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung provide an auxiliary function which can be easily minimized. Doing this for $W$ and $H$ we obtain the classic NMF updates:
 
-\begin{equation}
-W_{fk} \leftarrow W_{fk} \frac{\sum_{n} H_{kn} \frac{V_{fn}}{[WH]_{fn}}}{\sum_n H_{kn}},
-\qquad
-H_{kn} \leftarrow H_{kn} \frac{\sum_{f} W_{fk} \frac{V_{fn}}{[WH]_{fn}}}{\sum_f W_{fk}}
-\end{equation}
+$$
+W_{fk} \leftarrow W_{fk}
+\frac
+{\sum_n H_{kn} \frac{V_{fn}}{[WH]_{fn}}}
+{\sum_n H_{kn}},
+\qquad 
+H_{kn} \leftarrow H_{kn} 
+\frac{\sum_f W_{fk} \frac{V_{fn}}{[WH]_{fn}}}
+{\sum_f W_{fk}}
+$$
 
 
 Recall that the updates are supposed to minimize the KL divergence between the approximation
@@ -161,13 +166,13 @@ Now we call our NMF algorithm using this dataset as input. Let say we want to us
 *K=10* latent dimensions, or dictionary basis.
 
 ```{r execute, include = TRUE}
-V <- V[,1:10] #faces[,sample(400,100)]
+#V <- V[,1:10] #faces[,sample(400,100)]
 F <- nrow(V)
 N <- ncol(V)
 K = 10
 W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
 H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
-res <- nmf_Lee(V, K, W, H, maxiters = 10)
+res <- nmf_Lee(V, K, W, H, maxiters = 200)
 ```
 
 Did the algorithm convergence? The KL divergence is improving slowly after 100 iterations, so we will stop here.
