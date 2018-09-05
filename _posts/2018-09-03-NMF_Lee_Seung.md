@@ -70,7 +70,7 @@ curve to *G*(*h*<sub>*m**i**n*</sub>, *h*′) until we reach a minimum.
 </p>
 In our case, *F*(*h*) is a KL divergence. In their paper, Lee and Seung
 provide an auxiliary function which can be easily minimized. Doing this
-for *W* and *H* we obtain the classic NMF updates:
+for *W* and *H* they obtain the popular NMF updates:
 
 $$
 W_{fk} \leftarrow W_{fk}

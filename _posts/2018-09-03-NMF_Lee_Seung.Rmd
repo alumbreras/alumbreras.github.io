@@ -38,7 +38,7 @@ The idea is to optimize W given H, then H given W and so on until the algorithm 
  <img src="../assets/fig17_MM_LeeSeung.png" style="width:650px;height:300px;">
 </p>
 
-In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung provide an auxiliary function which can be easily minimized. Doing this for $W$ and $H$ we obtain the classic NMF updates:
+In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung provide an auxiliary function which can be easily minimized. Doing this for $W$ and $H$ they obtain the classic NMF updates:
 
 $$
 W_{fk} \leftarrow W_{fk}
