@@ -66,11 +66,11 @@ can find the *h*<sub>*m**i**n*</sub> at each step and then updating the
 curve to *G*(*h*<sub>*m**i**n*</sub>, *h*′) until we reach a minimum.
 
 <p style="text-align:center;">
-<img src="../assets/fig17_MM_LeeSeung.png" style="width:650px;height:300px;min-width:600px;">
+<img src="../assets/fig17_MM_LeeSeung.png" style="width:650px;height:300px;">
 </p>
 In our case, *F*(*h*) is a KL divergence. In their paper, Lee and Seung
 provide an auxiliary function which can be easily minimized. Doing this
-for *W* and *H* they obtain the popular NMF updates:
+for *W* and *H* they obtain the classic NMF updates:
 
 $$
 W_{fk} \leftarrow W_{fk}
@@ -84,24 +84,16 @@ H_{kn} \leftarrow H_{kn}
 $$
 
 Recall that the updates are supposed to minimize the KL divergence
-between the approximation and the true matrix. To monitorize this, let us code an R function that computes the KL divergence:
+between the approximation and the true matrix. To monitorize this, let
+us code an R function that computes the KL divergence:
 
-    #' @title Compute the KL divergence 
+    #' @title Compute the KL divergence (fast version)
     #' @param A first matrix
     #' @param B second matrix
     #' @details This function is useful for debugging
     KL_divergence_Lee <- function(A, B){
-      I <- dim(V)[1]
-      J <- dim(V)[2]
-      total <- 0
-      for(i in 1:I){
-        for(j in 1:J){
-          if (A[i,j] == 0) next
-          if ((B[i,j]) == 0 && (A[i,j] > 0)) return(Inf)
-          total <- total + A[i,j]*log(A[i,j]/B[i,j]) - A[i,j] + B[i,j]
-        }
-      }
-      total
+      eps <- 1e-6
+      sum(A*log((A + eps)/ (B + eps)) - A + B)
     }
 
 Now we can write the algorithm, which iteratively updates *W* and *H*
@@ -117,30 +109,24 @@ until convergence:
     nmf_Lee <- function(V, K, W, H, maxiters = 100){
       F <- nrow(V)
       N <- ncol(V)
+      eps = 1e-05
+      
+      unit_f <- matrix(1, ncol=1, nrow=F)
+      unit_n <- matrix(1, ncol=1, nrow=N)
       
       KLlog <- rep(NA, maxiters)
       for (i in 1:maxiters){
         cat("\n iteration:", i, "/", maxiters)
+
+        # update W (matricial)
+        # matlab: W = W .* ((V./(W*H + options.myeps))*H')./(ones(m,1)*sum(H'));
+        W <- W * ((V / (W%*%H + eps)) %*% t(H)) / (unit_f %*% rowSums(H))
         
-        # update H
-        for(k in 1:K){
-          denominator <- sum(W[,k])
-          for(n in 1:N){
-            numerator <- sum(W[,k]*V[,n]/(W%*%H[,n]), na.rm = TRUE)
-            if(denominator == 0) stop("W matrix with zero-sum column")
-            H[k,n] <- H[k,n] * numerator/denominator
-          }
-        }
+        #update H (matricial)
+        # matlab: H = H .* (W'*(V./(W*H + options.myeps)))./(sum(W)'*ones(1,n));
+        H <- H * (t(W) %*% (V / (W%*%H + eps))) / (colSums(W) %*% t(unit_n))
         
-        # update W
-        for(k in 1:K){
-          denominator <- sum(H[k,])
-          for(f in 1:F){
-              numerator <- sum(H[k,] * V[f,]/(W[f,]%*%H), na.rm = TRUE)
-              if(denominator == 0) stop("H matrix with zero-sum column")
-              W[f,k] <- W[f,k] * numerator/denominator
-          }
-        }
+        # Trace KL divergence
         KLlog[[i]] <- KL_divergence_Lee(V, W%*%H)
       }
       list(W=W, H=H, KLlog = KLlog)
@@ -171,36 +157,36 @@ dataset consists of 10 black and white photos of each member of a group
 
     #'@title Plot a face
     #'@details Given a vectorized image, reconstruct its matrix and plot it
-    plot_face <- function(arr10304){
+    plot_face <- function(arr10304, col=gray(0:255/255)){
       m <- matrix(arr10304, ncol=92,  nrow = 112)
-      image(t(m[112:1,]), asp=112/92, axes = FALSE, col=gray(0:255/255))
+      image(t(m[112:1,]), asp=112/92, axes = FALSE, col=col)
     }
 
     # Plot some faces
-    par(mfrow=c(2,3), mar=c(0,0,0,0), oma=c(0,0,0,0), oma=c(12,0,0,0))
-    for(i in sample(400,6)){
+    par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
+    for(i in sample(400,200)){
       plot_face(V[,i])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset.png)
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset-1.png)
 
 Now we call our NMF algorithm using this dataset as input. Let say we
 want to use *K=10* latent dimensions, or dictionary basis.
 
-	F <- nrow(V)
-	N <- ncol(V)
-	K = 10
-	W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
-	H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
-	res <- nmf_Lee(V, K, W, H, maxiters = 200))
-
+    #V <- V[,1:10] #faces[,sample(400,100)]
+    F <- nrow(V)
+    N <- ncol(V)
+    K = 100
+    W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
+    H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
+    res <- nmf_Lee(V, K, W, H, maxiters = 200)
 
 Did the algorithm convergence? The KL divergence is improving slowly
-after 200 iterations, so we will stop here.
+after 100 iterations, so we will stop here.
 
     plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/convergence.png)
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/convergence-1.png)
 
 Let's see how does our dictionary look like, and let's compare with the
 dictionary of a PCA:
@@ -209,22 +195,24 @@ dictionary of a PCA:
     pca   <- prcomp(V)
     V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
-    # Plot some faces and their reconstructions
-    par(mfcol=c(2,10), mar=c(0, 1, 0, 0), oma=c(0,0,0,0))
-    for(k in 1:K){
-      plot_face(res$W[,k])
-      plot_face(pca$x[,k])
+    # Plot some faces and their reconstrctions
+    par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
+    for(k in 1:100){
+      plot_face(res$W[,k], col = heat.colors(255))
+    }
+    for(k in 1:100){
+      plot_face(pca$x[,k], col = heat.colors(255))
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries.png)*Dictionaries obtained with NMF (above) and PCA (below)*
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries-1.png)*Dictionaries obtained with NMF (above) and PCA (below)*
 
-Finally, let's see how good the reconstruction is, and let us compare
+Note that, while PCA tends to create "holistic" bases, NMF prefers bases that focus on different parts of the face, which makes NMF more easy to interpret. Finally, let's see how good the reconstruction is, and let us compare
 with a PCA:
 
     # PCA
     mu    <- colMeans(V)
     pca   <- prcomp(V)
-    Kpca <- 10
+    Kpca <- K
     V_hat_pca  <- pca$x[,1:Kpca] %*% t(pca$rotation[,1:Kpca])
     V_hat_pca  <- scale(V_hat_pca, center = -mu, scale = FALSE)
 
@@ -232,14 +220,14 @@ with a PCA:
     V_hat <- res$W %*% res$H
 
     # Plot some faces and their reconstructions
-    par(mfcol=c(3,10), mar=c(0,0,0,0), oma=c(0,0,0,0))
+    par(mfcol=c(3,10), mar=c(0,1,0,0), oma=c(0,0,0,0))
     for(i in sample(ncol(V),10)){
       plot_face(V[,i])
       plot_face(V_hat[,i])
       plot_face(V_hat_pca[,i])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions.png)*Reconstructions obtained with NMF (above) and PCA (below)*
+![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions-1.png)*Reconstructions obtained with NMF (above) and PCA (below)*
 
 Note that the quality of our reconstruction depends on the chosen number
 of latent dimensions or components *K* (the larger, the more expressive
@@ -250,12 +238,23 @@ for Poisson data, PCA for Gaussian data).
 Final remarks
 -------------
 
-The algorithm presented in this post was the one who triggered the interested in NMF in 1999. However, the story continued for the next years and until today, taking different research avenues. 
+The algorithm presented in this post was the one who triggered the
+interested in NMF in 1999. However, the story continued for the next
+years and until today, taking different research avenues.
 
+In one of these avenues researchers proposed NMF algorithms to minimize
+other cost functions and assuming other likelihoods beyond Poisson and
+Gaussian. At some point, someone realized that there are some conections
+between cost functions and likelihoods: for instance, the KL
+minimization in this post is equivalent to find the MLE estimator
+assuming our data come from a Poisson distribution with mean *W**H*. 
 
-In one of these avenues researchers proposed NMF algorithms to minimize other cost functions and assuming other likelihoods beyond Poisson and Gaussian. At some point, someone realized that there are some conections between cost functions and  likelihoods: for instance, the KL minimization in this post is equivalent to find the MLE estimator assuming our data come from a Poisson distribution with mean *WH*. 
+On the probabilistic side, Bayesians consider W and H as random latent
+variables, and instead of trying to find point extimators for *W*, *H*
+they infer a posterior distribution over each of them.
 
-On the probabilistic side, Bayesians consider W and H as random latent variables, and instead of trying to find point extimators for *W,H* they infer a posterior distribution over each of them. 
-
-
-Finally, scalability is another important issue nowadays: people are playing with optimization algorithms that use a subsample of the data at each iteration (Stochastic Gradient Descent, Stochastic Variational Inference...) so that iterations are computationally cheaper while keeping good convergence properties in terms of number of iterations.
+Finally, scalability is another important issue nowadays: people are
+playing with optimization algorithms that use a subsample of the data at
+each iteration (Stochastic Gradient Descent, Stochastic Variational
+Inference...) so that iterations are computationally cheaper while
+keeping good convergence properties in terms of number of iterations.
