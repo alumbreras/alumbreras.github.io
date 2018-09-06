@@ -3,6 +3,7 @@ title: "Non-negative Matrix Factorization (Lee and Seung algorithm)"
 layout: post
 date: 03-09-2017
 output: md_document
+tags: machine learning
 ---
 
 ## Introduction
