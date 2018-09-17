@@ -1,11 +1,3 @@
----
-title: Biased and unbiased estimators
-layout: post
-date: 20-07-2018
-output: md_document
-tags: machine learning
----
-
 Introduction
 ------------
 
@@ -27,22 +19,20 @@ the older individual. Each of these quantities, denoted as *θ* is
 computed as a function *f* that takes the *N* individuals as input and
 returns a quantity. Unfortunatelly, often we cannot access to all the
 individuals, but to *S* samples of the population. An estimator is a
-function $\\hat{\\theta}(x\_1,...x\_S)$ that, taking a subset of
+function $\\\\hat{\\\\theta}(x\\\_1,...x\\\_S)$ that, taking a subset of
 individuals, tries to estimate the real quantity *θ*, i.e.:
 
 \begin{align}
 \hat{\theta}(\mathbf{x}_S) \approx \theta
 \end{align}
-
-The estimator $\\hat{\\theta}$ is a random variable because, while it is
-a (deterministic) function, it is applied over a random sample
+The estimator $\\\\hat{\\\\theta}$ is a random variable because, while
+it is a (deterministic) function, it is applied over a random sample
 **x**<sub>*S*</sub>. Among the different properties of our estimator,
 one the most important is the **bias**, defined as
 
 \begin{align}
 \mathbb{E}[\hat{\theta}] - \theta
 \end{align}
-
 If this difference is zero, then we say that the estimator is unbiased.
 Else, the estimator is biased.
 
@@ -57,7 +47,6 @@ as:
 \begin{align}
 \mathbb{E}[x] = \sum_{n=1}^N x_n p(x_n)
 \end{align}
-
 The expectation is just the *weighted sum* of the outcomes, where the
 weights are given by the probability of each outcome *x\_n*. The
 expectation is a deterministic value, not random, since it is a
@@ -70,7 +59,6 @@ the original population according to that distribution:
 \begin{align}
 x_s \sim p(x)
 \end{align}
-
 The question is whether we can propose an unbiased estimator of the real
 expectation. The classic estimator of a mean is the *sample mean*, that
 is:
@@ -86,7 +74,6 @@ We can easily checked that this estimator is unbiased:
 \frac{1}{S} \mathbb{E} [x_s] =
 \mathbb{E} [x] 
 \end{align}
-
 Let's play with a toy example where our variable comes from a Gaussian
 distribution centered at 1. We will plot the true distribution, the
 samples used for the estimator, and the value of the estimator.
@@ -122,7 +109,8 @@ samples used for the estimator, and the value of the estimator.
 
 ![](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
-*Sample points from an infinite population, and its estimated mean. The curve shows the true underlying distribution, with its mean in zero.*
+*Sample points from an infinite population, and its estimated mean. The
+curve shows the true underlying distribution, with its mean in zero.*
 
 It looks unbiased, but is this real? That is, will my estimator move
 around the true mean value if I repeat the experiments (with different
@@ -153,8 +141,9 @@ distance to the true value decreases).
 Estimation of the log of the mean
 ---------------------------------
 
-Imagine now that we want to estimate the log of the expectation
-log𝔼\[*x*\], defined as
+Imagine now that we want to estimate the log of the expectation log𝔼
+\**x*\*
+, defined as
 
 \begin{align}
 \log \mathbb{E}[x] = \log\left( \sum_{n=1}^N x_n p(x_n) \right)
@@ -175,7 +164,6 @@ And now let's see whether it is biased or unbiased (we will use
 =
 \log \mathbb{E}[x]
 \end{align}
-
 This estimator is biased and, more specifically, it underestimates the
 true value. Note, however, that the equality in the middle of the
 equation holds when the inside term is not a random variable but a
@@ -214,10 +202,10 @@ true value is the log of the mean, hence 0.
       ylim(c(0,0.5))+
       theme_bw()
 
-
 ![](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-3-1.png)
-*Probability density, some samples from it and the estimator of the log of the mean*
-Finally let's see what happens if we repeat the experiment many times.
+*Probability density, some samples from it and the estimator of the log
+of the mean* Finally let's see what happens if we repeat the experiment
+many times.
 
     # Estimate many times to analyze bias
     n_reps <- 10000
