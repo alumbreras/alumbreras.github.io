@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Installing Spark in Ubuntu 18.04
+title: Installing Spark on Ubuntu 18.04
 tags: big data
 ---
 
-This post contains the steps that I followed to install Spark in my Ubuntu 18.04 (Bionic). I first tried with the pre-build verstion available in their site, but when I tried to play with it it threw an error. After that, I tried with the more *serious* alternatives: installatation with Maven, wich did not work either, and with SBT, which worked after some hours of struggle.
+This post contains the steps that I followed to install Spark on my Ubuntu 18.04 (Bionic). I first tried with the pre-build verstion available in their site, but when I tried to play with it it threw an error. After that, I tried with the more *serious* alternatives: installatation with Maven, wich did not work either, and with SBT, which worked after some hours of struggle.
 
 
 First thing is to download and extract the .tgz file from [the official website](http://spark.apache.org/downloads.html)
