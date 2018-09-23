@@ -1,0 +1,13 @@
+---
+title: Generative Adversarial Networks
+layout: post
+date: 11-09-2018
+output: md_document
+tags: machine learning
+---
+
+## Introduction
+
+In statistics, we often hear that an estimator is biased or unbiased. In this post, I will introduce the definition of bias and then I will work through a couple of 
+examples (with R code!). I will always consider that we want to approximate an expectation, since this is a very common problem in Machine Learning. However, the same ideas can be applied to estimations of other quantities (e.g.: higher moments such as variances).
+
