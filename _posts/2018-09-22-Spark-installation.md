@@ -20,7 +20,7 @@ Check that we have Java 8 or higher and whether we have the JAVA_HOME environmen
     java --version
     echo $JAVA_HOME
 
-Java 9 might give problems with Spark, so some people install Java 8. Oracle Java 8 is not in the official repositories of Ubuntu 18. Thus, I added the repositories and then installed it.
+Java 9 (the default in Ubuntu 18) might give problems with Spark, so some people install Java 8. Oracle Java 8 is not in the official repositories of Ubuntu 18. Thus, I added the repositories and then installed it.
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
