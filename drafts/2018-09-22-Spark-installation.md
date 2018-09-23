@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Installing Spark in an Ubuntu 18.02
-tags: big data, Spark
+tags: big data
 ---
 
 This post contains the steps that I followed to install Spark in my Ubuntu 18.02. I first tried with the pre-build verstion available in their site, but when I tried to play with it it threw an error. After that, I tried with the more *serious* alternatives: installatation with Maven, wich did not work either, and with SBT, which worked after some hours of struggle.
