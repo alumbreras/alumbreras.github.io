@@ -92,6 +92,8 @@ A second alternative is to let Jupyter notebook be the default shell for pyspark
     export PYSPARK_DRIVER_PYTHON=jupyter
     export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
+## Computing $$\pi$$ with a parallel Monte Carlo
+
 Now we can call pyspark from the command line and write our first program in a notebook. The following code approximates $$\pi$$ using a Monte Carlo algorithm. We draw ramdom points within a unit square and count how many of them fall inside the curve  $$x^2 + y^2$$. We are working in one of the quadrants of a circle with radius 1. The area of the whole circle is, by definition, $$\pi$$. Therefore $$\pi$$ can be approximated as  $$ \pi= 4*s \approx 4 * inside / total$$. The code is
 
     import random
