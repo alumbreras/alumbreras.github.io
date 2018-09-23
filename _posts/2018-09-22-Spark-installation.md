@@ -18,7 +18,7 @@ The first thing is to download and extract the .tgz file from [the official webs
 Check that we have Java 8 or higher and whether we have the JAVA_HOME environment variable adequately defined:
 
     java --version
-    echo $JAVA_HOME$
+    echo $JAVA_HOME
 
 Java 9 might give problems with Spark, so some people install Java 8. Oracle Java 8 is not in the official repositories of Ubuntu 18. Thus, I added the repositories and then installed it.
 
