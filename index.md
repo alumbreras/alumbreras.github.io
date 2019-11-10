@@ -5,7 +5,7 @@ layout: default
 <div class="col-xs-12 col-md-12">
 
 <div class=".col-xs-12 .col-md-4">
-	<img src="./img/Alberto_w.jpg" 
+	<img src="./img/alberto_w.jpg" 
 		class="img-rounded" 
 		style="float: right; margin: 0px 25px 25px 25px;" />
 </div>
