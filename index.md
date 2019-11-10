@@ -15,7 +15,7 @@ layout: default
 	<h2 class="headline">Research Scientist @ Criteo AI Lab</h2>
 	<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris, France</p></h3>
 
-<p> From 2019, I am a Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Bayesian Statistics and Domain Adaptation for Computational Advertising.</p>
+<p> From 2019, I am Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Bayesian Statistics and Domain Adaptation for Computational Advertising.</p>
 
 <p>
 From 2016 to 2018, I was a CNRS postdoctoral researcher
