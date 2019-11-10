@@ -1,35 +1,50 @@
 ---
 layout: default
 ---
-  
-<img src="./img/Alberto.jpg" class="img-rounded" style="float: right; margin: 65px 25px 25px 25px;" />
 
-## Alberto Lumbreras
+<div class="col-xs-12 col-md-12">
 
-<p> I am a CNRS postdoctoral researcher in the <a href = "http://sc.enseeiht.fr/Signal & Communications Group">Signal & Communications Group</a>
-at the <a href="https://www.irit.fr/?lang=fr">Institut de Recherche en Informatique de Toulouse</a>. 
-I work in the <a href="http://projectfactory.irit.fr/">FACTORY</a> project 
-coordinated by <a href="https://www.irit.fr/~Cedric.Fevotte/">Cédric Févotte</a>. 
-My current research is focused on Monte Carlo inference methods for Non-Negative Matrix Factorization.
-
-<p>Previously, I did a PhD in Computer Science in the <a href="http://eric.univ-lyon2.fr/">ERIC Lab</a> 
-at <a href="http://www.univ-lyon2.fr/">Université Lyon 2</a> 
-under the supervision of <a href="http://blogs.univ-tlse2.fr/jouve/">Bertrand Jouve</a> 
-and <a href="http://mediamining.univ-lyon2.fr/people/velcin/">Julien Velcin</a> (2013-2016). 
-I did my thesis (on machine learning and social network analysis) at <a href="http://www.technicolor.com/">Technicolor R&D </a> (Rennes).</p> 
-
-<p>Before that, I got a MSc in Artificial Intelligence from <a href="http://www.upc.edu/?set_language=en">Universitat Politècnica de Catalunya</a> (Barcelona)
-and wrote a <a href="http://www.albertolumbreras.net/files/Lumbreras_MasterThesis.pdf">Master’s Thesis</a> on Trust-Aware Recommender Systems 
-advised by <a href="http://www.lsi.upc.edu/~gavalda/">Ricard Gavaldà</a> (2012).</p>
-
-<p>And before that, I studied Telecommunication Engineering 
-and worked for seven years at <a href="http://tid.es/en/Pages/default.aspx">Telefónica I+D</a> (a.k.a Telefonica Research) 
-as a research engineer. 
-I am also a member of the <a href="http://datanalysis15m.wordpress.com/">Datanalysis15m</a> research group 
-(<a href="http://www.uoc.edu/portal/en/index.html">Universitat Oberta de Catalunya</a>).</p>
-
-<div align="center">
-	<br />
-    <h5>contact:</h5>
-	<p>alberto.lumbreras (at) irit (dot) fr<br /> Toulouse, France</p>
+<div class=".col-xs-12 .col-md-4">
+	<img src="./img/Alberto_w.jpg" 
+		class="img-rounded" 
+		style="float: right; margin: 0px 25px 25px 25px;" />
 </div>
+
+<div class=".col-xs-12 .col-md-8">
+	<h1> Alberto Lumbreras </h1>
+	<h2 class="headline">Research Scientist @ Criteo AI Lab</h2>
+	<h3 class="headline">a.lumbreras (at) criteo (dot) com. <p>Paris, France</p></h3>
+
+<p> From 2019, I am a Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Bayesian Statistics and Domain Adaptation for Computational Advertising.</p>
+
+<p>
+From 2016 to 2018, I was a CNRS postdoctoral researcher
+at <a href="https://www.irit.fr/?lang=fr">IRIT</a>. 
+I worked in the <a href="http://projectfactory.irit.fr/">FACTORY</a> project 
+coordinated by <a href="https://www.irit.fr/~Cedric.Fevotte/">Cédric Févotte</a>, on Probabilistic Non-Negative Matrix Factorization.
+</p>
+
+<p>
+From 2013 to 2016, I did an industrial PhD on Machine learning and Social Network Analysis (<a href="http://www.technicolor.com/">Technicolor R&D </a> & <a href="http://eric.univ-lyon2.fr/">ERIC Lab</a>, <a href="http://www.univ-lyon2.fr/">Université Lyon 2</a>) under the supervision of <a href="http://blogs.univ-tlse2.fr/jouve/">Bertrand Jouve</a> 
+and <a href="http://mediamining.univ-lyon2.fr/people/velcin/">Julien Velcin</a>. 
+</p> 
+
+<p>
+From 2010 to 2012, I worked as the <a href="https://recerca.upc.edu/larca/en">LARCA</a> lab  while studying a MSc in Artificial Intelligence (<a href="http://www.upc.edu/?set_language=en">UPC</a>)
+and wrote a <a href="http://www.albertolumbreras.net/files/Lumbreras_MasterThesis.pdf">Master’s Thesis</a> on Trust-Aware Recommender Systems 
+advised by <a href="http://www.lsi.upc.edu/~gavalda/">Ricard Gavaldà</a> (2012).
+</p>
+
+<p>
+From 2004 to 2010, I worked at <a href="http://tid.es/en/Pages/default.aspx">Telefónica R&D</a> 
+as a Research Engineer. 
+</p>
+
+<p>
+I am also a member of the <a href="http://datanalysis15m.wordpress.com/">Datanalysis15m</a> research group 
+(<a href="http://www.uoc.edu/portal/en/index.html">UOC</a>).
+</p>
+
+</div> 
+</div> <!-- Text column -->
+

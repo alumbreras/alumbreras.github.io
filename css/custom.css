@@ -8,6 +8,10 @@ body {
     background-color: #fff;
 }
 
+.headline p {
+    margin:0.5em 0 0em 0;
+}
+
 /* Navigation menu with a slightly smaller font */
 nav {
     font-size: 14px;
@@ -71,7 +75,6 @@ pre code {
 /* Post titles*/
 h1,.h1 {
 	font-size:25px;
-	font-variant:small-caps;
 	font-weight:bold;
 }
 
@@ -80,7 +83,15 @@ h2,.h2 {
 	line-height:1.5em;
 	margin:1.5em 0 1.5em 0;
 	font-weight:bold;
-	font-family: 'lucida grande', sans-serif;
+    font-family:'lucida grande', sans-serif;
+}
+
+h2.headline {
+	font-size:120%;
+	line-height:1em;
+	margin:0.2em 0 0em 0;
+	font-weight:normal;
+    font-family:'lucida grande', sans-serif;
 }
 
 h3,.h3 {
@@ -89,6 +100,15 @@ h3,.h3 {
 	font-weight:bold;
 	font-family: 'lucida grande', sans-serif;
 	font-variant:small-caps;
+}
+
+h3.headline {
+	font-size:100%;
+    line-height:1em;
+    margin:0.5em 0em 2em 0em;
+	font-weight:normal;
+    font-family: 'lucida grande', sans-serif;
+    font-variant:normal;
 }
 
 h4,.h4 {
