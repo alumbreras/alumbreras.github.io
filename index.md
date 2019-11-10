@@ -13,7 +13,7 @@ layout: default
 <div class=".col-xs-12 .col-md-8">
 	<h1> Alberto Lumbreras </h1>
 	<h2 class="headline">Research Scientist @ Criteo AI Lab</h2>
-	<h3 class="headline">a.lumbreras (at) criteo (dot) com. <p>Paris, France</p></h3>
+	<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris, France</p></h3>
 
 <p> From 2019, I am a Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Bayesian Statistics and Domain Adaptation for Computational Advertising.</p>
 
