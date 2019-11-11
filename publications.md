@@ -5,6 +5,13 @@ title: Publications
 
 ## Publications
 
+[Bayesian Mean-parameterized Nonnegative Binary Matrix Factorization](https://arxiv.org/abs/1812.06866)<br>
+*Lumbreras A., Filstroff L., Févotte C.* <br> 
+Under review (2019)<br>
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://arxiv.org/abs/1812.06866)
+<i class="fa fa-github fa-lg fa-fw"></i>
+<i class="fa fa-slideshare fa-lg fa-fw"></i>
+
 [Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization](http://proceedings.mlr.press/v80/filstroff18a.html)<br>
 *Filstroff L., Lumbreras A., Févotte C.* <br> 
 International Conference on Machine Learning (2018) <br>
