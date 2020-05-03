@@ -3,7 +3,7 @@ layout: default
 title: Publications
 ---
 
-## Publications
+<h2 class="section">Publications</h2>
 
 [Bayesian Mean-parameterized Nonnegative Binary Matrix Factorization](https://arxiv.org/abs/1812.06866)<br>
 *Lumbreras A., Filstroff L., Févotte C.* <br> 

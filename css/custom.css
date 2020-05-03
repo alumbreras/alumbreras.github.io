@@ -5,6 +5,8 @@
     font-style: normal;
 }
 
+
+
 body {
     font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;
     /*font-family: Roboto;*/
@@ -13,6 +15,12 @@ body {
     line-height: 1.428571429;
     color: #000;
     background-color: #fff;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .headline p {
@@ -75,10 +83,6 @@ pre code {
     width: 95px;
 }
 
-.col-md-10 {
-    margin-left: 17%;
-}
-
 /* Post titles*/
 h1,.h1 {
 	font-size:25px;
@@ -91,6 +95,10 @@ h2,.h2 {
 	margin:1.5em 0 1.5em 0;
 	font-weight:bold;
     font-family:'lucida grande', sans-serif;
+}
+
+h2.section {
+    text-align: center;
 }
 
 h2.headline {

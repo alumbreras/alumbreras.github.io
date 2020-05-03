@@ -3,7 +3,7 @@ layout: default
 title: Posts
 ---
 
-## Posts
+<h2 class="section">Posts</h2>
 
 <div>
   <ul class='posts'>
