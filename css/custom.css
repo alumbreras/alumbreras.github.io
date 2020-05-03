@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url("../assets/fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;
     /*font-family: Roboto;*/
     /* font-family: Merriweather;*/ /* Shalir Mohamed */ 
     font-size: 15px;

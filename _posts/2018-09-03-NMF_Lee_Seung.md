@@ -10,20 +10,16 @@ Introduction
 [Nonnegative Matrix Factorization
 (NMF)](https://www.nature.com/articles/44565) is a technique that tries
 to approximate a nonnegative matrix *V* (with
-*F* × *N*
+$F \times N$
  dimensions) into the product of two smaller (also nonnegative) matrices
-*W* (
-*F* × *K*
-) and *H* (
-*K* × *N*
-).
+$W (F \times K)$ and $H (K \times N)$.
 
 For those familiar with PCA, NMF is a sort of PCA with nonnegative (and
 therefore more easy to interpret by humans) basis. Moreover, these basis
 do not need to be orthogonal.
 
-One of my favorite applications of NMF is in recomender systems. If *V*
-contains some ratings of users to movies (*F* users and *N* movies), *W*
+One of my favorite applications of NMF is in recomender systems. If $V$
+contains some ratings of users to movies ($F$ users and $N$ movies), $W$
 will contain the atraction of a each user to each topic, and *H* will
 contain the amount of each topic in each movie. This decomposition is a
 compressed version of the original matrix. Moreover, once we have this
@@ -58,20 +54,20 @@ The idea is to optimize W given H, then H given W and so on until the
 algorithm converges. A typical option is Gradient Descent, but
 convergence can be slow. Instead, Lee and Seung proposed
 Minorize-Maximization (MM) strategy. The idea of MM is to use an
-*auxiliary function*. We say that *G*(*h*, *h*′) is an auxiliary
-function of *F*(*h*) if *G*(*h*, *h*′) is equal or greater than *F*(*h*)
-everywhere and *G*(*h*, *h*)=*F*(*h*). Note that, when the first
-parameter is fixed *G*(*h*, *h*′) is a curve. The first parameter tell
-us the point where it touches *F*. If we can design such a function, we
-can find the *h*<sub>*m**i**n*</sub> at each step and then updating the
-curve to *G*(*h*<sub>*m**i**n*</sub>, *h*′) until we reach a minimum.
+*auxiliary function*. We say that $G(h, h′)$ is an auxiliary
+function of $F(h)$ if $G(h, h′)$ is equal or greater than $F(h)$
+everywhere and $G(h, h)=F(h)$. Note that, when the first
+parameter is fixed $G(h, h′)$ is a curve. The first parameter tell
+us the point where it touches $F$. If we can design such a function, we
+can find the $h_{min}$ at each step and then updating the
+curve to $G(h_{min}, h′)$ until we reach a minimum.
 
 <p style="text-align:center;">
 <img src="../assets/fig17_MM_LeeSeung.png" style="width:650px;height:300px;">
 </p>
-In our case, *F*(*h*) is a KL divergence. In their paper, Lee and Seung
+In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung
 provide an auxiliary function which can be easily minimized. Doing this
-for *W* and *H* they obtain the classic NMF updates:
+for $W$ and $H$ they obtain the classic NMF updates:
 
 $$
 W_{fk} \leftarrow W_{fk}
@@ -172,7 +168,7 @@ dataset consists of 10 black and white photos of each member of a group
 ![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset-1.png)
 
 Now we call our NMF algorithm using this dataset as input. Let say we
-want to use *K=100* latent dimensions, or dictionary basis.
+want to use $K=100$ latent dimensions, or dictionary basis.
 
     F <- nrow(V)
     N <- ncol(V)
@@ -229,7 +225,7 @@ Note that, while PCA tends to create "holistic" bases, NMF prefers bases that fo
 ![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions-1.png)*Reconstructions obtained with NMF (above) and PCA (below)*
 
 Note that the quality of our reconstruction depends on the chosen number
-of latent dimensions or components *K* (the larger, the more expressive
+of latent dimensions or components $K$ (the larger, the more expressive
 our dictionary basis), the convergence (we can try a bunch more of
 iterations) and the quality of the model to the data (KL is appropiate
 for Poisson data, PCA for Gaussian data).
@@ -246,10 +242,10 @@ other cost functions and assuming other likelihoods beyond Poisson and
 Gaussian. At some point, someone realized that there are some conections
 between cost functions and likelihoods: for instance, the KL
 minimization in this post is equivalent to find the MLE estimator
-assuming our data come from a Poisson distribution with mean *WH*. 
+assuming our data come from a Poisson distribution with mean $WH$. 
 
-On the probabilistic side, Bayesians consider W and H as random latent
-variables, and instead of trying to find point extimators for *W*, *H*
+On the probabilistic side, Bayesians consider $W$ and $H$ as random latent
+variables, and instead of trying to find point extimators for $W$, $H$
 they infer a posterior distribution over each of them.
 
 Finally, scalability is another important issue nowadays: people are
