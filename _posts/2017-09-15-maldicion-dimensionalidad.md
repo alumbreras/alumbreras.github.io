@@ -15,7 +15,7 @@ $$
 
 
 <p style="text-align:center;">
- <img src="/assets/unidimensional.png" style="width:304px;height:228px;">
+ <img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/unidimensional.png" style="width:304px;height:228px;">
 </p>
 
 
@@ -27,7 +27,7 @@ $$
 
 
 <p style="text-align:center;">
-<img src="/assets/bidimensional.png" style="width:304px;height:228px;">
+<img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/bidimensional.png" style="width:304px;height:228px;">
 </p>
 
 Es curioso. El area de salvación de la mosca cada vez es más y más voluminosa en detrimento del espacio ocupado por el cazamoscas. De hecho, si seguimos subiendo de dimensiones, la probabilidad de cazar la mosca en d-dimensiones es:
@@ -39,7 +39,7 @@ $$
 La gráfica muestra como esta probabilidad se va desvanenciendo a medida que subimos en número de dimensiones.
 
 <figure>
-    <img  style="margin:0px auto; display:block; width:500px;" src='/assets/hypercube_volume.png'/>
+    <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/hypercube_volume.png'/>
     <figcaption style=" text-align: center"><small>Figura. Caída del volumen relativo del (hiper-) cubo a medida que subimos en dimensiones</small>
 </figcaption>
 </figure>
@@ -49,7 +49,7 @@ La gráfica muestra como esta probabilidad se va desvanenciendo a medida que sub
 Esta imágen ilustra la misma idea. A medida que subimos en dimensiones, el segmento resaltado (el cazamoscas), representa una parte más pequeña del total y la mosca tiene más espacio para campar a sus anchas:
 
 <figure>
-<img  style="margin:0px auto; display:block; width:600px;"   src="/assets/betancourt_cubes.png">
+<img  style="margin:0px auto; display:block; width:600px;"   src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/betancourt_cubes.png">
 <figcaption style=" text-align: center"><small>Figura. Otra imagen más bonita sacada de <a href="https://arxiv.org/abs/1701.02434">aquí. </a></small>
 </figcaption>
 </figure>
@@ -65,7 +65,7 @@ p =   \frac{\pi R^2}{1} = \frac{\pi 0.5^2}{1} = \frac{\pi}{4} \approx 0.78
 $$
 
 <figure>
-    <img  style="margin:0px auto; display:block" src='/assets/montecarlo_circle.png'/>
+    <img  style="margin:0px auto; display:block" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/montecarlo_circle.png'/>
     <figcaption style=" text-align: center"><small>Figura. Nuestro barreño visto desde arriba. Las gotas rojas han caído fuera. Las azules, dentro.</small>
 </figcaption>
 </figure>
@@ -89,7 +89,7 @@ Mirando la gráfica vemos que a partir de la dimensión 4 ya  cae más agua fuer
 
 
 <figure>
-    <img  style="margin:0px auto; display:block; width:500px;" src='/assets/hypersphere_volume.png'/>
+    <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/hypersphere_volume.png'/>
     <figcaption style=" text-align: center"><small>Figura. Caída del volumen relativo de la (hiper-) esfera a medida que subimos en dimensiones</small>
 </figcaption>
 </figure>
@@ -140,7 +140,7 @@ $$
 $$
 
 <p style="text-align:center;">
-<img src="/assets/typical_set.png" alt="Unidimensional" style="width:400px;height:400px;">
+<img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/typical_set.png" alt="Unidimensional" style="width:400px;height:400px;">
 </p>
 
 En la imagen se muestra un ejemplo (inventado) de densidad ($$\pi(q)$$), volumen (de cada cachito del espacio, dq) y su producto.
@@ -154,19 +154,19 @@ La distribución uniforme la hemos tocado implícitamente antes, cuando hablába
 Podemos pensar en una granada (la fruta). Imaginemos que le vamos quitando las pepitas de fuera hacia dentro, rotando la granada en nuestras manos. En las primeras rotaciones obtendremos más pepitas que en las últimas!
 
 <p style="text-align:center;">
-<img src="/assets/granada.jpg" alt="Unidimensional" style="width:300px;">
+<img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/granada.jpg" alt="Unidimensional" style="width:300px;">
 </p>
 
 O en una cebolla, que es también uniformemente densa y cuyas capas externas tienen más masa que las capas internas:
 
 <p style="text-align:center;">
-<img src="/assets/cebolla.jpg" alt="Unidimensional" style="width:300px;">
+<img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/cebolla.jpg" alt="Unidimensional" style="width:300px;">
 </p>
 
 La distribución uniforme asigna la misma densidad probabilidad a cualquier punto del espacio. A medida que nos alejamos del centro, el volumen aumenta y la densidad se mantiene, por lo que la masa es mayor a más nos alejemos del centro. De ahí el fenómeno de las goteras que caían más fuera que dentro del barreño.
 
 <figure>
-    <img  style="margin:0px auto; display:block; width:500px;" src='/assets/typical_set_uniform.png'/>
+    <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/typical_set_uniform.png'/>
     <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Uniforme está en los bordes. Y a más dimensiones, mas concentración de masa en los bordes.</small>
 </figcaption>
 </figure>
@@ -178,8 +178,8 @@ Con muchas dimensiones, el volumen crecerá más rápido a medida que nos alejam
 *  Distribución Gaussiana
 
 <figure>
-    <img  style="margin:0px auto; display:block"	 src='/assets/normal_contour.png'/>
-    <figcaption style=" text-align: center"><small>Figura. Una distribución Gaussiana bi-dimensional. Las gotas caen más del centro.</small>
+    <img  style="margin:0px auto; display:block"	 src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/normal_contour.png'/>
+    <figcaption style="text-align: center"><small>Figura. Una distribución Gaussiana bi-dimensional. Las gotas caen más del centro.</small>
 </figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ Con muchas dimensiones, el volumen crecerá más rápido a medida que nos alejam
 En dos dimensiones, la carga del volumen empieza a desplazarse hacia valores más lejanos del centro. ¿Dónde está la mayor parte de la masa?
 
 <figure>
-    <img  style="margin:0px auto; display:block; width:500px;" src='/assets/typical_set_gaussian.png'/>
+    <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/typical_set_gaussian.png'/>
     <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Gaussiana está fuera de la moda. Y a más dimensiones, mas alejada estará.</small>
 </figcaption>
 </figure>

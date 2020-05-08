@@ -4,7 +4,7 @@ title: Revoluciones científicas y revoluciones políticas
 tags: philosophy
 ---
 <center>
-<img alt="kuhn" src="/img/kuhn.jpg" width="240" height="197" />
+<img alt="kuhn" src="{{site.baseurl}}/assets/img/2013-11-08-revoluciones-cientificas/kuhn.jpg" width="240" height="197" />
 </center>
 <br />
 

@@ -4,7 +4,7 @@ title: 100000 asambleas de la CUP
 ---
 
 <p align="center">
-<img src="/img/vega_cup.gif" width="700px">
+<img src="{{site.baseurl}}/assets/img/2015-12-28-10000-Asambleas-de-la-CUP/vega_cup.gif" width="700px">
 </p>
 
 ¿Cuál era la probabilidad de que la ultima votación de la asamblea de la 
@@ -29,7 +29,7 @@ y Xavier Sala-i-Martí (que en frio dijo 0.033 pero luego corrigió).
 ## Modelo incorrecto del 0.033%: la urna de Baños
 
 <p align="center">
-<img src="/img/2015-12-28-cunyao_prob.jpeg" width="300px">
+<img src="{{site.baseurl}}/assets/img/2015-12-28-10000-Asambleas-de-la-CUP/2015-12-28-cunyao_prob.jpeg" width="300px">
 </p>
 
 **Este modelo no tiene sentido**. Los que defienden este porcentaje asignan 
@@ -68,7 +68,7 @@ cat("Probabilidad de empate:", probabilidad_empate*100)
 ```
 
 <p align="center">
-<img src="/img/2015-12-28-CUP_banyos.png" width="800px">
+<img src="{{site.baseurl}}/assets/img/2015-12-28-10000-Asambleas-de-la-CUP/2015-12-28-CUP_banyos.png" width="800px">
 </p>
 
 donde la probabilidad de empate (y de cualquier otro resultado) 
@@ -121,7 +121,7 @@ cat("Probabilidad de empate:", probabilidad_empate*100)
 ```
 
 <p align="center">
-<img src="/img/2015-12-28-CUP.png" width="800px">
+<img src="{{site.baseurl}}/assets/img/2015-12-28-10000-Asambleas-de-la-CUP/2015-12-28-CUP.png" width="800px">
 </p>
 donde resulta que lo que tenemos es una distribución normal (la culpa es 
 del [Teorema del Límite Central](https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central)) 
@@ -171,7 +171,7 @@ cat("Probabilidad de empate:", probabilidad_empate*100)
 ```
 
 <p align="center">
-<img src="/img/2015-12-28-CUP_indecisos.png" width="800px">
+<img src="{{site.baseurl}}/assets/img/2015-12-28-10000-Asambleas-de-la-CUP/2015-12-28-CUP_indecisos.png" width="800px">
 </p>
 
 donde ahora la probabilidad de empate sube al 3.187%.

@@ -149,7 +149,7 @@ the Stick Breaking and different concentration $$\alpha$$, and samples
 obtained from these $$G$$:
 <figure>
 	<center>
-   <img src="{{ site.baseurl }}/assets/fig15_DP.png" width="50%"><img src="{{ site.baseurl }}/assets/fig16_DPsamples.png" width="50%">
+   <img src="{{ site.baseurl }}/assets/img/2018-06-28-Dirichlet Process with Stick Breaking/fig15_DP.png" width="50%"><img src="{{ site.baseurl }}/assets/img/2018-06-28-Dirichlet Process with Stick Breaking/fig16_DPsamples.png" width="50%">
     </center>
     <figcaption>Fig.1 - (Left) Distributions drawn from a Dirichlet Processes with different concentration parameters. (Right)
    Samples from these distributions. Columns represent repetitions of the experiment.</figcaption>

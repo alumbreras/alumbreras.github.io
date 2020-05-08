@@ -63,7 +63,7 @@ can find the $h_{min}$ at each step and then updating the
 curve to $G(h_{min}, h′)$ until we reach a minimum.
 
 <p style="text-align:center;">
-<img src="../assets/fig17_MM_LeeSeung.png" style="width:650px;height:300px;">
+<img src="{{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/fig17_MM_LeeSeung.png" style="width:650px;height:300px;">
 </p>
 In our case, $F(h)$ is a KL divergence. In their paper, Lee and Seung
 provide an auxiliary function which can be easily minimized. Doing this
@@ -84,14 +84,16 @@ Recall that the updates are supposed to minimize the KL divergence
 between the approximation and the true matrix. To monitorize this, let
 us code an R function that computes the KL divergence:
 
-    #' @title Compute the KL divergence (fast version)
-    #' @param A first matrix
-    #' @param B second matrix
-    #' @details This function is useful for debugging
-    KL_divergence_Lee <- function(A, B){
-      eps <- 1e-6
-      sum(A*log((A + eps)/ (B + eps)) - A + B)
-    }
+```R
+#' @title Compute the KL divergence (fast version)
+#' @param A first matrix
+#' @param B second matrix
+#' @details This function is useful for debugging
+KL_divergence_Lee <- function(A, B){
+  eps <- 1e-6
+  sum(A*log((A + eps)/ (B + eps)) - A + B)
+}
+```
 
 Now we can write the algorithm, which iteratively updates *W* and *H*
 until convergence:
@@ -165,7 +167,7 @@ dataset consists of 10 black and white photos of each member of a group
       plot_face(V[,i])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dataset-1.png)
+![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/dataset.png)
 
 Now we call our NMF algorithm using this dataset as input. Let say we
 want to use $K=100$ latent dimensions, or dictionary basis.
@@ -182,7 +184,7 @@ after 200 iterations, so we will stop here.
 
     plot(res$KLlog, type='l', ylab= "KL divergence", xlab = "iteration")
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/convergence-1.png)
+![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/convergence.png)
 
 Let's see how does our dictionary look like, and let's compare with the
 dictionary of a PCA:
@@ -200,7 +202,7 @@ dictionary of a PCA:
       plot_face(pca$x[,k], col = heat.colors(255))
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/dictionaries-1.png)*Dictionaries obtained with NMF (above) and PCA (below)*
+![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/dictionaries.png)*Dictionaries obtained with NMF (above) and PCA (below)*
 
 Note that, while PCA tends to create "holistic" bases, NMF prefers bases that focus on different parts of the face, which makes NMF more easy to interpret. Finally, let's see how good the reconstruction is, and let us compare with a PCA:
 
@@ -222,7 +224,7 @@ Note that, while PCA tends to create "holistic" bases, NMF prefers bases that fo
       plot_face(V_hat_pca[,i])
     }
 
-![](../assets/2018-09-03-NMF_Lee_Seung_files/figure-markdown_strict/reconstructions-1.png)*Reconstructions obtained with NMF (above) and PCA (below)*
+![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/reconstructions-1.png)*Reconstructions obtained with NMF (above) and PCA (below)*
 
 Note that the quality of our reconstruction depends on the chosen number
 of latent dimensions or components $K$ (the larger, the more expressive

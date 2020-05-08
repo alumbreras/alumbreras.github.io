@@ -29,7 +29,7 @@ Social Network Analysis and Mining (2017) <br>
 [Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](http://link.springer.com/article/10.1007/s00180-016-0668-0) <br>
 *Lumbreras A., Guégan M., Velcin J., Jouve B.* <br>
 Computational Statistics (2016)   <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://albertolumbreras.net/files/Lumbreras_et_al_2017_CompStats.pdf)
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2017_CompStats.pdf)
 [<i class="fa fa-github fa-lg fa-fw"></i>](https://github.com/alumbreras/Dual-DPGMM)
 <i class="fa fa-slideshare fa-lg fa-fw"></i>
 
@@ -43,15 +43,15 @@ Modèles et Analyses Réseau : Approches Mathématiques et Informatiques (2013)<
 [An insight into the Analysis of Roles in IMDb.](http://complexity-in-social-systems.u-cergy.fr/?page_id=326)   <br>
 *Lumbreras A., Lanagan J, Jouve B., Velcin J.* <br>
 Workshop on Complexity in social systems: from data to models, Cergy Pontoise (95), 27-28 (2013) <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://albertolumbreras.net/files/Lumbreras_et_al_2013_1.pdf)
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2013_1.pdf)
 <i class="fa fa-github fa-lg fa-fw"></i>
-[<i class="fa fa-slideshare fa-lg fa-fw"></i>](http://albertolumbreras.net/files/Lumbreras_et_al_2013_1_slides.pdf)
+[<i class="fa fa-slideshare fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2013_1_slides.pdf)
 
 [Applying trust metrics based on user interactions to recommendation in social networks](http://ieeexplore.ieee.org/document/6425600/)<br> 
 *Lumbreras A., Gavaldà R.* <br>
 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining    <br>
 Social Knowledge Discovery and Utilization Workshop  (2012)  <br> 
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://albertolumbreras.net/files/Lumbreras_Gavalda_ASONAM_2012_extversion.pdf)
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_Gavalda_ASONAM_2012_extversion.pdf)
 [<i class="fa fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets/)
 <i class="fa fa-slideshare fa-lg fa-fw"></i>
 
@@ -68,7 +68,7 @@ Ed.: Universitat Oberta de Catalunya (2012)  <br>
 *Aragón P., Gómez V., Lumbreras A., Kaltenbrunner A.* <br>
 The 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining <br>
 [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://www.upf.edu/web/ai-ml/tutorial-asonam-2018)
-[<i class="fa fa-github fa-lg fa-fw"></i>](http://www.albertolumbreras.net/files/notebookR_asonam_out.html)
+<i class="fa fa-github fa-lg fa-fw"></i>
 [<i class="fa fa-slideshare fa-lg fa-fw"></i>](https://docs.google.com/presentation/d/1sHfJJKMrBTjN05J5qPf6LP6CqF5vwUX6kq0P7LCobmU/edit?ts=5b83b77b#slide=id.g3ef0d253a5_2_30)
 
 -----
@@ -80,9 +80,9 @@ PhD Thesis. Université Lyon 2 - Technicolor (2016) <br>
 <i class="fa fa-github fa-lg fa-fw"></i>
 [<i class="fa fa-slideshare fa-lg fa-fw"></i>]({{site.url}}/files/PhD soutenance.pdf)
 
-[Towards Trust-Aware Recommender Systems.](http://albertolumbreras.net/files/Lumbreras_MasterThesis.pdf) <br>
+[Towards Trust-Aware Recommender Systems.]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf) <br>
 Masther’s Thesis. Master on Artificial Intelligence. Universitat Politècnica de Catalunya. (2012) <br>
 *Supervised by: Ricard Gavaldà.* <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://albertolumbreras.net/files/Lumbreras_MasterThesis.pdf)
+[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf)
 [<i class="fa fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets)
 [<i class="fa fa-slideshare fa-lg fa-fw"></i>](http://www.slideshare.net/anarcaster/towards-trustaware-recommender-systems)

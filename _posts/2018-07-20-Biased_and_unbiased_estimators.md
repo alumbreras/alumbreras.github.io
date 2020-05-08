@@ -114,7 +114,7 @@ samples used for the estimator, and the value of the estimator.
       ylim(c(0,0.5))+
       theme_bw()
 
-![](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-1-1.png)
 
 *Sample points from an infinite population, and its estimated mean. The
 curve shows the true underlying distribution, with its mean in zero.*
@@ -137,7 +137,7 @@ samples) many times?
     df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
     ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
 
-![image](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![image]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-2-1.png)
 *Evolution of the empirical bias with the number of repetitions of the
 experiment*
 
@@ -209,7 +209,7 @@ true value is the log of the mean, hence 0.
       ylim(c(0,0.5))+
       theme_bw()
 
-![](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-3-1.png)
 *Probability density, some samples from it and the estimator of the log
 of the mean* Finally let's see what happens if we repeat the experiment
 many times.
@@ -228,7 +228,7 @@ many times.
     df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
     ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
 
-![](../assets/2018-08-31-Biased_and_unbiased_estimators_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-4-1.png)
 *Evolution of the empirical bias with the number of repetitions of the
 experiment*
 
