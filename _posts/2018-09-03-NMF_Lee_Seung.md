@@ -98,38 +98,40 @@ KL_divergence_Lee <- function(A, B){
 Now we can write the algorithm, which iteratively updates *W* and *H*
 until convergence:
 
-    #' @title NMF with Lee and Saung multiplicative updates
-    #' @param V matrix to factorize
-    #' @param K number of latent factors (or dimensions)
-    #' @param W initial W matrix
-    #' @param H initial H matrix
-    #' @param maxiters maximum number of iterations
-    #' @details The number of iterations is set to maxiters.
-    nmf_Lee <- function(V, K, W, H, maxiters = 100){
-      F <- nrow(V)
-      N <- ncol(V)
-      eps = 1e-05
-      
-      unit_f <- matrix(1, ncol=1, nrow=F)
-      unit_n <- matrix(1, ncol=1, nrow=N)
-      
-      KLlog <- rep(NA, maxiters)
-      for (i in 1:maxiters){
-        cat("\n iteration:", i, "/", maxiters)
+```R
+#' @title NMF with Lee and Saung multiplicative updates
+#' @param V matrix to factorize
+#' @param K number of latent factors (or dimensions)
+#' @param W initial W matrix
+#' @param H initial H matrix
+#' @param maxiters maximum number of iterations
+#' @details The number of iterations is set to maxiters.
+nmf_Lee <- function(V, K, W, H, maxiters = 100){
+  F <- nrow(V)
+  N <- ncol(V)
+  eps = 1e-05
+  
+  unit_f <- matrix(1, ncol=1, nrow=F)
+  unit_n <- matrix(1, ncol=1, nrow=N)
+  
+  KLlog <- rep(NA, maxiters)
+  for (i in 1:maxiters){
+    cat("\n iteration:", i, "/", maxiters)
 
-        # update W (matricial)
-        # matlab: W = W .* ((V./(W*H + options.myeps))*H')./(ones(m,1)*sum(H'));
-        W <- W * ((V / (W%*%H + eps)) %*% t(H)) / (unit_f %*% rowSums(H))
-        
-        #update H (matricial)
-        # matlab: H = H .* (W'*(V./(W*H + options.myeps)))./(sum(W)'*ones(1,n));
-        H <- H * (t(W) %*% (V / (W%*%H + eps))) / (colSums(W) %*% t(unit_n))
-        
-        # Trace KL divergence
-        KLlog[[i]] <- KL_divergence_Lee(V, W%*%H)
-      }
-      list(W=W, H=H, KLlog = KLlog)
-    }
+    # update W (matricial)
+    # matlab: W = W .* ((V./(W*H + options.myeps))*H')./(ones(m,1)*sum(H'));
+    W <- W * ((V / (W%*%H + eps)) %*% t(H)) / (unit_f %*% rowSums(H))
+    
+    # update H (matricial)
+    # matlab: H = H .* (W'*(V./(W*H + options.myeps)))./(sum(W)'*ones(1,n));
+    H <- H * (t(W) %*% (V / (W%*%H + eps))) / (colSums(W) %*% t(unit_n))
+    
+    # Trace KL divergence
+    KLlog[[i]] <- KL_divergence_Lee(V, W%*%H)
+  }
+  list(W=W, H=H, KLlog = KLlog)
+}
+```
 
 Faces dataset
 -------------
@@ -138,46 +140,50 @@ To play with our code, let us download the ATT Faces dataset. The
 dataset consists of 10 black and white photos of each member of a group
 40 individuals. 400 images in total.
 
-    library(pixmap)
+```R
+library(pixmap)
 
-    url <- "http://www.cl.cam.ac.uk/Research/DTG/attarchive/pub/data/att_faces.zip"
-    filename <- basename(url)
-    download.file(url = url, destfile = filename)
-    unzip(filename, exdir = "faces")
-    dirname <- './faces/'
-    dirs <- list.dirs("./faces")
-    files <- list.files(pattern = ".pgm", recursive = TRUE)
-    V <- matrix(nrow = 92*112, ncol = length(files))
-    for (i in 1:length(files)){
-      v <- read.pnm(file = files[i], cellres=1)
-      V[,i] <- floor(as.vector(v@grey)*255)
-    }
+url <- "http://www.cl.cam.ac.uk/Research/DTG/attarchive/pub/data/att_faces.zip"
+filename <- basename(url)
+download.file(url = url, destfile = filename)
+unzip(filename, exdir = "faces")
+dirname <- './faces/'
+dirs <- list.dirs("./faces")
+files <- list.files(pattern = ".pgm", recursive = TRUE)
+V <- matrix(nrow = 92*112, ncol = length(files))
+for (i in 1:length(files)){
+  v <- read.pnm(file = files[i], cellres=1)
+  V[,i] <- floor(as.vector(v@grey)*255)
+}
 
 
-    #'@title Plot a face
-    #'@details Given a vectorized image, reconstruct its matrix and plot it
-    plot_face <- function(arr10304, col=gray(0:255/255)){
-      m <- matrix(arr10304, ncol=92,  nrow = 112)
-      image(t(m[112:1,]), asp=112/92, axes = FALSE, col=col)
-    }
+#'@title Plot a face
+#'@details Given a vectorized image, reconstruct its matrix and plot it
+plot_face <- function(arr10304, col=gray(0:255/255)){
+  m <- matrix(arr10304, ncol=92,  nrow = 112)
+  image(t(m[112:1,]), asp=112/92, axes = FALSE, col=col)
+}
 
-    # Plot some faces
-    par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
-    for(i in sample(400,200)){
-      plot_face(V[,i])
-    }
+# Plot some faces
+par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
+for(i in sample(400,200)){
+  plot_face(V[,i])
+}
+```
 
 ![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/dataset.png)
 
 Now we call our NMF algorithm using this dataset as input. Let say we
 want to use $K=100$ latent dimensions, or dictionary basis.
 
-    F <- nrow(V)
-    N <- ncol(V)
-    K = 100
-    W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
-    H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
-    res <- nmf_Lee(V, K, W, H, maxiters = 200)
+```R
+F <- nrow(V)
+N <- ncol(V)
+K = 100
+W <- matrix(rpois(n = F*K, lambda = 10), nrow = F, ncol = K) 
+H <- matrix(rpois(n = N*K, lambda = 10), nrow = K, ncol = N) 
+res <- nmf_Lee(V, K, W, H, maxiters = 200)
+```
 
 Did the algorithm convergence? The KL divergence is improving slowly
 after 200 iterations, so we will stop here.
@@ -189,40 +195,44 @@ after 200 iterations, so we will stop here.
 Let's see how does our dictionary look like, and let's compare with the
 dictionary of a PCA:
 
-    # PCA 
-    pca   <- prcomp(V)
-    V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
+```R
+# PCA 
+pca   <- prcomp(V)
+V_hat_pca  <- pca$x[,1:K] %*% t(pca$rotation[,1:K])
 
-    # Plot some faces and their reconstrctions
-    par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
-    for(k in 1:100){
-      plot_face(res$W[,k], col = heat.colors(255))
-    }
-    for(k in 1:100){
-      plot_face(pca$x[,k], col = heat.colors(255))
-    }
+# Plot some faces and their reconstrctions
+par(mfrow=c(10,20), mar=c(0, 0.2, 0, 0), oma=c(0,0,0,0))
+for(k in 1:100){
+  plot_face(res$W[,k], col = heat.colors(255))
+}
+for(k in 1:100){
+  plot_face(pca$x[,k], col = heat.colors(255))
+}
+```
 
 ![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/dictionaries.png)*Dictionaries obtained with NMF (above) and PCA (below)*
 
 Note that, while PCA tends to create "holistic" bases, NMF prefers bases that focus on different parts of the face, which makes NMF more easy to interpret. Finally, let's see how good the reconstruction is, and let us compare with a PCA:
 
-    # PCA
-    mu    <- colMeans(V)
-    pca   <- prcomp(V)
-    Kpca <- K
-    V_hat_pca  <- pca$x[,1:Kpca] %*% t(pca$rotation[,1:Kpca])
-    V_hat_pca  <- scale(V_hat_pca, center = -mu, scale = FALSE)
+```R
+# PCA
+mu    <- colMeans(V)
+pca   <- prcomp(V)
+Kpca <- K
+V_hat_pca  <- pca$x[,1:Kpca] %*% t(pca$rotation[,1:Kpca])
+V_hat_pca  <- scale(V_hat_pca, center = -mu, scale = FALSE)
 
-    # NMF reconstruction
-    V_hat <- res$W %*% res$H
+# NMF reconstruction
+V_hat <- res$W %*% res$H
 
-    # Plot some faces and their reconstructions
-    par(mfcol=c(3,10), mar=c(0,1,0,0), oma=c(0,0,0,0))
-    for(i in sample(ncol(V),10)){
-      plot_face(V[,i])
-      plot_face(V_hat[,i])
-      plot_face(V_hat_pca[,i])
-    }
+# Plot some faces and their reconstructions
+par(mfcol=c(3,10), mar=c(0,1,0,0), oma=c(0,0,0,0))
+for(i in sample(ncol(V),10)){
+  plot_face(V[,i])
+  plot_face(V_hat[,i])
+  plot_face(V_hat_pca[,i])
+}
+```
 
 ![]({{site.baseurl}}/assets/img/2018-09-03-NMF_Lee_Seung/reconstructions-1.png)*Reconstructions obtained with NMF (above) and PCA (below)*
 

@@ -58,7 +58,7 @@ $$v_k$$ of the remaining stick
 Here is the R code to sample from a Dirichlet Process using the Stick Breaking
 construction:
 
-```
+```R
 library(dplyr)
 library(ggplot2)
 

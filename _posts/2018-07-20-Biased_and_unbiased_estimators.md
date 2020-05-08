@@ -85,34 +85,36 @@ Let's play with a toy example where our variable comes from a Gaussian
 distribution centered at 1. We will plot the true distribution, the
 samples used for the estimator, and the value of the estimator.
 
-    # Estimate the mean of a Gaussian random variable
-    # given a random sample of size S
+```R
+# Estimate the mean of a Gaussian random variable
+# given a random sample of size S
 
-    library(tidyr)
-    library(ggplot2)
+library(tidyr)
+library(ggplot2)
 
-    estimator <- function(samples){
-      mean(x_samples)
-    }
+estimator <- function(samples){
+  mean(x_samples)
+}
 
-    S <- 100
-    mu <- 1
-    sdev <- 1
-    x           <- seq(-3,3, by=0.1)
-    prob        <- dnorm(x, mean = mu, sd = sdev)
+S <- 100
+mu <- 1
+sdev <- 1
+x           <- seq(-3,3, by=0.1)
+prob        <- dnorm(x, mean = mu, sd = sdev)
 
-    # Estimate once
-    x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
-    theta_hat   <- estimator(x_samples)
+# Estimate once
+x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
+theta_hat   <- estimator(x_samples)
 
-    df.pdf <- data.frame(x = x, prob = prob)
-    df <- data.frame(x = x_samples, prob = runif(S)/100)
-    ggplot(df, aes(x = x, y = prob)) + 
-      geom_point() +
-      geom_line(data = df.pdf, aes(x=x, y=prob))+
-      geom_vline(aes(xintercept = theta_hat), linetype = 2) + 
-      ylim(c(0,0.5))+
-      theme_bw()
+df.pdf <- data.frame(x = x, prob = prob)
+df <- data.frame(x = x_samples, prob = runif(S)/100)
+ggplot(df, aes(x = x, y = prob)) + 
+  geom_point() +
+  geom_line(data = df.pdf, aes(x=x, y=prob))+
+  geom_vline(aes(xintercept = theta_hat), linetype = 2) + 
+  ylim(c(0,0.5))+
+  theme_bw()
+```
 
 ![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-1-1.png)
 
@@ -123,20 +125,21 @@ It looks unbiased, but is this real? That is, will my estimator move
 around the true mean value if I repeat the experiments (with different
 samples) many times?
 
-    # Estimate many times to analyze bias
-    n_reps <- 10000
-    theta_hat_samples <- rep(NA, n_reps)
-    for(xp in 1:n_reps){
-      x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
-      theta_hat   <- estimator(x_samples)
-      theta_hat_samples[xp]  <- theta_hat
-    }
+```R
+# Estimate many times to analyze bias
+n_reps <- 10000
+theta_hat_samples <- rep(NA, n_reps)
+for(xp in 1:n_reps){
+  x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
+  theta_hat   <- estimator(x_samples)
+  theta_hat_samples[xp]  <- theta_hat
+}
 
-    # Empirical bias
-    bias <- cumsum(theta_hat_samples) / seq_along(theta_hat_samples) - mu
-    df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
-    ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
-
+# Empirical bias
+bias <- cumsum(theta_hat_samples) / seq_along(theta_hat_samples) - mu
+df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
+ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
+```
 ![image]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-2-1.png)
 *Evolution of the empirical bias with the number of repetitions of the
 experiment*
@@ -180,54 +183,58 @@ that, the larger the population sample, the smaller the bias.
 Let's repeat the experiments with our new estimator. Note that now the
 true value is the log of the mean, hence 0.
 
-    # Estimate the mean of a Gaussian random variable
-    # given a random sample of size S
+```R
+# Estimate the mean of a Gaussian random variable
+# given a random sample of size S
 
-    library(tidyr)
-    library(ggplot2)
+library(tidyr)
+library(ggplot2)
 
-    estimator <- function(samples){
-      log(mean(x_samples))
-    }
+estimator <- function(samples){
+  log(mean(x_samples))
+}
 
-    S <- 100
-    mu <- 1
-    sdev <- 1
-    x           <- seq(-3,3, by=0.1)
-    prob        <- dnorm(x, mean = mu, sd = sdev)
+S <- 100
+mu <- 1
+sdev <- 1
+x           <- seq(-3,3, by=0.1)
+prob        <- dnorm(x, mean = mu, sd = sdev)
 
-    # Estimate once
-    x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
-    theta_hat   <- estimator(x_samples)
+# Estimate once
+x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
+theta_hat   <- estimator(x_samples)
 
-    df.pdf <- data.frame(x = x, prob = prob)
-    df <- data.frame(x = x_samples, prob = runif(S)/100)
-    ggplot(df, aes(x = x, y = prob)) + 
-      geom_point() +
-      geom_line(data = df.pdf, aes(x=x, y=prob))+
-      geom_vline(aes(xintercept = theta_hat), linetype = 2) + 
-      ylim(c(0,0.5))+
-      theme_bw()
-
+df.pdf <- data.frame(x = x, prob = prob)
+df <- data.frame(x = x_samples, prob = runif(S)/100)
+ggplot(df, aes(x = x, y = prob)) + 
+  geom_point() +
+  geom_line(data = df.pdf, aes(x=x, y=prob))+
+  geom_vline(aes(xintercept = theta_hat), linetype = 2) + 
+  ylim(c(0,0.5))+
+  theme_bw()
+```
 ![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-3-1.png)
 *Probability density, some samples from it and the estimator of the log
-of the mean* Finally let's see what happens if we repeat the experiment
+of the mean* 
+
+Finally let's see what happens if we repeat the experiment
 many times.
 
-    # Estimate many times to analyze bias
-    n_reps <- 10000
-    theta_hat_samples <- rep(NA, n_reps)
-    for(xp in 1:n_reps){
-      x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
-      theta_hat   <- estimator(x_samples)
-      theta_hat_samples[xp]  <- theta_hat
-    }
+```R
+# Estimate many times to analyze bias
+n_reps <- 10000
+theta_hat_samples <- rep(NA, n_reps)
+for(xp in 1:n_reps){
+  x_samples   <- rnorm(n = S, mean = mu, sd = sdev)
+  theta_hat   <- estimator(x_samples)
+  theta_hat_samples[xp]  <- theta_hat
+}
 
-    # Empirical bias
-    bias <- cumsum(theta_hat_samples) / seq_along(theta_hat_samples) - log(mu)
-    df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
-    ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
-
+# Empirical bias
+bias <- cumsum(theta_hat_samples) / seq_along(theta_hat_samples) - log(mu)
+df.bias <- data.frame(bias = bias, repetitions = 1:length(bias))
+ggplot(df.bias, aes(x=repetitions, y = bias)) + geom_line() + theme_bw()
+```
 ![]({{site.baseurl}}/assets/img/2018-08-31-Biased_and_unbiased_estimators/unnamed-chunk-4-1.png)
 *Evolution of the empirical bias with the number of repetitions of the
 experiment*
