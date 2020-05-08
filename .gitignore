@@ -4,3 +4,4 @@ _cache
 .stack-work
 .sass-cache
 *~
+.vscode/settings.json
