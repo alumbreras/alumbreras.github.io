@@ -1,9 +1,0 @@
----
-title: Logistic PCA
-layout: post
-date: 11-09-2018
-output: html_document
-tags: machine learning
----
-
-In this post I introduce the Logistic PCA, a version of the classic PCA adapted to binary data.
