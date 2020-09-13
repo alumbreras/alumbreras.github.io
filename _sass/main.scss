@@ -12,6 +12,7 @@ body {
     color: #000;
     background-color: #fff;
     text-align: justify;
+    overflow-x: hidden; 
 }
 
 .container {
@@ -38,18 +39,6 @@ a {
 a:hover { 
     color: #428bca;
 }
-
-
-
-/*
-code {
-    color: black;
-}
-
-pre code {
-    color: black;
-}
-*/
 
 /*Alignment tweaks for social sharing buttons*/
 /* This gets Google to fall into place */

@@ -7,7 +7,7 @@ layout: default
 	<div class=".col-xs-12 .col-md-4">
 		<img src="{{site.baseurl}}/assets/img/alberto_w.jpg" 
 			class="img-rounded" 
-			style="float: right; margin: 0px 25px 25px 25px; width: 250px;" />
+			style="float: right; margin: 0px 0px 25px 25px; width: 250px;" />
 	</div>
 
 	<div class=".col-xs-12 .col-md-8">
@@ -16,7 +16,7 @@ layout: default
 		<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris, France</p></h3>
 
 		<div class='maintext'>
-			<p> Since 2019, I am Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Deep Generative Models and Bayesian Inference.</p>
+			<p> Since 2019, I am a Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Deep Generative Models and Bayesian Inference.</p>
 
 			<p>
 			From 2016 to 2018, I was a CNRS postdoctoral researcher
