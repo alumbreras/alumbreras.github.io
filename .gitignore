@@ -5,3 +5,4 @@ _cache
 .sass-cache
 *~
 .vscode/settings.json
+assets/.DS_Store
