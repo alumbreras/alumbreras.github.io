@@ -5,9 +5,9 @@ title: Publications
 
 <h2 class="section">Publications</h2>
 
-[Bayesian Mean-parameterized Nonnegative Binary Matrix Factorization](https://arxiv.org/abs/1812.06866)<br>
+[Bayesian Mean-parameterized Nonnegative Binary Matrix Factorization](https://link.springer.com/article/10.1007/s10618-020-00712-w)<br>
 *Lumbreras A., Filstroff L., Févotte C.* <br> 
-Under review (2019)<br>
+Data Mining and Knowledge Discovery (2020)<br>
 [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://arxiv.org/abs/1812.06866)
 <i class="fa fa-github fa-lg fa-fw"></i>
 <i class="fa fa-slideshare fa-lg fa-fw"></i>
