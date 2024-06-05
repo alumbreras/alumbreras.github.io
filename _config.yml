@@ -13,6 +13,8 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
+include: ['_pages']
+
 # Outputting
 exclude: [
   'cibuild',

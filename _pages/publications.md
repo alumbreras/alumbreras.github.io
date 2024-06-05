@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Publications
+permalink: /publications.html
 ---
 
 <h2 class="section">Publications</h2>
