@@ -1,89 +1,74 @@
 ---
 layout: default
-title: Publications
+title: Coaching
 permalink: /coaching.html
 ---
 
-<h2 class="section">Publications</h2>
+# Carrer coaching
 
-[Bayesian Mean-parameterized Nonnegative Binary Matrix Factorization](https://link.springer.com/article/10.1007/s10618-020-00712-w)<br>
-*Lumbreras A., Filstroff L., Févotte C.* <br> 
-Data Mining and Knowledge Discovery (2020)<br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://arxiv.org/abs/1812.06866)
-<i class="fa fa-github fa-lg fa-fw"></i>
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+## About me
 
-[Closed-form Marginal Likelihood in Gamma-Poisson Matrix Factorization](http://proceedings.mlr.press/v80/filstroff18a.html)<br>
-*Filstroff L., Lumbreras A., Févotte C.* <br> 
-International Conference on Machine Learning (2018) <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://proceedings.mlr.press/v80/filstroff18a/filstroff18a.pdf)
-<i class="fa fa-github fa-lg fa-fw"></i>
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+I partner with professionals to build careers that are meaningful to them, connected to who they are. 
 
-[Role detection in online forums based on growth models for trees](https://www.springer.com/computer/database+management+%26+information+retrieval/journal/13278)<br>
-*Lumbreras A., Jouve B., Velcin J., Guégan M.* <br>
-Social Network Analysis and Mining (2017) <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://www.springer.com/computer/database+management+%26+information+retrieval/journal/13278)
-<i class="fa fa-github fa-lg fa-fw"></i>
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+I am a **researcher** in Artificial Intelligence with 20 years of experience in tech multinationals and academia. I have lived (and survived) crises, career shifts, promotions, corporate restructurings, and layoffs. I know the challenges of working in a foreign country and adapting to a new culture. I have also learned to be a parent and set boundaries so that my work does not take over my life. I have been through the ups and downs of a career in the tech industry, learning how to navigate and thrive through them.
 
-[Non-parametric clustering over user features and latent behavioral functions with dual-view mixture models](http://link.springer.com/article/10.1007/s00180-016-0668-0) <br>
-*Lumbreras A., Guégan M., Velcin J., Jouve B.* <br>
-Computational Statistics (2016)   <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2017_CompStats.pdf)
-[<i class="fa fa-github fa-lg fa-fw"></i>](https://github.com/alumbreras/Dual-DPGMM)
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+In this path I found *my* answers. My role as your coach is to help you finding *your* answers.
 
-[Analyse des rôles dans les communautés virtuelles : définitions et premières expérimentations sur IMDb](http://lipn.univ-paris13.fr/marami2013/MARAMI13/Programme_2.html) <br>
-*Lumbreras A., Lanagan J., Velcin J.,  Jouve B.* <br>
-Modèles et Analyses Réseau : Approches Mathématiques et Informatiques (2013)<br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://arxiv.org/ftp/arxiv/papers/1309/1309.7187.pdf)
-<i class="fa fa-github fa-lg fa-fw"></i>
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+I was trained by the [Co-active Training Institute (CTI)](https://coactive.com/). I am an internal coach for my company, and I also coach external clients.
 
-[An insight into the Analysis of Roles in IMDb.](http://complexity-in-social-systems.u-cergy.fr/?page_id=326)   <br>
-*Lumbreras A., Lanagan J, Jouve B., Velcin J.* <br>
-Workshop on Complexity in social systems: from data to models, Cergy Pontoise (95), 27-28 (2013) <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2013_1.pdf)
-<i class="fa fa-github fa-lg fa-fw"></i>
-[<i class="fa fa-slideshare fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_et_al_2013_1_slides.pdf)
+I speak English, Spanish, French, and Catalan. 
 
-[Applying trust metrics based on user interactions to recommendation in social networks](http://ieeexplore.ieee.org/document/6425600/)<br> 
-*Lumbreras A., Gavaldà R.* <br>
-IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining    <br>
-Social Knowledge Discovery and Utilization Workshop  (2012)  <br> 
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_Gavalda_ASONAM_2012_extversion.pdf)
-[<i class="fa fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets/)
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+To arrange a free consultation and tell me about your goals, please email me to:
 
-[Tecnopolítica: la potencia de las multitudes conectadas. El sistema red 15M, un nuevo paradigma de la política distribuida](http://tecnopolitica.net/sites/default/files/1878-5799-3-PB%20%282%29.pdf)   <br>
-*Toret J. (coord.), Aguilera M., Aragón P., Calleja A., Lumbreras A., Marín Ó* <br>
-Ed.: Universitat Oberta de Catalunya (2012)  <br> 
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](http://tecnopolitica.net/sites/default/files/1878-5799-3-PB%20%282%29.pdf) 
-<i class="fa fa-github fa-lg fa-fw"></i>
-<i class="fa fa-slideshare fa-lg fa-fw"></i>
+<div class="center-email">
+    <a href="mailto:alberto@eulercoaching.com">alberto@eulercoaching.com</a>
+</div>
 
------
+----
 
-[Generative models of online discussion threads (Tutorial)](http://asonam.cpsc.ucalgary.ca/2018/Tutorials/asonam-generative-models_Andreas.pdf)<br>
-*Aragón P., Gómez V., Lumbreras A., Kaltenbrunner A.* <br>
-The 2018 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://www.upf.edu/web/ai-ml/tutorial-asonam-2018)
-<i class="fa fa-github fa-lg fa-fw"></i>
-[<i class="fa fa-slideshare fa-lg fa-fw"></i>](https://docs.google.com/presentation/d/1sHfJJKMrBTjN05J5qPf6LP6CqF5vwUX6kq0P7LCobmU/edit?ts=5b83b77b#slide=id.g3ef0d253a5_2_30)
+## My coaching principles 
 
------
+My coaching style is grounded in four key principles that will guide our journey together.
 
-[Automatic Role Detection in Online Forums](https://tel.archives-ouvertes.fr/tel-01439342/) <br>
-PhD Thesis. Université Lyon 2 - Technicolor (2016) <br>
-*Supervised by: Bertrand Jouve, Julien Velcin, Marie Guégan* <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://tel.archives-ouvertes.fr/tel-01439342/)
-<i class="fa fa-github fa-lg fa-fw"></i>
-[<i class="fa fa-slideshare fa-lg fa-fw"></i>]({{site.url}}/files/PhD soutenance.pdf)
+#### **Values**
 
-[Towards Trust-Aware Recommender Systems.]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf) <br>
-Masther’s Thesis. Master on Artificial Intelligence. Universitat Politècnica de Catalunya. (2012) <br>
-*Supervised by: Ricard Gavaldà.* <br>
-[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf)
-[<i class="fa fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets)
-[<i class="fa fa-slideshare fa-lg fa-fw"></i>](http://www.slideshare.net/anarcaster/towards-trustaware-recommender-systems)
+My coachee's values are the foundation on which we build their goals and their vision for the future. Values help us to define what is important for them, and they provide a compass to guide their decisions and actions. I help my coachees to identify their values and to make sure that their actions are consistent with their values and their priorities.
+
+#### **Co-creation**
+
+The essence of our coaching relationship is grounded in co-creation. This means we collaborate closely to tailor strategies and solutions that uniquely fit my coachees needs. I bring my expertise and insights to the table, while you bring your unique experiences and perspectives. Our sessions will be interactive and dynamic, encouraging an open dialogue. This collaborative approach ensures that the insights and actions developed are deeply personalized, ensuring that they are not just effective but also meaningful and sustainable for the coachee.
+
+#### **Accountability**
+
+Accountability is a key pillar of our coaching engagement. I am committed to holding my coachees accountable to the goals we set together, providing a balanced mix of support and challenge. This involves regular check-ins, constructive feedback, and encouragement to stay on track. My role is to be a catalyst for their commitment and a support system for their journey, helping them navigate through obstacles and stay focused on their desired outcomes. This consistent accountability framework fosters progress and facilitates real change.
+
+#### **Ambition** (*exponential growth*)
+
+I challenge my coachees to think big. I help them crafting a vision for their future that is both inspiring and achievable, and that deeply resonate with their values and their priorities, setting the stage for a transformative experience. Our journey involves uncovering their potential, leveraging their strengths, and confronting any barriers that might be hindering their progress.
+<br>
+
+## A digression on exponential growth
+
+As an telecommunication enginner, I owe a lot to Leonhard Euler, the Swiss mathematician who introduced the number *e* (2.71828...). Euler's number is a fundamental constant in mathematics, and it is used in many areas of science. Imagine that you have a some initial capital $$c_o$$, and that your bank gives you a yearly interest rate of $$r$$. After one year, you will have
+
+
+$$
+c_1 = c_o \cdot (1+r)
+$$
+
+  
+Now imagine that, instead of waiting one year, the bank lets you compound the interest (that is, every time you get some interest, it's used as your new capital upon which the next interest is calculated) $$n$$ times that year. After one year, you will have
+
+$$
+c_{n} = c_o \cdot (1+\frac{r}{n})^{n}
+$$
+
+The more often the interest is compounded, the more money you will have at the end of the year. But, what's the pattern of this growth? Euler proved that, if your could compound the interest infinite times for any given period, your final capital would exponentially with the interest rate. And the base of that exponential growth is Euler's number:
+
+$$
+c_{\infty} = c_o \cdot e^r
+$$
+
+What Euler tells you is that you should re-invest your *career capital* as often as possible.
+
+I will help you to identify those investing opportunities, and to make the most of them.

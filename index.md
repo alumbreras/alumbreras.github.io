@@ -3,50 +3,19 @@ layout: default
 ---
 
 <div class="col-xs-12 col-md-12">
-
-	<div class=".col-xs-12 .col-md-4">
-		<img src="{{site.baseurl}}/assets/img/alberto_w.jpg" 
-			class="img-rounded" 
-			style="float: right; margin: 0px 0px 25px 25px; width: 250px;" />
-	</div>
-
 	<div class=".col-xs-12 .col-md-8">
+		<div class='centered-content'>
 		<h1> Alberto Lumbreras </h1>
-		<h2 class="headline">Research Scientist @ Criteo AI Lab</h2>
-		<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris, France</p></h3>
-
-		<div class='maintext'>
-			<p> Since 2019, I am a Staff Research Scientist at the <a href="https://ailab.criteo.com/">Criteo AI Lab</a>, working on Deep Generative Models and Bayesian Inference.</p>
-
-			<p>
-			From 2016 to 2018, I was a CNRS postdoctoral researcher
-			at <a href="https://www.irit.fr/?lang=fr">IRIT</a>. 
-			I worked in the <a href="http://projectfactory.irit.fr/">FACTORY</a> project 
-			coordinated by <a href="https://www.irit.fr/~Cedric.Fevotte/">Cédric Févotte</a>, on Probabilistic Non-Negative Matrix Factorization.
-			</p>
-
-			<p>
-			From 2013 to 2016, I did an industrial PhD on Machine learning and Social Network Analysis (<a href="http://www.technicolor.com/">Technicolor R&D </a> & <a href="http://eric.univ-lyon2.fr/">ERIC Lab</a>, <a href="http://www.univ-lyon2.fr/">Université Lyon 2</a>) under the supervision of <a href="http://blogs.univ-tlse2.fr/jouve/">Bertrand Jouve</a> 
-			and <a href="http://mediamining.univ-lyon2.fr/people/velcin/">Julien Velcin</a>. 
-			</p> 
-
-			<p>
-			From 2010 to 2012, I worked as the <a href="https://recerca.upc.edu/larca/en">LARCA</a> lab  while studying a MSc in Artificial Intelligence (<a href="http://www.upc.edu/?set_language=en">UPC</a>)
-			and wrote a <a href="http://www.albertolumbreras.net/files/Lumbreras_MasterThesis.pdf">Master’s Thesis</a> on Trust-Aware Recommender Systems 
-			advised by <a href="http://www.lsi.upc.edu/~gavalda/">Ricard Gavaldà</a> (2012).
-			</p>
-
-			<p>
-			From 2004 to 2010, I worked at <a href="http://tid.es/en/Pages/default.aspx">Telefónica R&D</a> 
-			as a Research Engineer. 
-			</p>
-
-			<p>
-			I am also a member of the <a href="http://datanalysis15m.wordpress.com/">Datanalysis15m</a> research group 
-			(<a href="http://www.uoc.edu/portal/en/index.html">UOC</a>).
-			</p>
+		<h2 class="headline">AI Researcher, Career coach, Tech advisor</h2>
+		<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris (France)- Barcelona (Spain)</p></h3>
 		</div>
+		<div class='maintext'>
+			<p><b>Research scientist</b> leading applied projects on generative AI, LLMs, and recommender systems in collaboration with engineering teams at  <a href="https://ailab.criteo.com/">Criteo AI Lab</a> . Scientific publications in top-tier journals and conferences. (<i>see <a href="/research.html">Research</a></i>)</p>
+			
+			<p> <b>Career coach</b> for professionals who want a boost (or a change) in their careers. Trained by the <a href="https://coactive.com/">Co-Active Training Institute</a> and working with diverse people from corporate and freelancing worlds, from engineering to arts. (<i>see <a href="/coaching.html">Coaching</a></i>)</p>
 
+			<p> <b>Tech advisor</b> for start-ups who want to change the world and need technical guidance, creativity, and advice in the extremely dynamic space of Artificial Intelligence.</p>
+		</div>
 	</div> 
 </div>
 

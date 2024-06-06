@@ -21,6 +21,17 @@ body {
     justify-content: center;
 }
 
+.centered-content {
+    text-align: center;
+    margin: 0 auto; /* Asegura que el contenedor esté centrado */
+}
+
+.centered-content h1,
+.centered-content h2,
+.centered-content h3 {
+    margin: 0.5em 0; /* Ajusta el margen según sea necesario */
+}
+
 .headline p {
     margin:0.5em 0 0em 0;
 }
@@ -195,4 +206,20 @@ img{
 
 .maintext{
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.center-email {
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen según sea necesario */
+    font-size: 16px;  /* Ajusta el tamaño de fuente según sea necesario */
+}
+
+.center-email a {
+    color: #5077bd; /* Color del enlace */
+    text-decoration: none;
+}
+
+.center-email a:hover {
+    color: #428bca; /* Color del enlace al pasar el cursor */
 }
