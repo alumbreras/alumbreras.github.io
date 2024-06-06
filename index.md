@@ -9,6 +9,7 @@ layout: default
 		<h2 class="headline">AI Researcher, Career coach, Tech advisor</h2>
 		<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris (France)- Barcelona (Spain)</p></h3>
 		</div>
+
 		<div class='maintext'>
 			<p><b>Research scientist</b> leading applied projects on generative AI, LLMs, and recommender systems in collaboration with engineering teams at  <a href="https://ailab.criteo.com/">Criteo AI Lab</a> . Scientific publications in top-tier journals and conferences. (<i>see <a href="/research.html">Research</a></i>)</p>
 			

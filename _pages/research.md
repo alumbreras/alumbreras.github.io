@@ -6,7 +6,7 @@ permalink: /research.html
 # Research
 
 <h2 class="section">Publications</h2>
-My research include different areas mostly in applied topics. Below, you will find publications on Large Language Models, Bayesian inference, Social Network Analysis, and Recommender Systems.
+My research includes different areas mostly in applied topics. Below, you will find publications on Large Language Models, Bayesian inference, Social Network Analysis, and Recommender Systems.
 <p>
 <div class="center-email">
 (<a href="https://github.com/alumbreras?tab=repositories"><i class="fa fa-github fa-lg fa-fw"></i> Gitlab repository</a> )
