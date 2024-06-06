@@ -223,3 +223,11 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 .center-email a:hover {
     color: #428bca; /* Color del enlace al pasar el cursor */
 }
+
+
+.rounded-image {
+    width: 250px; /* Ajusta el tamaño según sea necesario */
+    height: 250px; /* Asegúrate de que el ancho y el alto sean iguales */
+    border-radius: 50%; /* Esto hace que la imagen sea redonda */
+    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
+}

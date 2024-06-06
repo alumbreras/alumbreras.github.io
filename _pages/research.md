@@ -3,7 +3,14 @@ layout: default
 title: Publications
 permalink: /research.html
 ---
+
 # Research
+<div style="text-align: center;">
+    <figure style="display: inline-block;">
+        <img src="{{site.baseurl}}/assets/img/escher-geese-2.png" alt="" style="max-width: 100%;" />
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1938) "Day and Night"</figcaption>
+    </figure>
+</div>
 
 <h2 class="section">Publications</h2>
 My research includes different areas mostly in applied topics. Below, you will find publications on Large Language Models, Bayesian inference, Social Network Analysis, and Recommender Systems.

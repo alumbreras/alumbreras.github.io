@@ -5,7 +5,12 @@ permalink: /coaching.html
 ---
 
 # Carrer coaching
-
+<div style="text-align: center;">
+    <figure style="display: inline-block;">
+        <img src="{{site.baseurl}}/assets/img/metamorphose_2.png" alt="Metamorphose" style="max-width: 100%;" />
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940) "Metamorphose II"</figcaption>
+    </figure>
+</div>
 ## About me
 
 I partner with professionals to build careers that are meaningful to them, connected to who they are. 
@@ -30,7 +35,7 @@ To arrange a free consultation and tell me about your goals, please email me to:
 
 My coaching style is grounded in four key principles that will guide our journey together.
 
-#### **Values**
+#### **Coachee's values**
 
 My coachee's values are the foundation on which we build their goals and their vision for the future. Values help us to define what is important for them, and they provide a compass to guide their decisions and actions. I help my coachees to identify their values and to make sure that their actions are consistent with their values and their priorities.
 
@@ -42,56 +47,11 @@ The essence of our coaching relationship is grounded in co-creation. This means 
 
 Accountability is a key pillar of our coaching engagement. I am committed to holding my coachees accountable to the goals we set together, providing a balanced mix of support and challenge. This involves regular check-ins, constructive feedback, and encouragement to stay on track. My role is to be a catalyst for their commitment and a support system for their journey, helping them navigate through obstacles and stay focused on their desired outcomes. This consistent accountability framework fosters progress and facilitates real change.
 
-#### **Ambition** (*exponential growth*)
+#### **Ambition** (and *exponential growth*)
 
-I challenge my coachees to think big. I help them crafting a vision for their future that is both inspiring and achievable, and that deeply resonate with their values and their priorities, setting the stage for a transformative experience. Our journey involves uncovering their potential, leveraging their strengths, and confronting any barriers that might be hindering their progress.
+I challenge my coachees to think big. I help them crafting a vision for their future that is both inspiring and achievable, and that deeply resonate with their values and their priorities, setting the stage for a transformative experience. Our journey involves uncovering their potential, leveraging their strengths, and confronting any barriers that might be hindering their progress. I like make my coaches dream of exponential growth (you can read my <a href="posts/a-digression-on-exponential-growth.html">digression on exponential growth</a>)
 <br>
 
-## A digression on exponential growth
-
-As an telecommunication enginner, I owe a lot to Leonhard Euler, the Swiss mathematician who introduced the number *e* (2.71828...). Euler's number is a fundamental constant in mathematics, and it is used in many areas of science. 
-
-#### Growth with no re-investment 
-
-Imagine that you have a some initial capital $$c_o$$ and that you are given one year maximize it. You decide to put the money into the bank, who gives you a yearly interest rate of $$r$$. After one year, you will have
-
-
-$$
-c_1 = c_o \cdot (1+r)
-$$
-
-
-#### Growth with $n$ re-investments
-
-Now imagine that, instead of waiting one year, the bank lets you compound the interest (that is, every time you get some interest, it's used as your new capital upon which the next interest is calculated) $$n$$ times that year. After one year, you will have
-
-$$
-c_{n} = c_o \cdot (1+\frac{r}{n})^{n}
-$$
-
-The more often the interest is compounded, the more money you will have at the end of the year. 
-
-#### Growth with infinite re-investments
-
-But, what's the pattern of this growth? Euler proved that, if your could compound the interest infinite times for any given period, your final capital would be multiplied by a factor $e^r$, where $r$ is the interest rate and $e=2.718281828459045...$. In other words:
-
-$$
-c_{\infty} = c_o \cdot e^r
-$$
-
-Finally, if we repeat the exercise $t$ times where each time we grow $e^t$ we would get:
-
-$$
-c_{\infty}(t) = c_o \cdot (e^{r})^t
-$$
-
-There is something deeper here than just your money growing. The Euler number is to life what light is to the universe: a limit of how fast you can grow (or travel). Imagine rabbits reproducing as fast as they can. The bigger the population, the faster it will grow. Yet the ratio between one day and the day before will be given by Euler's number. 
-
-Euler number is everywhere, in our lifes and in our careers. 
-
-<div style="text-align: center;">
-    <img src="{{site.baseurl}}/assets/img/DALLE-rabbits-exponential.png" alt="Exponential growth illustration" />
-</div>
 
 
 <br>
