@@ -6,7 +6,7 @@ layout: default
 	<div class=".col-xs-12 .col-md-8">
 		<div class='centered-content'>
 		<h1> Alberto Lumbreras </h1>
-		<h2 class="headline">AI Researcher, Career coach, Tech advisor</h2>
+		<h2 class="headline">AI researcher, Career coach, Tech advisor</h2>
 		<h3 class="headline">a.lumbreras (at) criteo (dot) com <p>Paris (France)- Barcelona (Spain)</p></h3>
 		</div>
 
