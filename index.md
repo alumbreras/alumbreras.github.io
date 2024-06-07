@@ -12,8 +12,8 @@ layout: default
 
 <div style="text-align: center;">
     <figure style="display: inline-block;">
-        <img src="{{site.baseurl}}/assets/img/escher-metamorfosis.jpeg" alt="Metamorphose" style="max-width: 100%;" />
-        <figcaption style="text-align: left; font-size: 0.9em; color: #555;"></figcaption>
+        <img src="{{site.baseurl}}/assets/img/metamorphose-1.jpg" alt="Metamorphosis" style="max-width: 100%;" />
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1937) "Metamorphosis I"</figcaption>
     </figure>
 </div>
 <br>
@@ -21,7 +21,7 @@ layout: default
 <br>
 
 	<div class=".col-xs-12 .col-md-4">
-		<img src="{{site.baseurl}}/assets/img/alberto_w.jpg" 
+		<img src="{{site.baseurl}}/assets/img/alberto_bw.jpg" 
 			class="img-rounded" 
 			style="float: right; margin: 0px 0px 25px 25px; width: 250px;" />
 	</div>

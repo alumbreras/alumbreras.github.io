@@ -7,8 +7,8 @@ permalink: /research.html
 # Research
 <div style="text-align: center;">
     <figure style="display: inline-block;">
-        <img src="{{site.baseurl}}/assets/img/escher-geese-2.png" alt="" style="max-width: 100%;" />
-        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1938) "Day and Night"</figcaption>
+        <img src="{{site.baseurl}}/assets/img/metamorphose-2-2.png" alt="" style="max-width: 100%;" />
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940) "Metamorphosis II"</figcaption>
     </figure>
 </div>
 
