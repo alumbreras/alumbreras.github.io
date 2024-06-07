@@ -7,7 +7,7 @@ permalink: /coaching.html
 # Career coaching
 <div style="text-align: center;">
     <figure style="display: inline-block;">
-        <img src="{{site.baseurl}}/assets/img/metamorphose-2-3.png" alt="Metamorphose" style="max-width: 100%;" />
+        <img src="{{site.baseurl}}/assets/img/metamorphose-2-3.jpg" alt="Metamorphose" style="max-width: 100%;" />
         <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940) "Metamorphosis II"</figcaption>
     </figure>
 </div>
