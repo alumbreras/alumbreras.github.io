@@ -13,7 +13,7 @@ layout: default
 <div style="text-align: center;">
     <figure style="display: inline-block;">
         <img src="{{site.baseurl}}/assets/img/metamorphose-1.jpg" alt="Metamorphosis" style="max-width: 100%;" />
-        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1937) "Metamorphosis I"</figcaption>
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1937). <i>Metamorphosis I.</i></figcaption>
     </figure>
 </div>
 <br>

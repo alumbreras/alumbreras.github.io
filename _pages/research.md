@@ -8,7 +8,7 @@ permalink: /research.html
 <div style="text-align: center;">
     <figure style="display: inline-block;">
         <img src="{{site.baseurl}}/assets/img/metamorphose-2-2.jpg" alt="" style="max-width: 100%;" />
-        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940) "Metamorphosis II"</figcaption>
+        <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940). <i>Metamorphosis II.</i></figcaption>
     </figure>
 </div>
 
