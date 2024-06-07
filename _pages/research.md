@@ -19,6 +19,7 @@ My research includes different areas mostly in applied topics. Below, you will f
 (<a href="https://github.com/alumbreras?tab=repositories"><i class="fa fa-github fa-lg fa-fw"></i> Gitlab repository</a> )
 </div>
 </p>
+
 Le Bronnec, F., Duong, S., Ravaut, M., Allauzen, A., Chen, N. F., Guigue, V., Lumbreras, A., Soulier, L., Gallinari, P. "[LOCOST: State-Space Models for Long Document Abstractive Summarization](https://example.com/locost-pdf)." *Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics*, 2024. **(Best paper award)**[<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://example.com/locost-pdf) <i class="fa fa-github fa-lg fa-fw"></i> <i class="fa fa-slideshare fa-lg fa-fw"></i> 
 
 Vongpaseut, C., Lumbreras, A., Gartrell, M., Gallinari, P. "[Evaluating the Generalization Property of Prefix-based Methods for Data-to-text Generation](https://example.com/prefix-based-pdf)." *Actes de CORIA-TALN 2023. Actes de la 30e Conférence sur le Traitement Automatique des Langues Naturelles (TALN), volume 2: travaux de recherche originaux--articles courts*, 2023. [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://example.com/prefix-based-pdf) <i class="fa fa-github fa-lg fa-fw"></i> <i class="fa fa-slideshare fa-lg fa-fw"></i>
@@ -50,6 +51,7 @@ Aragón, P., Gómez, V., Lumbreras, A., Kaltenbrunner, A. "[Generative models of
 Lumbreras, A. "[Automatic Role Detection in Online Forums](https://tel.archives-ouvertes.fr/tel-01439342/)." *PhD Thesis. Université Lyon 2 - Technicolor*, 2016. *Supervised by: Bertrand Jouve, Julien Velcin, Marie Guégan* [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>](https://tel.archives-ouvertes.fr/tel-01439342/) <i class="fa fa-github fa-lg fa-fw"></i> [<i class="fa fa-slideshare fa-lg fa-fw"></i>]({{site.url}}/files/PhD_soutenance.pdf)
 
 Lumbreras, A. "[Towards Trust-Aware Recommender Systems](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets)." *Masther’s Thesis. Master on Artificial Intelligence. Universitat Politècnica de Catalunya*, 2012. *Supervised by: Ricard Gavaldà.* [<i class="fa fa-file-pdf-o fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf) [<i class="fa fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets) [<i class="fa fa-slideshare fa-lg fa-fw"></i>](http://www.slideshare.net/anarcaster/towards-trustaware-recommender-systems)
+
 
 
 <h2 class="section">Posts</h2>

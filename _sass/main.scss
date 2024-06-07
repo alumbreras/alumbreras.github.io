@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-size: 15px;
     line-height: 1.428571429;
     color: #000;
@@ -14,6 +15,14 @@ body {
     text-align: justify;
     overflow-x: hidden; 
 }
+
+.maintext{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+#publications{
+    font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
 
 .container {
     height: 100%;
@@ -208,7 +217,6 @@ img{
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
 .center-email {
     text-align: center;
     margin-top: 20px; /* Ajusta el margen según sea necesario */
@@ -230,4 +238,58 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     height: 250px; /* Asegúrate de que el ancho y el alto sean iguales */
     border-radius: 50%; /* Esto hace que la imagen sea redonda */
     object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio entre las reviews */
+    margin-top: 40px;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la foto y el texto */
+    font-size: 0.95em;
+}
+
+.review-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.review-figure {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.review-photo {
+    width: 175px;
+    height: 275px;
+    border-radius: 0%; /* La imagen no es redonda */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
+}
+
+.review-text {
+    font-size: 0.98em;
+    text-align: justify;
+    padding-left: 20px; /* Añade espacio entre la foto y el texto */
+    font-family:  Tahoma, Arial, sans-serif; /* Tahoma shows more contrast between normal and bold. Nice here that we want to highlight some passages from coachees*/
+}
+
+.review-name {
+    font-weight: bold;
+    display: block;
+}
+
+.review-position {
+    font-style: italic;
+    display: block;
+    margin-bottom: 10px; /* Ajusta el espacio entre el nombre, puesto y la opinión */
+}
+
+.review-opinion {
+    margin-top: 10px; /* Ajusta el espacio entre el nombre y el puesto */
+    font-weight: 300;
 }
