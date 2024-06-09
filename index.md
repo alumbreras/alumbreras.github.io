@@ -19,11 +19,18 @@ layout: default
 		<br>
 		<br>
 		<br>
+		<!--
 		<div class=".col-xs-12 .col-md-4">
-			<img src="{{site.baseurl}}/assets/img/alberto_bw.jpg" 
+			<img src="{{site.baseurl}}/assets/img/alberto/alberto_bw.jpg" 
 				class="img-rounded" 
 				style="float: right; margin: 0px 0px 25px 25px; width: 250px;" />
+		</div> -->
+		<div class=".col-xs-12 .col-md-4">
+			<img src="{{site.baseurl}}/assets/img/alberto/cortada_toulouse_2.png" 
+				class="img-rounded" 
+				style="float: right; margin: 0px 0px 25px 25px; width: 200px; height:270px; object-fit: cover;" />
 		</div>
+
 		<div class='maintext'>
 			<p><b>Research scientist</b> leading applied projects on generative AI, LLMs, and recommender systems in collaboration with engineering teams at  <a href="https://ailab.criteo.com/">Criteo AI Lab</a> . Scientific publications in top-tier journals and conferences. (<i>see <a href="/research.html">Research</a></i>)</p>
 			

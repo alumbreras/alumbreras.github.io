@@ -11,24 +11,32 @@ permalink: /coaching.html
         <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940). <i>Metamorphosis II.</i></figcaption>
     </figure>
 </div>
+
 ## About me
+<div class="row">
+    <div class="col-md-4 col-md-push-8">
+        <img src="{{site.baseurl}}/assets/img/alberto/cortada_paris.png" class="img-responsive" alt="Alberto" />
+    </div>
+    <div class="col-md-8 col-md-pull-4">
+        {% raw %}
+        <p>I partner with professionals to build careers that are meaningful to them, connected to who they are.</p>
 
-I partner with professionals to build careers that are meaningful to them, connected to who they are. 
+        <p>I am a researcher in Artificial Intelligence with 20 years of experience in tech multinationals and academia. I have lived (and survived) crises, career shifts, promotions, corporate restructurings, and layoffs. I know the challenges of working in a foreign country and adapting to a new culture. I have also learned to be a parent and set boundaries so that my work does not take over my life. I have been through the ups and downs of a career in the tech industry, learning how to navigate and thrive through them.</p>
 
-I am a researcher in Artificial Intelligence with 20 years of experience in tech multinationals and academia. I have lived (and survived) crises, career shifts, promotions, corporate restructurings, and layoffs. I know the challenges of working in a foreign country and adapting to a new culture. I have also learned to be a parent and set boundaries so that my work does not take over my life. I have been through the ups and downs of a career in the tech industry, learning how to navigate and thrive through them.
+        <p>In this path I found <em>my</em> answers. My role as your coach is to help you finding <em>your</em> answers.</p>
 
-In this path I found *my* answers. My role as your coach is to help you finding *your* answers.
+        <p>I was trained by the <a href="https://coactive.com/">Co-active Training Institute (CTI)</a>. I am an internal coach for my company, and I also coach external clients.</p>
 
-I was trained by the [Co-active Training Institute (CTI)](https://coactive.com/). I am an internal coach for my company, and I also coach external clients.
+        <p>I speak English, Spanish, French, and Catalan.</p>
 
-I speak English, Spanish, French, and Catalan. 
+        <p>To arrange a free consultation and tell me about your goals, please email me to:</p>
 
-To arrange a free consultation and tell me about your goals, please email me to:
-
-<div class="center-email">
-    <a href="mailto:alberto@eulercoaching.com">alberto@eulercoaching.com</a>
+        <div class="center-email">
+            <a href="mailto:alberto@eulercoaching.com">alberto@eulercoaching.com</a>
+        </div>
+        {% endraw %}
+    </div>
 </div>
-
 ----
 
 ## My coaching principles 
