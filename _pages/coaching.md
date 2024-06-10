@@ -5,19 +5,19 @@ permalink: /coaching.html
 ---
 
 # Career coaching
-<div style="text-align: center;">
-    <figure style="display: inline-block;">
-        <img src="{{site.baseurl}}/assets/img/metamorphose-2-3.jpg" alt="Metamorphose" style="max-width: 100%;" />
+<div class="text-center">
+    <figure class="d-inline-block">
+        <img src="{{site.baseurl}}/assets/img/metamorphose-2-3.jpg" alt="Metamorphose" class="img-fluid" />
         <figcaption style="text-align: left; font-size: 0.9em; color: #555;">Escher, M.C. (1940). <i>Metamorphosis II.</i></figcaption>
     </figure>
 </div>
 
 ## About me
 <div class="row">
-    <div class="col-md-4 col-md-push-8">
-        <img src="{{site.baseurl}}/assets/img/alberto/cortada_paris.png" class="img-responsive" alt="Alberto" />
+    <div class="col-md-4 order-md-2">
+        <img src="{{site.baseurl}}/assets/img/alberto/cortada_paris.png" class="img-fluid about-photo" alt="Alberto" />
     </div>
-    <div class="col-md-8 col-md-pull-4">
+    <div class="col-md-8 order-md-1">
         {% raw %}
         <p>I partner with professionals to build careers that are meaningful to them, connected to who they are.</p>
 
@@ -72,7 +72,7 @@ I challenge my coachees to think big. I help them crafting a vision for their fu
             </figcaption>
         </figure>
     </div>
-    <div class="review-item reverse">
+    <div class="review-item">
         <figure class="review-figure">
             <img src="{{site.baseurl}}/assets/img/coachees/tomasz.png" alt="Tomasz" class="review-photo" />
             <figcaption class="review-text">
@@ -83,8 +83,6 @@ I challenge my coachees to think big. I help them crafting a vision for their fu
     </div>
     <!-- Añade más reviews aquí -->
 </div>
-
-
 
 <br>
 <br>

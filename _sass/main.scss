@@ -7,7 +7,6 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /*font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-size: 15px;
     line-height: 1.428571429;
     color: #000;
@@ -16,13 +15,13 @@ body {
     overflow-x: hidden; 
 }
 
-.maintext{
+.maintext {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
+}
 
-#publications{
+#publications {
     font-family: "Source Serif Pro", "Helvetica Neue",Helvetica,Arial,sans-serif;
-    }
+}
 
 .container {
     height: 100%;
@@ -32,24 +31,22 @@ body {
 
 .centered-content {
     text-align: center;
-    margin: 0 auto; /* Asegura que el contenedor esté centrado */
+    margin: 0 auto;
 }
 
 .centered-content h1,
 .centered-content h2,
 .centered-content h3 {
-    margin: 0.5em 0; /* Ajusta el margen según sea necesario */
+    margin: 0.5em 0;
 }
 
 .headline p {
-    margin:0.5em 0 0em 0;
+    margin: 0.5em 0 0em 0;
 }
 
-/* Navigation menu with a slightly smaller font */
 nav {
     font-size: 14px;
 }
-
 
 a {
     color: #5077bd;
@@ -60,212 +57,37 @@ a:hover {
     color: #428bca;
 }
 
-/*Alignment tweaks for social sharing buttons*/
-/* This gets Google to fall into place */
-.social {
-    font-size: 1px;
-}
- 
-/* This gets Facebook to fall into place */
-.social .fb-like {
-    font-size: 1px;
-    display: inline-block;
-}
- 
-/* Set an optional width for your button wrappers */
-.social span {
-    display: inline-block;
-    width: 110px;
-}
- 
-/* Adjust the widths individually if you like */
-.social .google {
-    width: 65px;
-}
-
-.social .facebook {
-    width: 85px;
-}
-
-.social .twitter {
-    width: 95px;
-}
-
-/* Post titles*/
-h1,.h1 {
-	font-size:25px;
-	font-weight:bold;
-}
-
-h2,.h2 {
-	font-size:120%;
-	line-height:1.5em;
-	margin:1.5em 0 1.5em 0;
-	font-weight:bold;
-    font-family:'lucida grande', sans-serif;
-}
-
-h2.section {
-    text-align: center;
-}
-
-h2.headline {
-	font-size:120%;
-	line-height:1em;
-	margin:0.2em 0 0em 0;
-	font-weight:normal;
-    font-family:'lucida grande', sans-serif;
-}
-
-h3,.h3 {
-	font-size:100%;
-	line-height:1.25em;
-	font-weight:bold;
-	font-family: 'lucida grande', sans-serif;
-	font-variant:small-caps;
-}
-
-h3.headline {
-	font-size:100%;
-    line-height:1em;
-    margin:0.5em 0em 2em 0em;
-	font-weight:normal;
-    font-family: 'lucida grande', sans-serif;
-    font-variant:normal;
-}
-
-h4,.h4 {
-	font-size:100%;
-	font-weight:bold;
-}
-
-h5,.h5 {
-	font-size:100%;
-	font-weight:bold;
-}
-h6,.h6 {
-	font-size:100%;
-	font-weight:bold;
-}
-
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-  ul.posts li {
-    line-height: 1.75em;
-  }
-
-  ul.posts span {
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
-  }
-
-
-/* prevents the navbar from shifting horizontally when scroll appears */
-html { 
-  overflow-y: scroll; 
-  overflow-x: scroll;
-}
-
-
-
-@media (max-width: 990px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
-    /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
-        display: block!important;
-    }
-    .collapsing {
-        overflow: hidden!important;
-    }
-}
-
-img{
-    max-width:100%;
-}
-
-.maintext{
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+img {
+    max-width: 100%;
 }
 
 .center-email {
     text-align: center;
-    margin-top: 20px; /* Ajusta el margen según sea necesario */
-    font-size: 16px;  /* Ajusta el tamaño de fuente según sea necesario */
+    margin-top: 20px;
+    font-size: 16px;
 }
 
 .center-email a {
-    color: #5077bd; /* Color del enlace */
+    color: #5077bd;
     text-decoration: none;
 }
 
 .center-email a:hover {
-    color: #428bca; /* Color del enlace al pasar el cursor */
-}
-
-
-.rounded-image {
-    width: 250px; /* Ajusta el tamaño según sea necesario */
-    height: 250px; /* Asegúrate de que el ancho y el alto sean iguales */
-    border-radius: 50%; /* Esto hace que la imagen sea redonda */
-    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
-}
-
-.rounded-image-alberto-coach {
-    width: 250px; /* Ajusta el tamaño según sea necesario */
-    height: 250px; /* Asegúrate de que el ancho y el alto sean iguales */
-    border-radius: 50%; /* Esto hace que la imagen sea redonda */
-    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
-    /*display: inline-block; */ /* Asegura que la imagen esté alineada con el texto */
-    float: right;
-    margin: 0px 0px 25px 25px; 
+    color: #428bca;
 }
 
 .reviews {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacio entre las reviews */
+    gap: 40px;
     margin-top: 40px;
 }
 
 .review-item {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espacio entre la foto y el texto */
+    gap: 20px;
     font-size: 0.95em;
-}
-
-.review-item.reverse {
-    flex-direction: row-reverse;
 }
 
 .review-figure {
@@ -277,15 +99,15 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 .review-photo {
     width: 175px;
     height: 275px;
-    border-radius: 0%; /* La imagen no es redonda */
-    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
+    border-radius: 0%;
+    object-fit: cover;
 }
 
 .review-text {
     font-size: 0.98em;
     text-align: justify;
-    padding-left: 20px; /* Añade espacio entre la foto y el texto */
-    font-family:  Tahoma, Arial, sans-serif; /* Tahoma shows more contrast between normal and bold. Nice here that we want to highlight some passages from coachees*/
+    padding-left: 20px;
+    font-family: Tahoma, Arial, sans-serif;
 }
 
 .review-name {
@@ -296,24 +118,127 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 .review-position {
     font-style: italic;
     display: block;
-    margin-bottom: 10px; /* Ajusta el espacio entre el nombre, puesto y la opinión */
+    margin-bottom: 10px;
 }
 
 .review-opinion {
-    margin-top: 10px; /* Ajusta el espacio entre el nombre y el puesto */
+    margin-top: 10px;
     font-weight: 300;
 }
 
 .review-photo,
 .img-responsive {
     max-width: 100%;
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: auto;
 }
 
+
+.about-photo {
+    width: 250px; /* Tamaño fijo */
+    height: 450px; /* Tamaño fijo */
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centrará la imagen en pantallas pequeñas */
+}
+
+/* Media queries used to adjust the layout for different screen sizes 
+It uses the @media rule to include a block of CSS properties only if a certain condition is true. 
+In this case, the condition is the maximum width of the screen. 
+If the screen is 768px wide or less, the CSS inside the @media rule will be applied. 
+*/
+
 @media (max-width: 768px) {
-    .review-photo,
-    .img-responsive {
-        width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor en pantallas pequeñas */
-        height: auto; /* Mantiene la proporción de la imagen */
+    .review-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .review-photo {
+        width: 175px; /* Mantiene el tamaño fijo en pantallas pequeñas */
+        height: 275px; /* Mantiene el tamaño fijo en pantallas pequeñas */
+        margin-bottom: 20px; /* Añade espacio entre la foto y el texto en pantallas pequeñas */
+    }
+
+    .review-text {
+        padding-left: 0; /* Elimina el padding a la izquierda en pantallas pequeñas */
+    }
+
+    .about-photo {
+        margin: 0 auto 20px auto; /* Centra la foto en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 992px) {
+    .review-item,
+    .review-item.reverse {
+        padding: 10px;
+    }
+
+    .review-photo {
+        margin-right: 20px; /* Añade espacio a la derecha de la imagen en pantallas medianas */
+    }
+
+    .review-item.reverse .review-photo {
+        margin-left: 20px; /* Añade espacio a la izquierda de la imagen en pantallas medianas */
+        margin-right: 0; /* Elimina el margen a la derecha */
+    }
+}
+
+/* Adjustments for headings */
+h1, .h1 {
+    font-size: 2rem; /* Ajustar según sea necesario */
+    font-weight: bold;
+}
+
+h2, .h2 {
+    font-size: 1.5rem; /* Ajustar según sea necesario */
+    line-height: 1.5em;
+    margin: 1.5em 0 1.5em 0;
+    font-weight: bold;
+    font-family: 'lucida grande', sans-serif;
+}
+
+h2.section {
+    text-align: center;
+}
+
+h2.headline {
+    font-size: 120%; /* Ajustar según sea necesario % sobre el tamaño base que es 1.5rem como se especifica en h2 */
+    line-height: 1em;
+    margin: 0.2em 0 0em 0;
+    font-weight: normal;
+    font-family: 'lucida grande', sans-serif;
+}
+
+h3, .h3 {
+    font-size: 1.25rem; /* Ajustar según sea necesario */
+    line-height: 1.25em;
+    font-weight: bold;
+    font-family: 'lucida grande', sans-serif;
+    font-variant: small-caps;
+}
+
+h3.headline {
+    font-size: 100%; /* Ajustar según sea necesario */
+    line-height: 1em;
+    margin: 0.5em 0em 2em 0em;
+    font-weight: normal;
+    font-family: 'lucida grande', sans-serif;
+    font-variant: normal;
+}
+
+h4, .h4 {
+    font-size: 1.125rem; /* Ajustar según sea necesario */
+    font-weight: bold;
+}
+
+h5, .h5 {
+    font-size: 1rem; /* Ajustar según sea necesario */
+    font-weight: bold;
+}
+
+h6, .h6 {
+    font-size: 0.875rem; /* Ajustar según sea necesario */
+    font-weight: bold;
 }
