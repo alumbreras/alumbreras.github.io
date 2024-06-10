@@ -126,11 +126,17 @@ img {
     font-weight: 300;
 }
 
+/* Asegura que las negritas se muestren correctamente */
+.review-opinion b, .review-opinion strong {
+    font-weight: bold;
+}
+
 .review-photo,
 .img-responsive {
     max-width: 100%;
     height: auto;
 }
+
 
 
 .about-photo {
