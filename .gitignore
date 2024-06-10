@@ -6,3 +6,4 @@ _cache
 *~
 .vscode/settings.json
 assets/.DS_Store
+Gemfile.lock
