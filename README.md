@@ -11,3 +11,8 @@ The different pages are in the root:
 - publications: page to print publications
 - posts: a blog
 - coaching: my coaching services website
+
+# Run locally
+
+bundle install
+bundle exec jekyll serve
