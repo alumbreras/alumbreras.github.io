@@ -7,3 +7,7 @@ _cache
 .vscode/settings.json
 assets/.DS_Store
 Gemfile.lock
+assets/talks/.DS_Store
+.DS_Store
+Gemfile.lock
+Gemfile.lock
