@@ -12,27 +12,6 @@ permalink: /research.html
     </figure>
 </div>
 
-
-<h2 class="section">Talks</h2>
-
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-  {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
-  {% for talk in sorted_talks %}
-    <div class="col">
-      <div class="card h-100">
-        <a href="{{ talk.url }}" class="text-decoration-none">
-          <img src="{{ talk.cover_image }}" class="card-img-top" alt="{{ talk.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ talk.title }}</h5>
-            <p class="card-text">{{ talk.date | date: "%B %d, %Y" }}</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
-
 <h2 class="section">Publications</h2>
 My research includes different areas mostly in applied topics. Below, you will find publications on Large Language Models, Bayesian inference, Social Network Analysis, and Recommender Systems.
 <p>
@@ -73,6 +52,24 @@ Lumbreras, A. "[Automatic Role Detection in Online Forums](https://tel.archives-
 
 Lumbreras, A. "[Towards Trust-Aware Recommender Systems](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets)." *Masther’s Thesis. Master on Artificial Intelligence. Universitat Politècnica de Catalunya*, 2012. *Supervised by: Ricard Gavaldà.* [<i class="fas fa-file-pdf fa-lg fa-fw"></i>]({{site.baseurl}}/assets/files/Lumbreras_MasterThesis.pdf) [<i class="fab fa-github fa-lg fa-fw"></i>](https://bitbucket.org/alumbreras/trust-aware-recommender-system-for-tweets) [<i class="fab fa-slideshare fa-lg fa-fw"></i>](http://www.slideshare.net/anarcaster/towards-trustaware-recommender-systems)
 
+<h2 class="section">Talks</h2>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
+  {% for talk in sorted_talks %}
+    <div class="col">
+      <div class="card h-100">
+        <a href="{{ talk.url }}" class="text-decoration-none">
+          <img src="{{ talk.cover_image }}" class="card-img-top" alt="{{ talk.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ talk.title }}</h5>
+            <p class="card-text">{{ talk.date | date: "%B %d, %Y" }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
 
 <h2 class="section">Posts</h2>
