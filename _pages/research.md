@@ -54,57 +54,22 @@ Lumbreras, A. "[Towards Trust-Aware Recommender Systems](https://bitbucket.org/a
 
 <h2 class="section">Talks</h2>
 
-<!-- TODO-LLM 
-Add a 3 (horixontal) x N grid with screenshots that link to my pdf presentations
-{{site.baseurl}}/assets/'20240205 Alberto Lumbreras - Large Language Models.png'
-enlaza a
-{{site.baseurl}}/assets/'20240205 Alberto Lumbreras - Large Language Models.pdf'
-
-{{site.baseurl}}/assets/'20240713 Alberto Lumbreras - Social Impacts AI.png'
-enlaza a 
-{{site.baseurl}}/assets/'20240205 Alberto Lumbreras - Large Language Models.pdf'
--->
-
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <a href="{{site.baseurl}}/assets/talks/20240205 Alberto Lumbreras - Large Language Models.pdf" target="_blank" class="text-decoration-none">
-        <img src="{{site.baseurl}}/assets/talks/20240205 Alberto Lumbreras - Large Language Models.png" class="card-img-top" alt="Large Language Models Talk">
-        <div class="card-body">
-          <h5 class="card-title">Large Language Models</h5>
-          <p class="card-text">February 5, 2024</p>
-        </div>
-      </a>
+  {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
+  {% for talk in sorted_talks %}
+    <div class="col">
+      <div class="card h-100">
+        <a href="{{ talk.url }}" class="text-decoration-none">
+          <img src="{{ talk.cover_image }}" class="card-img-top" alt="{{ talk.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ talk.title }}</h5>
+            <p class="card-text">{{ talk.date | date: "%B %d, %Y" }}</p>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-
-  <div class="col">
-    <div class="card h-100">
-      <a href="{{site.baseurl}}/assets/talks/20240713 Alberto Lumbreras - Social Impacts AI.pdf" target="_blank" class="text-decoration-none">
-        <img src="{{site.baseurl}}/assets/talks/20240713 Alberto Lumbreras - Social Impacts AI.png" class="card-img-top" alt="Social Impacts of AI Talk">
-        <div class="card-body">
-          <h5 class="card-title">Social Impacts of AI</h5>
-          <p class="card-text">July 13, 2024</p>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="card h-100">
-      <a href="{{site.baseurl}}/assets/talks/20200401 Alberto Lumbreras - Variational Autoencoders.pdf" target="_blank" class="text-decoration-none">
-        <img src="{{site.baseurl}}/assets/talks/20200401 Alberto Lumbreras - Variational Autoencoders.png" class="card-img-top" alt="Variational Autoencoders">
-        <div class="card-body">
-          <h5 class="card-title">Variational Autoencoders</h5>
-          <p class="card-text">April 1st, 2020</p>
-        </div>
-      </a>
-    </div>
-  </div>
-
+  {% endfor %}
 </div>
-
-
 
 
 <h2 class="section">Posts</h2>

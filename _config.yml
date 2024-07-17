@@ -35,3 +35,8 @@ author: ''
 
 
 permalink: /posts/:title.html
+
+collections:
+  talks:
+    output: true
+    permalink: /talks/:title/
