@@ -81,6 +81,15 @@ I challenge my coachees to think big. I help them crafting a vision for their fu
             </figcaption>
         </figure>
     </div>
+    <div class="review-item">
+        <figure class="review-figure">
+            <img src="{{site.baseurl}}/assets/img/coachees/alessandro.png" alt="Tomasz" class="review-photo" />
+            <figcaption class="review-text">
+                <strong class="review-name">ALESSANDRO CORNACCHIA</strong> <i class="review-position">Account Strategist</i>
+                <p class="review-opinion">"Alberto has been crucial in my growth process. Right from the start we defined a list of goals and modeled the coaching sessions on them. Alberto has the ability to listen to you and ask the right questions at the right time almost as if he were a psychologist. Thanks to him, we were able to achieve the goals we set at the beginning of the process, and I am grateful to Alberto for <b>unlocking new skills that I will carry with me for the rest of my life</b>."</p>
+            </figcaption>
+        </figure>
+    </div>
     <!-- Añade más reviews aquí -->
 </div>
 
