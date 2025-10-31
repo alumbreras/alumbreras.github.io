@@ -248,3 +248,31 @@ h6, .h6 {
     font-size: 0.875rem; /* Ajustar según sea necesario */
     font-weight: bold;
 }
+
+/* Code block styling with Solarized-like yellow background */
+.highlight {
+    background-color: #fdf6e3; /* Solarized light base3 - warm yellow/cream */
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 1.5em 0;
+    overflow-x: auto;
+}
+
+.highlight pre {
+    margin: 0;
+    background-color: transparent;
+}
+
+/* Inline code styling */
+code {
+    font-family: 'Monaco', 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Inline code (not in blocks) */
+p code, li code, td code {
+    background-color: #fdf6e3;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #657b83; /* Solarized base00 for code text */
+}

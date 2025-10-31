@@ -40,3 +40,6 @@ collections:
   talks:
     output: true
     permalink: /talks/:title/
+  ai_notes:
+    output: true
+    permalink: /ai-notes/:title/

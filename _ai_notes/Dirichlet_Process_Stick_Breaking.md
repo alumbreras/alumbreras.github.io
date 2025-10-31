@@ -1,6 +1,8 @@
 ---
-layout: post
+layout: ai-note
 title: Generating distributions with the Stick Breaking version of the Dirichlet Process
+category: "Stats and Machine Learning"
+date: 2018-06-28
 tags: nonparametrics
 ---
 The Dirichlet Process is a prior over distributions. The basic definition relays on 

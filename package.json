@@ -1,0 +1,17 @@
+{
+  "name": "alumbreras-website",
+  "version": "1.0.0",
+  "description": "Personal website for Alberto Lumbreras",
+  "scripts": {
+    "start": "bundle exec jekyll serve",
+    "serve": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build",
+    "install": "bundle install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alumbreras/alumbreras.github.io.git"
+  },
+  "author": "Alberto Lumbreras",
+  "license": "MIT"
+}

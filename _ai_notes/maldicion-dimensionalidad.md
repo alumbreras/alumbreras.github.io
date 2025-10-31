@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: ai-note
 title: La maldición de la multidimensionalidad
+category: "Stats and Machine Learning"
 date: 15-09-2017
 ---
 
