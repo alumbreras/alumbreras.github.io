@@ -3,6 +3,96 @@
 
 {% include head.html %}
 
+<style>
+    /* Responsive fixes for mobile overflow */
+
+    /* Force container to not overflow */
+    .col-12, .col-md-8 {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* Content wrapper */
+    body, html {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* Code blocks - allow horizontal scroll */
+    pre {
+        overflow-x: auto;
+        max-width: 100%;
+        white-space: pre;
+        word-wrap: normal;
+    }
+
+    code {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Math equations - MathJax/LaTeX */
+    .MathJax, .MathJax_Display, .MathJax_Preview {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        max-width: 100% !important;
+    }
+
+    mjx-container, mjx-math {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    /* Inline math - allow breaking */
+    mjx-container[jax="CHTML"][display="true"] {
+        overflow-x: auto !important;
+    }
+
+    /* Paragraphs with math should not overflow */
+    p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Images - responsive */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Tables - allow horizontal scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+        /* Reduce math font size slightly on mobile */
+        mjx-container, .MathJax {
+            font-size: 85% !important;
+        }
+
+        /* Ensure pre blocks don't break layout */
+        pre {
+            font-size: 0.8em;
+        }
+
+        /* Force all content to stay within bounds */
+        * {
+            max-width: 100% !important;
+        }
+
+        /* Exception for container structure */
+        .container, .row {
+            max-width: 100% !important;
+        }
+    }
+</style>
+
 <body>
     <div class="container" style="position:relative; margin-top: 60px;">
         <div class="row justify-content-center">
