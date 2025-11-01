@@ -1,7 +1,7 @@
 ---
 layout: ai-note
 title: Tokenization
-category: "Large Language Models and Agents"
+category: "Large Language Models"
 date: 2024-10-31
 tags: llm, tokenization, nlp
 ---

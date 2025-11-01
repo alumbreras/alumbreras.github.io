@@ -1,7 +1,7 @@
 ---
 layout: ai-note
 title: Attention Mechanisms
-category: "Large Language Models and Agents"
+category: "Large Language Models"
 date: 2024-10-31
 tags: llm, attention, transformers, nlp
 ---

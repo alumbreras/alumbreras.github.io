@@ -1,7 +1,7 @@
 ---
 layout: ai-note
 title: Group Relative Policy Optimization (GRPO)
-category: "Large Language Models and Agents"
+category: "Agents"
 date: 2024-10-31
 tags: reinforcement-learning, llm, policy-optimization
 ---

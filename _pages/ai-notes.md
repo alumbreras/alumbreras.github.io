@@ -59,18 +59,16 @@ Generating distributions with the Stick Breaking version of the Dirichlet Proces
 
 ---
 
-## Large Language Models and Agents
+## Large Language Models
 
-{% assign llm_notes = site.ai_notes | where: "category", "Large Language Models and Agents" %}
+{% assign llm_notes = site.ai_notes | where: "category", "Large Language Models" %}
 
 <!-- Manual ordered list by complexity -->
 {% capture llm_manual_titles %}
 Tokenization
 Attention Mechanisms
-Proximal Policy Optimization (PPO)
-Direct Preference Optimization (DPO)
-Direct Preference Optimization (DPO copy)
-Group Relative Policy Optimization (GRPO)
+Reinforcement Learning from AI Feedback (RLAIF)
+Reinforcement Learning from Visual Feedback (RLVF)
 {% endcapture %}
 {% assign llm_manual_list = llm_manual_titles | split: "
 " %}
@@ -105,20 +103,72 @@ Group Relative Policy Optimization (GRPO)
   {% endunless %}
 {% endfor %}
 
+---
+
+## Agents
+
+{% assign agents_notes = site.ai_notes | where: "category", "Agents" %}
+
+<!-- Manual ordered list by complexity -->
+{% capture agents_manual_titles %}
+Proximal Policy Optimization (PPO)
+Direct Preference Optimization (DPO)
+Group Relative Policy Optimization (GRPO)
+{% endcapture %}
+{% assign agents_manual_list = agents_manual_titles | split: "
+" %}
+
+<div>
+  <ul class='posts'>
+    {% for title_raw in agents_manual_list %}
+      {% assign title = title_raw | strip %}
+      {% if title != "" %}
+        {% assign note = agents_notes | where: "title", title | first %}
+        {% if note %}
+          <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Show articles not in the manual list -->
+{% assign agents_unlisted_notes = "" | split: "" %}
+{% for note in agents_notes %}
+  {% assign is_listed = false %}
+  {% for title_raw in agents_manual_list %}
+    {% assign title = title_raw | strip %}
+    {% if note.title == title %}
+      {% assign is_listed = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% unless is_listed %}
+    {% assign agents_unlisted_notes = agents_unlisted_notes | push: note %}
+  {% endunless %}
+{% endfor %}
+
 
 ---
 
 ## Miscellaneous
 
-{% if unlisted_notes.size > 0 %}
 <div>
   <ul class='posts'>
     {% for note in unlisted_notes %}
       <li><a href="{{ note.url }}">{{ note.title }}</a></li>
     {% endfor %}
+    {% for note in llm_unlisted_notes %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
+    {% for note in agents_unlisted_notes %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
+    {% for note in handson_unlisted_notes %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
   </ul>
 </div>
-{% endif %}
 
 ---
 
