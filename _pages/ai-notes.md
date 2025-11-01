@@ -57,17 +57,6 @@ Generating distributions with the Stick Breaking version of the Dirichlet Proces
   {% endunless %}
 {% endfor %}
 
-{% if unlisted_notes.size > 0 %}
-<div style="margin-top: 30px; padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107;">
-  <h4 style="margin-top: 0; color: #856404;">⚠️ Other Articles (not yet ordered)</h4>
-  <ul class='posts'>
-    {% for note in unlisted_notes %}
-      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
 ---
 
 ## Large Language Models and Agents
@@ -76,8 +65,11 @@ Generating distributions with the Stick Breaking version of the Dirichlet Proces
 
 <!-- Manual ordered list by complexity -->
 {% capture llm_manual_titles %}
+Tokenization
+Attention Mechanisms
 Proximal Policy Optimization (PPO)
 Direct Preference Optimization (DPO)
+Direct Preference Optimization (DPO copy)
 Group Relative Policy Optimization (GRPO)
 {% endcapture %}
 {% assign llm_manual_list = llm_manual_titles | split: "
@@ -113,11 +105,15 @@ Group Relative Policy Optimization (GRPO)
   {% endunless %}
 {% endfor %}
 
-{% if llm_unlisted_notes.size > 0 %}
-<div style="margin-top: 30px; padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107;">
-  <h4 style="margin-top: 0; color: #856404;">⚠️ Other Articles (not yet ordered)</h4>
+
+---
+
+## Miscellaneous
+
+{% if unlisted_notes.size > 0 %}
+<div>
   <ul class='posts'>
-    {% for note in llm_unlisted_notes %}
+    {% for note in unlisted_notes %}
       <li><a href="{{ note.url }}">{{ note.title }}</a></li>
     {% endfor %}
   </ul>
@@ -167,13 +163,3 @@ Fine-tuning an LLM for Meal Planning
   {% endunless %}
 {% endfor %}
 
-{% if handson_unlisted_notes.size > 0 %}
-<div style="margin-top: 30px; padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107;">
-  <h4 style="margin-top: 0; color: #856404;">⚠️ Other Articles (not yet ordered)</h4>
-  <ul class='posts'>
-    {% for note in handson_unlisted_notes %}
-      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}

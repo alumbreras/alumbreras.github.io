@@ -6,16 +6,10 @@
 <style>
     /* Responsive fixes for mobile overflow */
 
-    /* Force container to not overflow */
-    .col-12, .col-md-8 {
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
     /* Content wrapper */
     body, html {
         overflow-x: hidden;
-        max-width: 100%;
+        width: 100%;
     }
 
     /* Code blocks - allow horizontal scroll */
@@ -67,6 +61,21 @@
         display: block;
         overflow-x: auto;
         max-width: 100%;
+    }
+
+    /* Override main.scss container flex that causes column width issues */
+    body > .container {
+        display: block !important;
+        height: auto !important;
+    }
+
+    /* Fix column width to be consistent across all articles */
+    @media (min-width: 768px) {
+        .col-md-8 {
+            width: 66.666667% !important;
+            flex: 0 0 66.666667% !important;
+            max-width: 66.666667% !important;
+        }
     }
 
     /* Mobile specific adjustments */
