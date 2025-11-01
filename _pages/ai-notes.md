@@ -20,6 +20,7 @@ This is a work in progress, evolving between individual notes and potentially a 
 {% capture manual_titles %}
 Biased and unbiased estimators
 La maldición de la multidimensionalidad
+Variational Inference
 Non-negative Matrix Factorization (Lee and Seung algorithm)
 The Chinese Restaurant Process
 Generating distributions with the Stick Breaking version of the Dirichlet Process
@@ -67,6 +68,9 @@ Generating distributions with the Stick Breaking version of the Dirichlet Proces
 {% capture llm_manual_titles %}
 Tokenization
 Attention Mechanisms
+Proximal Policy Optimization (PPO)
+Direct Preference Optimization (DPO)
+Group Relative Policy Optimization (GRPO)
 Reinforcement Learning from AI Feedback (RLAIF)
 Reinforcement Learning from Visual Feedback (RLVF)
 {% endcapture %}
@@ -111,9 +115,10 @@ Reinforcement Learning from Visual Feedback (RLVF)
 
 <!-- Manual ordered list by complexity -->
 {% capture agents_manual_titles %}
-Proximal Policy Optimization (PPO)
-Direct Preference Optimization (DPO)
-Group Relative Policy Optimization (GRPO)
+What is an Agent?
+Structured Outputs and Tool Calling
+Agent Design Patterns
+On Training Agents
 {% endcapture %}
 {% assign agents_manual_list = agents_manual_titles | split: "
 " %}

@@ -1,7 +1,7 @@
 ---
 layout: ai-note
 title: Direct Preference Optimization (DPO)
-category: "Agents"
+category: "Large Language Models"
 date: 2024-10-31
 tags: reinforcement-learning, llm, preference-learning
 ---
