@@ -20,7 +20,11 @@ This is a work in progress, evolving between individual notes and potentially a 
 {% capture manual_titles %}
 Biased and unbiased estimators
 La maldición de la multidimensionalidad
+Importance Sampling
+Metropolis-Hastings Algorithm
+Gibbs Sampling
 Variational Inference
+Variational Autoencoders (VAE)
 Non-negative Matrix Factorization (Lee and Seung algorithm)
 The Chinese Restaurant Process
 Generating distributions with the Stick Breaking version of the Dirichlet Process
@@ -57,6 +61,36 @@ Generating distributions with the Stick Breaking version of the Dirichlet Proces
     {% assign unlisted_notes = unlisted_notes | push: note %}
   {% endunless %}
 {% endfor %}
+
+<!-- Hands-on subsection for Stats and ML -->
+{% assign handson_notes = site.ai_notes | where: "category", "Hands-on" %}
+{% capture ml_handson_titles %}
+{% endcapture %}
+{% assign ml_handson_list = ml_handson_titles | split: "
+" %}
+
+{% assign ml_handson_articles = "" | split: "" %}
+{% for title_raw in ml_handson_list %}
+  {% assign title = title_raw | strip %}
+  {% if title != "" %}
+    {% assign note = handson_notes | where: "title", title | first %}
+    {% if note %}
+      {% assign ml_handson_articles = ml_handson_articles | push: note %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if ml_handson_articles.size > 0 %}
+### Hands-on
+
+<div>
+  <ul class='posts'>
+    {% for note in ml_handson_articles %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
 
 ---
 
@@ -107,6 +141,36 @@ Reinforcement Learning from Visual Feedback (RLVF)
   {% endunless %}
 {% endfor %}
 
+<!-- Hands-on subsection for LLMs -->
+{% capture llm_handson_titles %}
+Fine-tuning an LLM for Meal Planning
+{% endcapture %}
+{% assign llm_handson_list = llm_handson_titles | split: "
+" %}
+
+{% assign llm_handson_articles = "" | split: "" %}
+{% for title_raw in llm_handson_list %}
+  {% assign title = title_raw | strip %}
+  {% if title != "" %}
+    {% assign note = handson_notes | where: "title", title | first %}
+    {% if note %}
+      {% assign llm_handson_articles = llm_handson_articles | push: note %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if llm_handson_articles.size > 0 %}
+### Hands-on
+
+<div>
+  <ul class='posts'>
+    {% for note in llm_handson_articles %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
 ---
 
 ## Agents
@@ -153,6 +217,76 @@ On Training Agents
   {% endunless %}
 {% endfor %}
 
+<!-- Hands-on subsection for Agents -->
+{% capture agents_handson_titles %}
+{% endcapture %}
+{% assign agents_handson_list = agents_handson_titles | split: "
+" %}
+
+{% assign agents_handson_articles = "" | split: "" %}
+{% for title_raw in agents_handson_list %}
+  {% assign title = title_raw | strip %}
+  {% if title != "" %}
+    {% assign note = handson_notes | where: "title", title | first %}
+    {% if note %}
+      {% assign agents_handson_articles = agents_handson_articles | push: note %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if agents_handson_articles.size > 0 %}
+### Hands-on
+
+<div>
+  <ul class='posts'>
+    {% for note in agents_handson_articles %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+---
+
+## Paper Reviews
+
+{% assign paper_notes = site.ai_notes | where: "category", "Paper Reviews" %}
+
+<!-- Manual ordered list -->
+{% capture paper_manual_titles %}
+{% endcapture %}
+{% assign paper_manual_list = paper_manual_titles | split: "
+" %}
+
+<div>
+  <ul class='posts'>
+    {% for title_raw in paper_manual_list %}
+      {% assign title = title_raw | strip %}
+      {% if title != "" %}
+        {% assign note = paper_notes | where: "title", title | first %}
+        {% if note %}
+          <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Show articles not in the manual list -->
+{% assign paper_unlisted_notes = "" | split: "" %}
+{% for note in paper_notes %}
+  {% assign is_listed = false %}
+  {% for title_raw in paper_manual_list %}
+    {% assign title = title_raw | strip %}
+    {% if note.title == title %}
+      {% assign is_listed = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% unless is_listed %}
+    {% assign paper_unlisted_notes = paper_unlisted_notes | push: note %}
+  {% endunless %}
+{% endfor %}
 
 ---
 
@@ -169,7 +303,7 @@ On Training Agents
     {% for note in agents_unlisted_notes %}
       <li><a href="{{ note.url }}">{{ note.title }}</a></li>
     {% endfor %}
-    {% for note in handson_unlisted_notes %}
+    {% for note in paper_unlisted_notes %}
       <li><a href="{{ note.url }}">{{ note.title }}</a></li>
     {% endfor %}
   </ul>
@@ -177,44 +311,44 @@ On Training Agents
 
 ---
 
+<!-- Collect all hands-on articles that are already listed in subsections -->
+{% assign all_categorized_handson = "" | split: "" %}
+{% for note in ml_handson_articles %}
+  {% assign all_categorized_handson = all_categorized_handson | push: note %}
+{% endfor %}
+{% for note in llm_handson_articles %}
+  {% assign all_categorized_handson = all_categorized_handson | push: note %}
+{% endfor %}
+{% for note in agents_handson_articles %}
+  {% assign all_categorized_handson = all_categorized_handson | push: note %}
+{% endfor %}
+
+<!-- Find uncategorized hands-on articles -->
+{% assign uncategorized_handson = "" | split: "" %}
+{% for note in handson_notes %}
+  {% assign is_categorized = false %}
+  {% for categorized_note in all_categorized_handson %}
+    {% if note.url == categorized_note.url %}
+      {% assign is_categorized = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% unless is_categorized %}
+    {% assign uncategorized_handson = uncategorized_handson | push: note %}
+  {% endunless %}
+{% endfor %}
+
+{% if uncategorized_handson.size > 0 %}
 ## Hands-on
-
-{% assign handson_notes = site.ai_notes | where: "category", "Hands-on" %}
-
-<!-- Manual ordered list -->
-{% capture handson_manual_titles %}
-Fine-tuning an LLM for Meal Planning
-{% endcapture %}
-{% assign handson_manual_list = handson_manual_titles | split: "
-" %}
 
 <div>
   <ul class='posts'>
-    {% for title_raw in handson_manual_list %}
-      {% assign title = title_raw | strip %}
-      {% if title != "" %}
-        {% assign note = handson_notes | where: "title", title | first %}
-        {% if note %}
-          <li><a href="{{ note.url }}">{{ note.title }}</a></li>
-        {% endif %}
-      {% endif %}
+    {% for note in uncategorized_handson %}
+      <li><a href="{{ note.url }}">{{ note.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
 
-<!-- Show articles not in the manual list -->
-{% assign handson_unlisted_notes = "" | split: "" %}
-{% for note in handson_notes %}
-  {% assign is_listed = false %}
-  {% for title_raw in handson_manual_list %}
-    {% assign title = title_raw | strip %}
-    {% if note.title == title %}
-      {% assign is_listed = true %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-  {% unless is_listed %}
-    {% assign handson_unlisted_notes = handson_unlisted_notes | push: note %}
-  {% endunless %}
-{% endfor %}
+---
+{% endif %}
 
