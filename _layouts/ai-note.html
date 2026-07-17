@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<style>
+    /* Responsive fixes for mobile overflow */
+
+    /* Content wrapper */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Code blocks - allow horizontal scroll */
+    pre {
+        overflow-x: auto;
+        max-width: 100%;
+        white-space: pre;
+        word-wrap: normal;
+    }
+
+    code {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Math equations - MathJax/LaTeX */
+    .MathJax, .MathJax_Display, .MathJax_Preview {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        max-width: 100% !important;
+    }
+
+    mjx-container, mjx-math {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    /* Inline math - allow breaking */
+    mjx-container[jax="CHTML"][display="true"] {
+        overflow-x: auto !important;
+    }
+
+    /* Paragraphs with math should not overflow */
+    p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Images - responsive */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Tables - allow horizontal scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    /* Override main.scss container flex that causes column width issues */
+    body > .container {
+        display: block !important;
+        height: auto !important;
+    }
+
+    /* Fix column width to be consistent across all articles */
+    @media (min-width: 768px) {
+        .col-md-8 {
+            width: 66.666667% !important;
+            flex: 0 0 66.666667% !important;
+            max-width: 66.666667% !important;
+        }
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+        /* Reduce math font size slightly on mobile */
+        mjx-container, .MathJax {
+            font-size: 85% !important;
+        }
+
+        /* Ensure pre blocks don't break layout */
+        pre {
+            font-size: 0.8em;
+        }
+
+        /* Force all content to stay within bounds */
+        * {
+            max-width: 100% !important;
+        }
+
+        /* Exception for container structure */
+        .container, .row {
+            max-width: 100% !important;
+        }
+    }
+</style>
+
+<body>
+    <div class="container" style="position:relative; margin-top: 60px;">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                {% include navbar.html %}
+
+                <div style="margin-bottom: 20px;">
+                    <a href="/ai-notes.html" style="text-decoration: none; color: #333;">← AI Notes</a>
+                </div>
+
+                <h1>{{ page.title }}</h1>
+                {% if page.date %}
+                <p><small style="color: #666;">{{ page.date | date_to_string }}</small></p>
+                {% endif %}
+                {{ content }}
+
+                <div style="margin-top: 50px; margin-bottom: 30px;">
+                    <a href="/ai-notes.html" style="text-decoration: none; color: #333;">← AI Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <section id="footer">
+            {% include footer.html %}
+        </section>
+        {% include scripts.html %}
+    </div>
+</body>
+
+</html>

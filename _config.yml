@@ -13,6 +13,8 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
+include: ['_pages']
+
 # Outputting
 exclude: [
   'cibuild',
@@ -33,3 +35,11 @@ author: ''
 
 
 permalink: /posts/:title.html
+
+collections:
+  talks:
+    output: true
+    permalink: /talks/:title/
+  ai_notes:
+    output: true
+    permalink: /ai-notes/:title/

@@ -1,6 +1,7 @@
 ---
 title: Biased and unbiased estimators
-layout: post
+layout: ai-note
+category: "Stats and Machine Learning"
 date: 20-07-2018
 tags: machine learning
 ---

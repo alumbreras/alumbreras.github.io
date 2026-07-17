@@ -6,3 +6,12 @@ _cache
 *~
 .vscode/settings.json
 assets/.DS_Store
+Gemfile.lock
+assets/talks/.DS_Store
+.DS_Store
+Gemfile.lock
+Gemfile.lock
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/core-plugins.json
+.obsidian/workspace.json

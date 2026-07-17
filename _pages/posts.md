@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Posts
+permalink: /posts.html
 ---
 
 <h2 class="section">Posts</h2>

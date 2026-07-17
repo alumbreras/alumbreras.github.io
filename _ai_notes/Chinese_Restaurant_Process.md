@@ -1,6 +1,8 @@
 ---
-layout: post
+layout: ai-note
 title: The Chinese Restaurant Process
+category: "Stats and Machine Learning"
+date: 2014-02-25
 tags: tutorials
 ---
 
