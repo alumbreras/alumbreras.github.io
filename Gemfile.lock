@@ -1,14 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-<<<<<<< HEAD
-    activesupport (6.0.6.1)
-=======
     Ascii85 (1.1.1)
     activesupport (7.1.3.4)
       base64
       bigdecimal
->>>>>>> origin/master
       concurrent-ruby (~> 1.0, >= 1.0.2)
       connection_pool (>= 2.2.5)
       drb
@@ -30,14 +26,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorator (1.1.0)
-<<<<<<< HEAD
-    commonmarker (0.17.13)
-      ruby-enum (~> 0.5)
-    concurrent-ruby (1.2.0)
-    dnsruby (1.61.3)
-      addressable (~> 2.5)
-    em-websocket (0.5.1)
-=======
     commonmarker (0.23.10)
     concurrent-ruby (1.3.3)
     connection_pool (2.4.1)
@@ -49,7 +37,6 @@ GEM
       simpleidn (~> 0.2.1)
     drb (2.2.1)
     em-websocket (0.5.3)
->>>>>>> origin/master
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     ethon (0.16.0)
@@ -267,19 +254,12 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-<<<<<<< HEAD
-    minitest (5.17.0)
-    multipart-post (2.1.1)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
-=======
     minitest (5.24.1)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
     nokogiri (1.18.8)
       mini_portile2 (~> 2.8.2)
->>>>>>> origin/master
       racc (~> 1.4)
     nokogiri (1.18.8-aarch64-linux-gnu)
       racc (~> 1.4)
@@ -336,13 +316,6 @@ GEM
       bigdecimal (~> 3.1)
     typhoeus (1.4.1)
       ethon (>= 0.9.0)
-<<<<<<< HEAD
-    tzinfo (1.2.11)
-      thread_safe (~> 0.1)
-    unicode-display_width (1.7.0)
-    yell (2.2.2)
-    zeitwerk (2.6.6)
-=======
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
@@ -350,7 +323,6 @@ GEM
     webrick (1.8.1)
     yell (2.2.2)
     zeitwerk (2.6.16)
->>>>>>> origin/master
 
 PLATFORMS
   aarch64-linux
