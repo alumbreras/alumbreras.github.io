@@ -1,4 +1,5 @@
 ---
+redirect_from: /posts/The-Chinese-Restaurant-Process.html
 writing: true
 topic: technical
 layout: ai-note

@@ -1,4 +1,5 @@
 ---
+redirect_from: /posts/maldicion-dimensionalidad.html
 lang: es
 topic: technical
 layout: ai-note

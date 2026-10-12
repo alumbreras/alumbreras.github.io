@@ -1,4 +1,5 @@
 ---
+redirect_from: /posts/Biased_and_unbiased_estimators.html
 writing: true
 topic: technical
 title: Biased and unbiased estimators

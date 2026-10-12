@@ -1,4 +1,5 @@
 ---
+redirect_from: /posts/Dirichlet-Process-with-Stick-Breaking.html
 writing: true
 topic: technical
 layout: ai-note
