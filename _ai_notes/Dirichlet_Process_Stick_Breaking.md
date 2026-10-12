@@ -1,4 +1,6 @@
 ---
+writing: true
+topic: technical
 layout: ai-note
 title: Generating distributions with the Stick Breaking version of the Dirichlet Process
 category: "Stats and Machine Learning"

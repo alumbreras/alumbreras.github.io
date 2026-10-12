@@ -1,4 +1,6 @@
 ---
+writing: true
+topic: technical
 layout: ai-note
 title: The Chinese Restaurant Process
 category: "Stats and Machine Learning"

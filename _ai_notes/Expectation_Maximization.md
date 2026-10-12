@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Expectation-Maximization Algorithm
 category: "Stats and Machine Learning"

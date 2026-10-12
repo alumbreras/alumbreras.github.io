@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Fine-tuning an LLM for Meal Planning
 category: "Hands-on"

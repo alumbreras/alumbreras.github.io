@@ -1,4 +1,5 @@
 ---
+topic: technical
 layout: post
 title: A digression on exponential growth
 tags: mathematics, exponential-growth, Euler

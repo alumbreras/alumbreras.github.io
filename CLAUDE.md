@@ -39,8 +39,10 @@ No manual build or deployment steps are needed. The `_site/` directory is genera
 **Content Pages** (root and `_pages/`)
 - `index.md`: Landing page with introduction and main content
 - `_pages/research.md`: Research publications, talks, and posts listing
-- `_pages/coaching.md`: Coaching services information
-- `_pages/posts.md`: Blog posts index
+- `_pages/writing.md`: Writing index (main blog page), grouped by year
+- `_pages/archive.md`: Past activities (coaching, archived posts), linked from the footer
+- `_pages/coaching.md`: Archived coaching page (kept at its URL, linked from Archive)
+- `_pages/*-redirect.md`, `_pages/posts.md`: redirects (jekyll-redirect-from) for moved pages
 
 **Layouts** (`_layouts/`)
 - `default.html`: Base layout with navbar, footer, and Bootstrap grid
@@ -72,7 +74,11 @@ Key settings:
 
 ### Content Organization
 
-**Blog Posts**: Use Jekyll's standard post format with YAML front matter. Posts support LaTeX math rendering and code syntax highlighting.
+**Writing**: The Writing page lists `_posts` (except those with `archived: true`) plus `_ai_notes` with `writing: true`, newest first (see `_includes/writing-items.html`). Optional front matter: `topic` (shown as a label) and `lang` (shown when not English). Posts support LaTeX math rendering and code syntax highlighting.
+
+**AI Notes drafts**: Unfinished notes in `_ai_notes/` carry `published: false`. Keep them as drafts; do not delete them.
+
+**Political/activist writing** does not belong here; it goes to maldekstrakolono.net (separate Jekyll repo `alumbreras/maldekstrakolono`, branch `gh-pages`).
 
 **Talks**: Each talk is a Markdown file in `_talks/` with:
 - `layout: talk`
@@ -95,4 +101,5 @@ Key settings:
 - Google Analytics tracking is embedded in navbar links via onclick events
 - Math rendering in posts uses LaTeX/MathJax syntax
 - The `_site/` directory is the build output and should not be edited directly
-- External links include an e-Garden (Obsidian Publish) and LinkedIn profile
+- Plugins (GitHub Pages whitelisted): jekyll-feed (`/feed.xml`), jekyll-seo-tag, jekyll-redirect-from
+- Local builds on Ruby >= 3.2 fail with the Jekyll 3.9 pinned by `github-pages` (`tainted?` removed); use Ruby 3.1 or a shim

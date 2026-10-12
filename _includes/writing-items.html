@@ -1,0 +1,7 @@
+{%- comment -%}
+  Builds `writing_items`: posts (except archived) plus AI notes flagged `writing: true`,
+  newest first. Used by the Writing page and the home page.
+{%- endcomment -%}
+{%- assign writing_posts = site.posts | where_exp: "p", "p.archived != true" -%}
+{%- assign writing_notes = site.ai_notes | where: "writing", true -%}
+{%- assign writing_items = writing_posts | concat: writing_notes | sort: "date" | reverse -%}

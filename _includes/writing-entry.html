@@ -1,0 +1,8 @@
+<li class="writing-entry">
+  <a href="{{ include.item.url }}">{{ include.item.title }}</a>
+  <span class="writing-meta">
+    {%- if include.show_date %}<span>{{ include.item.date | date: "%b %Y" }}</span>{% endif -%}
+    {%- if include.item.topic %}<span>{{ include.item.topic }}</span>{% endif -%}
+    {%- if include.item.lang and include.item.lang != "en" %}<span class="lang">{{ include.item.lang | upcase }}</span>{% endif -%}
+  </span>
+</li>

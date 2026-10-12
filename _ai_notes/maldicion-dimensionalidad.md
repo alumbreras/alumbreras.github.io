@@ -1,4 +1,7 @@
 ---
+lang: es
+writing: true
+topic: technical
 layout: ai-note
 title: La maldición de la multidimensionalidad
 category: "Stats and Machine Learning"

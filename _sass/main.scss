@@ -11,7 +11,7 @@ body {
     line-height: 1.428571429;
     color: #000;
     background-color: #fff;
-    text-align: justify;
+    text-align: left;
     overflow-x: hidden; 
 }
 
@@ -275,4 +275,133 @@ p code, li code, td code {
     padding: 2px 6px;
     border-radius: 3px;
     color: #657b83; /* Solarized base00 for code text */
+}
+
+
+/* ---------- Writing ---------- */
+
+.page-narrow {
+    margin: 0 auto;
+}
+
+.page-title {
+    margin-top: 1em;
+}
+
+.page-intro {
+    color: #444;
+    font-size: 1.05em;
+}
+
+.home-intro {
+    margin-top: 2em;
+}
+
+h2.writing-year {
+    text-align: left;
+    font-size: 1rem;
+    color: #888;
+    margin: 2em 0 0.6em 0;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+.writing-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.writing-entry {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 1em;
+    padding: 0.35em 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.05em;
+}
+
+.writing-meta {
+    color: #888;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.writing-meta span + span::before {
+    content: "·";
+    margin: 0 0.4em;
+}
+
+.writing-meta .lang {
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+}
+
+.page-footnote {
+    margin-top: 2.5em;
+    font-size: 0.9em;
+}
+
+/* Long-form reading: serif, comfortable measure */
+.prose {
+    margin: 0 auto;
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #1a1a1a;
+}
+
+.prose h1 {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin-bottom: 0.3em;
+}
+
+.prose > .writing-meta {
+    margin-bottom: 2em;
+}
+
+.prose h2, .prose h3 {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-variant: normal;
+    text-align: left;
+    margin: 1.6em 0 0.6em 0;
+}
+
+.back-link {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 15px;
+    margin: 1.5em 0 1em 0;
+}
+
+.back-link a {
+    color: #555;
+}
+
+.back-link-bottom {
+    margin-top: 3em;
+}
+
+.site-footer {
+    margin: 4em 0 2em 0;
+    padding-top: 1.5em;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.site-footer a {
+    color: #666;
+    margin: 0 0.8em;
+}
+
+.archive-note {
+    background: #f6f6f4;
+    border-left: 3px solid #ccc;
+    padding: 0.7em 1em;
+    color: #555;
+    font-size: 0.95em;
+    margin-top: 1.5em;
 }

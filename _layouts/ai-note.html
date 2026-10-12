@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 
 {% include head.html %}
 
@@ -108,27 +108,24 @@
             <div class="col-12 col-md-8">
                 {% include navbar.html %}
 
-                <div style="margin-bottom: 20px;">
-                    <a href="/ai-notes.html" style="text-decoration: none; color: #333;">← AI Notes</a>
-                </div>
-
-                <h1>{{ page.title }}</h1>
-                {% if page.date %}
-                <p><small style="color: #666;">{{ page.date | date_to_string }}</small></p>
-                {% endif %}
-                {{ content }}
-
-                <div style="margin-top: 50px; margin-bottom: 30px;">
-                    <a href="/ai-notes.html" style="text-decoration: none; color: #333;">← AI Notes</a>
-                </div>
+                <article class="prose">
+                    <p class="back-link"><a href="/writing.html">← Writing</a></p>
+                    <h1>{{ page.title }}</h1>
+                    <p class="writing-meta">
+                        {%- if page.date %}<span>{{ page.date | date: "%B %-d, %Y" }}</span>{% endif -%}
+                        {%- if page.topic %}<span>{{ page.topic }}</span>{% endif -%}
+                    </p>
+                    {{ content }}
+                    <p class="back-link back-link-bottom"><a href="/writing.html">← Writing</a></p>
+                </article>
             </div>
         </div>
-
-        <section id="footer">
-            {% include footer.html %}
-        </section>
-        {% include scripts.html %}
     </div>
+
+    <section id="footer">
+        {% include footer.html %}
+    </section>
+    {% include scripts.html %}
 </body>
 
 </html>

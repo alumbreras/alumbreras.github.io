@@ -4,6 +4,8 @@ title: Coaching
 permalink: /coaching.html
 ---
 
+<p class="archive-note"><i class="fa fa-box-archive"></i> This page is kept in the <a href="/archive.html">archive</a>. I am not taking new coaching clients at the moment.</p>
+
 # Career coaching
 <div class="text-center">
     <figure class="d-inline-block">

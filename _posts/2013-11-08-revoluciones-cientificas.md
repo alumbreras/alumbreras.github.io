@@ -1,4 +1,6 @@
 ---
+topic: essay
+lang: es
 layout: post
 title: Revoluciones científicas y revoluciones políticas
 tags: philosophy

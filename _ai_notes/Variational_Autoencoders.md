@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Variational Autoencoders (VAE)
 category: "Stats and Machine Learning"

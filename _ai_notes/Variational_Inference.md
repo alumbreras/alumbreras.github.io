@@ -1,4 +1,6 @@
 ---
+writing: true
+topic: technical
 layout: ai-note
 title: Variational Inference
 category: "Stats and Machine Learning"

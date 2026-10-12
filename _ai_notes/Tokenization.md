@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Tokenization
 category: "Large Language Models"

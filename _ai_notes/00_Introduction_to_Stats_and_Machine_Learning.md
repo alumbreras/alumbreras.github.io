@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Introduction to Stats and Machine Learning
 category: "Stats and Machine Learning"

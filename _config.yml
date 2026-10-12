@@ -29,9 +29,18 @@ exclude: [
 
 timezone: Europe/Berlin
 baseurl: '' # the subpath of your site, e.g. /blog/
-url: '' # the base hostname & protocol for your site
+url: 'https://albertolumbreras.net' # the base hostname & protocol for your site
 title: 'Alberto Lumbreras'
-author: ''
+author: 'Alberto Lumbreras'
+description: 'Research scientist in AI. Writing on AI, its social impact, and how I work with it.'
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+feed:
+  path: feed.xml
 
 
 permalink: /posts/:title.html

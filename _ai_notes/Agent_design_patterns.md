@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Agent Design Patterns
 category: "Agents"

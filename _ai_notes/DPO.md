@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Direct Preference Optimization (DPO)
 category: "Large Language Models"

@@ -1,4 +1,6 @@
 ---
+writing: true
+topic: technical
 title: Biased and unbiased estimators
 layout: ai-note
 category: "Stats and Machine Learning"

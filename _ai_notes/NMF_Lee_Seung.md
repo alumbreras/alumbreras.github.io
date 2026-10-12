@@ -1,4 +1,6 @@
 ---
+writing: true
+topic: technical
 title: "Non-negative Matrix Factorization (Lee and Seung algorithm)"
 layout: ai-note
 category: "Stats and Machine Learning"

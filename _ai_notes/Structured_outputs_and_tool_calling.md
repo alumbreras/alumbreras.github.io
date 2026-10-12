@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Structured Outputs and Tool Calling
 category: "Agents"

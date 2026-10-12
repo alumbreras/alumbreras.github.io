@@ -1,9 +1,10 @@
 ---
+topic: ai & society
 layout: post
 title: From Alan Turing to ChatGPT
 tags: artificial-intelligence
 ---
-(This article has been translated from its <a href="https://albertolumbreras.net/posts/ChatGPT.html">Spanish version</a> by ChatGPT)
+(This article has been translated from its <a href="http://www.maldekstrakolono.net/2023/04/11/ChatGPT.html">Spanish version</a> by ChatGPT)
 
 In 1936, Alan Turing published an article that marked a turning point in the perception of what machines could achieve. Turing addressed the issue of computability, defining as _computable_ those mathematical problems that can be solved through a step-by-step process, an _algorithm_. Turing gave us both bad and good news. The bad news is that certain mathematical problems lack an algorithmic solution. The good news is that for the rest of the problems, there is an algorithm that solves them, and this algorithm is reproducible by a mechanical device with a set of very basic operations called a "**Turing machine**".
 

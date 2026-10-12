@@ -1,4 +1,5 @@
 ---
+archived: true
 layout: post
 title: Installing Spark on Ubuntu 18.04
 tags: big data

@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Importance Sampling
 category: "Stats and Machine Learning"

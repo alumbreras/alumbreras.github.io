@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Gibbs Sampling
 category: "Stats and Machine Learning"

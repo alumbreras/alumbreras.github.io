@@ -1,4 +1,5 @@
 ---
+published: false
 layout: ai-note
 title: Metropolis-Hastings Algorithm
 category: "Stats and Machine Learning"
