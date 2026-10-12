@@ -78,6 +78,8 @@ Key settings:
 
 **AI Notes drafts**: Unfinished notes in `_ai_notes/` carry `published: false`. Keep them as drafts; do not delete them.
 
+**Articles in progress are written in Obsidian**: while an article is being drafted, its source of truth is a `... (web).md` note in the work vault (`~/Vaults/work/30.05 ARTICULOS/<article folder>/`), with images in that folder's `img/`. Any change requested to the article must be made in the vault note, never only in the repo. "Upload" means copying the vault note into the repo (add layout/permalink front matter, map `img/` to `/assets/img/<slug>/`), checking on localhost, committing and pushing. Hidden review drafts live in `_pages/draft-*.md` with `noindex: true` and an unguessable permalink.
+
 **Political/activist writing** does not belong here; it goes to maldekstrakolono.net (separate Jekyll repo `alumbreras/maldekstrakolono`, branch `gh-pages`).
 
 **Talks**: Each talk is a Markdown file in `_talks/` with:
