@@ -76,7 +76,7 @@ Key settings:
 
 **Writing**: The Writing page lists `_posts` (except those with `archived: true`) plus `_ai_notes` with `writing: true`, newest first (see `_includes/writing-items.html`). Optional front matter: `topic` (shown as a label) and `lang` (shown when not English). Posts support LaTeX math rendering and code syntax highlighting.
 
-**AI Notes drafts**: Unfinished notes in `_ai_notes/` carry `published: false`. Keep them as drafts; do not delete them.
+**AI Notes drafts**: Unfinished notes in `_ai_notes/` carry `published: false`. Keep them as drafts; do not delete them. Their old URLs redirect to `/writing.html` via `redirect_from` in `_pages/writing.md`; when a draft is published, remove its URL from that list.
 
 **Articles in progress are written in Obsidian**: while an article is being drafted, its source of truth is a `... (web).md` note in the work vault (`~/Vaults/work/30.05 ARTICULOS/<article folder>/`), with images in that folder's `img/`. Any change requested to the article must be made in the vault note, never only in the repo. "Upload" means copying the vault note into the repo (add layout/permalink front matter, map `img/` to `/assets/img/<slug>/`), checking on localhost, committing and pushing. Hidden review drafts live in `_pages/draft-*.md` with `noindex: true` and an unguessable permalink.
 
