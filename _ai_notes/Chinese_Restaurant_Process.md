@@ -1,5 +1,6 @@
 ---
-redirect_from: /posts/The-Chinese-Restaurant-Process.html
+permalink: /posts/The-Chinese-Restaurant-Process.html
+redirect_from: /ai-notes/Chinese_Restaurant_Process/
 writing: true
 topic: technical
 layout: ai-note

@@ -1,5 +1,6 @@
 ---
-redirect_from: /posts/maldicion-dimensionalidad.html
+permalink: /posts/maldicion-dimensionalidad.html
+redirect_from: /ai-notes/maldicion-dimensionalidad/
 lang: es
 topic: technical
 layout: ai-note
@@ -8,7 +9,7 @@ category: "Stats and Machine Learning"
 date: 2017-09-15
 ---
 
-*(Esta nota también está [en inglés]({{site.baseurl}}/ai-notes/curse-of-dimensionality/).)*
+*(Esta nota también está [en inglés]({{site.baseurl}}/posts/curse-of-dimensionality.html).)*
 
 La **maldición de la dimensionalidad** es el efecto por el cual muchos problemas matemáticos se vuelven difíciles cuando tratamos con muchas dimensiones. En este artículo explicamos por qué en altas dimensiones una caja con un melón contiene más aire que melón, por qué la vida se complica con muchas dimensiones y cuáles son algunos efectos de la maldición en estadística y en aprendizaje automático. 
 

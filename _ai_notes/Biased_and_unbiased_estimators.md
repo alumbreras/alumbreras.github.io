@@ -1,5 +1,6 @@
 ---
-redirect_from: /posts/Biased_and_unbiased_estimators.html
+permalink: /posts/Biased_and_unbiased_estimators.html
+redirect_from: /ai-notes/Biased_and_unbiased_estimators/
 writing: true
 topic: technical
 title: Biased and unbiased estimators

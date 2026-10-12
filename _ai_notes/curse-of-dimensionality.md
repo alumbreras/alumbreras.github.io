@@ -1,4 +1,6 @@
 ---
+permalink: /posts/curse-of-dimensionality.html
+redirect_from: /ai-notes/curse-of-dimensionality/
 writing: true
 topic: technical
 layout: ai-note

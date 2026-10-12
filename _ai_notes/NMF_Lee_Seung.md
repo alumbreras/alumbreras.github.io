@@ -1,5 +1,6 @@
 ---
-redirect_from: /posts/NMF_Lee_Seung.html
+permalink: /posts/NMF_Lee_Seung.html
+redirect_from: /ai-notes/NMF_Lee_Seung/
 writing: true
 topic: technical
 title: "Non-negative Matrix Factorization (Lee and Seung algorithm)"
