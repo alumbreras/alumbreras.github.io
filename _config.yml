@@ -32,7 +32,8 @@ baseurl: '' # the subpath of your site, e.g. /blog/
 url: 'https://albertolumbreras.net' # the base hostname & protocol for your site
 title: 'Alberto Lumbreras'
 author: 'Alberto Lumbreras'
-description: 'Research scientist in AI. Writing on AI, its social impact, and how I work with it.'
+description: 'Staff Research Scientist at Criteo AI Lab, working on AI agents. Notes and essays on how AI works, how I work with it, and what it is doing to society.'
+tagline: 'Staff Research Scientist at Criteo AI Lab'
 
 plugins:
   - jekyll-feed

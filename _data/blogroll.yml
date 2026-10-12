@@ -1,0 +1,17 @@
+# Blogs listed under "Blogs I read" on the Writing page
+- name: Lil'Log
+  author: Lilian Weng
+  url: https://lilianweng.github.io/
+  note: Thorough, well-referenced deep dives into ML topics.
+- name: Deep (Learning) Focus
+  author: Cameron R. Wolfe
+  url: https://cameronrwolfe.substack.com/
+  note: Clear, didactic explanations of LLM research.
+- name: Interconnects
+  author: Nathan Lambert
+  url: https://www.interconnects.ai/
+  note: Post-training, open models and the AI industry, from the inside.
+- name: Essays
+  author: Paul Graham
+  url: https://paulgraham.com/articles.html
+  note: Short essays on startups, work and thinking. The inspiration for this page.

@@ -29,6 +29,11 @@ body {
     justify-content: center;
 }
 
+/* Rows inside the flex container must take the full width, not shrink to their content */
+.container > .row {
+    flex: 1 1 auto;
+}
+
 .centered-content {
     text-align: center;
     margin: 0 auto;
@@ -314,7 +319,7 @@ h2.writing-year {
 
 .writing-entry {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: baseline;
     justify-content: space-between;
     gap: 0 1em;
@@ -323,10 +328,23 @@ h2.writing-year {
     font-size: 1.05em;
 }
 
+.writing-entry > a {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
 .writing-meta {
+    flex: 0 0 auto;
     color: #888;
     font-size: 0.85em;
     white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+    .writing-entry {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .writing-meta span + span::before {
@@ -395,6 +413,7 @@ h2.writing-year {
 .site-footer a {
     color: #666;
     margin: 0 0.8em;
+    white-space: nowrap;
 }
 
 .archive-note {
@@ -429,4 +448,52 @@ h2.writing-year {
 .prose img {
     display: block;
     margin: 1.5em auto;
+}
+
+.home-banner {
+    margin: 0 0 0.5em 0;
+}
+
+.home-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-banner figcaption {
+    text-align: right;
+    font-size: 0.75em;
+    color: #888;
+    margin-top: 0.3em;
+}
+
+.blogroll {
+    margin-top: 3.5em;
+    padding: 1em 1.3em 0.6em 1.3em;
+    background: #f6f6f4;
+    border-radius: 6px;
+}
+
+.blogroll h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin: 0 0 0.5em 0;
+}
+
+.blogroll .writing-entry {
+    flex-wrap: wrap;
+    font-size: 0.95em;
+    border-bottom-color: #e6e6e2;
+}
+
+.blogroll .writing-entry:last-child {
+    border-bottom: none;
+}
+
+.blogroll-note {
+    flex-basis: 100%;
+    color: #666;
+    font-size: 0.85em;
 }

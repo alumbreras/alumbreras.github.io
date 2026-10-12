@@ -6,20 +6,23 @@ permalink: /writing.html
 
 <div class="page-narrow">
   <h1 class="page-title">Writing</h1>
-  <p class="page-intro">
-    Essays and notes on artificial intelligence: how it works, how I work with it,
-    and what it is doing to the world around us. Now and then, a derivation I wanted
-    to work out myself.
-  </p>
-
   {% include writing-items.html %}
-  {% assign by_year = writing_items | group_by_exp: "item", "item.date | date: '%Y'" %}
-  {% for year in by_year %}
-  <h2 class="writing-year">{{ year.name }}</h2>
   <ul class="writing-list">
-    {% for item in year.items %}{% include writing-entry.html item=item %}{% endfor %}
+    {% for item in writing_items %}{% include writing-entry.html item=item show_date=true %}{% endfor %}
   </ul>
-  {% endfor %}
+
+  <aside class="blogroll">
+  <h2>Blogs I read</h2>
+  <ul class="writing-list">
+    {% for blog in site.data.blogroll %}
+    <li class="writing-entry">
+      <a href="{{ blog.url }}">{{ blog.name }}</a>
+      <span class="writing-meta"><span>{{ blog.author }}</span></span>
+      <div class="blogroll-note">{{ blog.note }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+  </aside>
 
   <p class="page-footnote"><a href="/feed.xml"><i class="fa fa-rss"></i> RSS</a></p>
 </div>
