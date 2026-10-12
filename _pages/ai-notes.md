@@ -14,12 +14,12 @@ This is a work in progress, evolving between individual notes and potentially a 
 
 ## Stats and Machine Learning
 
-{% assign ml_notes = site.ai_notes | where: "category", "Stats and Machine Learning" %}
+{% assign ml_notes = site.ai_notes | where: "category", "Stats and Machine Learning"| where_exp: "n", "n.lang != 'es'" %}
 
 <!-- Manual ordered list by complexity -->
 {% capture manual_titles %}
 Biased and unbiased estimators
-La maldición de la multidimensionalidad
+The curse of dimensionality
 Importance Sampling
 Metropolis-Hastings Algorithm
 Gibbs Sampling

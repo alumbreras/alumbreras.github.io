@@ -1,17 +1,18 @@
 ---
 lang: es
-writing: true
 topic: technical
 layout: ai-note
 title: La maldición de la multidimensionalidad
 category: "Stats and Machine Learning"
-date: 15-09-2017
+date: 2017-09-15
 ---
+
+*(Esta nota también está [en inglés]({{site.baseurl}}/ai-notes/curse-of-dimensionality/).)*
 
 La **maldición de la dimensionalidad** es el efecto por el cual muchos problemas matemáticos se vuelven difíciles cuando tratamos con muchas dimensiones. En este artículo explicamos por qué en altas dimensiones una caja con un melón contiene más aire que melón, por qué la vida se complica con muchas dimensiones y cuáles son algunos efectos de la maldición en estadística y en aprendizaje automático. 
 
 ## Moscas multidimensionales
-Minsky es un robot unidimensional que vive en un universo contenido en un segmento de 1 metro. Un día, el robot ve una mosca que vuela hacia delante y hacia atrás en el segmento. Minsky decide cazarla con su cazamoscas, que tiene una longitud de $$l = 0.8$$, Como Minsky no tiene ni idea donde estará la mosca en un momento dado, lanza su cazamoscas a boleo. La probabilidad de cazar la mosca es igual al porcentaje de espacio que es capaz de cubrir con su matamoscas:
+Minsky es un robot unidimensional que vive en un universo contenido en un segmento de 1 metro. Un día, el robot ve una mosca que vuela hacia delante y hacia atrás en el segmento. Minsky decide cazarla con su cazamoscas, que tiene una longitud de $$l = 0.8$$. Como Minsky no tiene ni idea donde estará la mosca en un momento dado, lanza su cazamoscas a boleo. La probabilidad de cazar la mosca es igual al porcentaje de espacio que es capaz de cubrir con su matamoscas:
 
 $$
 p = \frac{l}{1} = 0.8
@@ -34,13 +35,13 @@ $$
 <img src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/bidimensional.png" style="width:304px;height:228px;">
 </p>
 
-Es curioso. El area de salvación de la mosca cada vez es más y más voluminosa en detrimento del espacio ocupado por el cazamoscas. De hecho, si seguimos subiendo de dimensiones, la probabilidad de cazar la mosca en d-dimensiones es:
+Es curioso. El área de salvación de la mosca cada vez es más y más voluminosa en detrimento del espacio ocupado por el cazamoscas. De hecho, si seguimos subiendo de dimensiones, la probabilidad de cazar la mosca en d-dimensiones es:
 
 $$
 p = l^d
 $$
 
-La gráfica muestra como esta probabilidad se va desvanenciendo a medida que subimos en número de dimensiones.
+La gráfica muestra cómo esta probabilidad se va desvaneciendo a medida que subimos en número de dimensiones.
 
 <figure>
     <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/hypercube_volume.png'/>
@@ -48,9 +49,9 @@ La gráfica muestra como esta probabilidad se va desvanenciendo a medida que sub
 </figcaption>
 </figure>
 
-¡Parece que es altas dimensiones no hay manera de cazar una mosca!
+¡Parece que en altas dimensiones no hay manera de cazar una mosca!
 
-Esta imágen ilustra la misma idea. A medida que subimos en dimensiones, el segmento resaltado (el cazamoscas), representa una parte más pequeña del total y la mosca tiene más espacio para campar a sus anchas:
+Esta imagen ilustra la misma idea. A medida que subimos en dimensiones, el segmento resaltado (el cazamoscas), representa una parte más pequeña del total y la mosca tiene más espacio para campar a sus anchas:
 
 <figure>
 <img  style="margin:0px auto; display:block; width:600px;"   src="{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/betancourt_cubes.png">
@@ -62,7 +63,7 @@ Esta imágen ilustra la misma idea. A medida que subimos en dimensiones, el segm
 
 ## Goteras multidimensionales
 
-Vamos a por un segundo ejemplo donde jugaremos con esferas en lugar de cubos. Imaginemos que tenemos goteras por todo el techo en nuestro comedor de dimensiones 1 m $$\times$$ 1 m y que queremos recoger todo el agua posible. Para ello ponemos un barreño 1 m de diámetro. El porcentaje de agua que caerá fuera del barreño es el cociente entre la superficie del barreño y la superficie del comedor. Esto es:
+Vamos a por un segundo ejemplo donde jugaremos con esferas en lugar de cubos. Imaginemos que tenemos goteras por todo el techo en nuestro comedor de dimensiones 1 m $$\times$$ 1 m y que queremos recoger todo el agua posible. Para ello ponemos un barreño 1 m de diámetro. El porcentaje de agua que caerá dentro del barreño es el cociente entre la superficie del barreño y la superficie del comedor. Esto es:
 
 $$
 p =   \frac{\pi R^2}{1} = \frac{\pi 0.5^2}{1} = \frac{\pi}{4} \approx 0.78
@@ -89,7 +90,7 @@ $$
 
 donde el numerador es el volumen de una esfera de radio R.
 
-Mirando la gráfica vemos que a partir de la dimensión 4 ya  cae más agua fuera que dentro! 
+Mirando la gráfica vemos que ¡a partir de la dimensión 4 ya cae más agua fuera que dentro! 
 
 
 <figure>
@@ -103,13 +104,13 @@ Volviendo al ejemplo del melón en una caja: a más dimensiones tenga la caja, m
 
 ## Dardos, fútbol y puntería multidimensional en general
 
-Esta dificultad de hacer puntería en altas dimensiones se reproduce en todas partes. En una diana de darnos multidimensional, la probabilidad de hacer diana (si no tocamos el diámetro de esta) tiende a cero. Lo mismo pasa, en fútbol, a la probabilidad de meter un gol (a no ser que aumentemos las medidas de la portería a medida que subimos de dimensiones). Y en basket, la probabilidad de meter una canasta también de desvanece.
+Esta dificultad de hacer puntería en altas dimensiones se reproduce en todas partes. En una diana de dardos multidimensional, la probabilidad de hacer diana (a no ser que la agrandemos) tiende a cero. Lo mismo pasa, en fútbol, a la probabilidad de meter un gol (a no ser que aumentemos las medidas de la portería a medida que subimos de dimensiones). Y en basket, la probabilidad de meter una canasta también se desvanece.
 
 Hacer deporte en altas dimensiones es muy, muy aburrido.
 
 
 
-## Aprendizaje automático: espacios desérticos y vecindarios vacios
+## Aprendizaje automático: espacios desérticos y vecindarios vacíos
 
 En aprendizaje automático el problema es el siguiente. Imaginemos que me dan una lista de animales descritos por su peso y su altura y una etiqueta que indica si el animal es un gato o un perro. Por simplicidad asumiremos que los atributos tienen tres valores posibles: bajo, medio, alto. El número de combinaciones posibles es:
 
@@ -117,9 +118,9 @@ $$
 3~\text{pesos} \times 3~\text{alturas} = 3^2
 $$
 
-Con unas decenas de ejemplos empezaré a ser capaz de ver qué combinaciones de atributos tienen a ser de perros y qué combinaciones tienden a ser de gatos. 
+Con unas decenas de ejemplos empezaré a ser capaz de ver qué combinaciones de atributos tienden a ser de perros y qué combinaciones tienden a ser de gatos. 
 
-Ahora, para poder mejorar mi clasificador, me dan cuatro atributos más: tamaño de las orejas, longitud de la cola, cantidad de pelo, y número de horas durmiendo... A priori parece útil, pero si no me dan más ejemplos no me están haciendo ningún favor. Mi espacio de ha crecido brutalmente! Ahora el número de combinaciones es:
+Ahora, para poder mejorar mi clasificador, me dan cuatro atributos más: tamaño de las orejas, longitud de la cola, cantidad de pelo, y número de horas durmiendo... A priori parece útil, pero si no me dan más ejemplos no me están haciendo ningún favor. ¡Mi espacio ha crecido brutalmente! Ahora el número de combinaciones es:
 
 $$
 3~\text{pesos} \times 3~\text{alturas} \times ~ ...  = 3^6
@@ -127,7 +128,7 @@ $$
 
 Si antes tenía 9 combinaciones posibles ahora tenemos 729. El problema es que si sólo nos dan 10 ejemplos, la mayoría de combinaciones están quedando inexploradas. 
 
-Vemos entonces que en altas dimensiones, todo está lejos de todo. Esto nos lleva un problema añadido, y es que desaparece la noción de vecindad (en el sentido de distancia en sus atributos, es decir, de parecerse) tan útil en aprendizaje. Si todo está lejos de todo, entonces un punto no tiene vecinos (puntos parecidos) y no podré decir si es un gato o un perro. "Pero el vecindario está definido arbitrariamente, aumentemos el radio del vecindario!", dirán algunos. El problema es que si nuestro radio de vecindario es muy grande acabamos considerando que todos son vecinos de todos, lo cual es tan inútil como considerar que todos son vecinos de todos.
+Vemos entonces que en altas dimensiones, todo está lejos de todo. Esto nos lleva a un problema añadido, y es que desaparece la noción de vecindad (en el sentido de distancia en sus atributos, es decir, de parecerse) tan útil en aprendizaje. Si todo está lejos de todo, entonces un punto no tiene vecinos (puntos parecidos) y no podré decir si es un gato o un perro. "Pero el vecindario está definido arbitrariamente, ¡aumentemos el radio del vecindario!", dirán algunos. El problema es que si nuestro radio de vecindario es muy grande acabamos considerando que todos son vecinos de todos, lo cual es tan inútil como considerar que nadie es vecino de nadie.
 
 En resumen, el aumento de dimensiones me desertifica el espacio, me lo convierte en un Mad Max multidimensional.
 
@@ -148,12 +149,12 @@ $$
 </p>
 
 En la imagen se muestra un ejemplo (inventado) de densidad ($$\pi(q)$$), volumen (de cada cachito del espacio, dq) y su producto.
-Vamos a analizar que pasa con dos de las distribuciones de probabilidad más conocidas: la Uniforme y la Gaussiana.
+Vamos a analizar qué pasa con dos de las distribuciones de probabilidad más conocidas: la Uniforme y la Gaussiana.
 
 
 *  Distribución uniforme
 
-La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones $$d_1 \times d_2$$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo. En otras palabras, es más probable que una gota caiga en el algún punto del borde que justo en el centro.
+La distribución uniforme la hemos tocado implícitamente antes, cuando hablábamos de las goteras: dado un suelo de dimensiones $$d_1 \times d_2$$, las gotas tienen la misma probabilidad de caer en todas las partes del suelo. Hemos visto que, a medida que subíamos de dimensiones, la mayoría de gotas caían en los bordes del suelo. En otras palabras, es más probable que una gota caiga en algún punto del borde que justo en el centro.
 
 Podemos pensar en una granada (la fruta). Imaginemos que le vamos quitando las pepitas de fuera hacia dentro, rotando la granada en nuestras manos. En las primeras rotaciones obtendremos más pepitas que en las últimas!
 
@@ -171,11 +172,11 @@ La distribución uniforme asigna la misma densidad probabilidad a cualquier punt
 
 <figure>
     <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/typical_set_uniform.png'/>
-    <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Uniforme está en los bordes. Y a más dimensiones, mas concentración de masa en los bordes.</small>
+    <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Uniforme está en los bordes. Y a más dimensiones, más concentración de masa en los bordes.</small>
 </figcaption>
 </figure>
 
-Con muchas dimensiones, el volumen crecerá más rápido a medida que nos alejamos de la moda, por lo que el producto de volumen por densidad, la masa, crecerá aún más rápido. 
+Con muchas dimensiones, el volumen crecerá más rápido a medida que nos alejamos de la moda, por lo que el producto de volumen por densidad, la masa, crecerá al mismo ritmo (la densidad es constante). 
 
 
 
@@ -183,7 +184,7 @@ Con muchas dimensiones, el volumen crecerá más rápido a medida que nos alejam
 
 <figure>
     <img  style="margin:0px auto; display:block"	 src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/normal_contour.png'/>
-    <figcaption style="text-align: center"><small>Figura. Una distribución Gaussiana bi-dimensional. Las gotas caen más del centro.</small>
+    <figcaption style="text-align: center"><small>Figura. Una distribución Gaussiana bi-dimensional. Las gotas caen más cerca del centro.</small>
 </figcaption>
 </figure>
 
@@ -193,25 +194,25 @@ En dos dimensiones, la carga del volumen empieza a desplazarse hacia valores má
 
 <figure>
     <img  style="margin:0px auto; display:block; width:500px;" src='{{site.baseurl}}/assets/img/2017-09-15-maldicion-dimensionalidad/typical_set_gaussian.png'/>
-    <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Gaussiana está fuera de la moda. Y a más dimensiones, mas alejada estará.</small>
+    <figcaption style=" text-align: center"><small>Figura. La mayor parte de la masa en una Gaussiana está fuera de la moda. Y a más dimensiones, más alejada estará.</small>
 </figcaption>
 </figure>
 
 
-Igual que antes, en muchas dimensiones el volumen crecerá más rápido a medida que nos alejamos de la moda. El efecto en la Gaussiana es que la montañita que indica la zona de más mas (conocido como *set típico*) se irá alejando más y más a la derecha, divorciándose de la moda.
+Igual que antes, en muchas dimensiones el volumen crecerá más rápido a medida que nos alejamos de la moda. El efecto en la Gaussiana es que la montañita que indica la zona de más masa (conocida como *set típico*) se irá alejando más y más a la derecha, divorciándose de la moda. En una Gaussiana estándar de $$d$$ dimensiones, casi toda la masa está en una capa fina a distancia $$\approx \sqrt{d}$$ de la moda, y casi nada cerca de la moda misma.
 
-Y es por eso que cuando se tienen muchas variables calcular la esperanza (valor que tiene en cuenta la masa) es mejor idea que buscar la moda.
+Por eso, cuando se tienen muchas variables, la moda resume mal la distribución: lo que importa son las esperanzas, que integran sobre la masa, y por eso métodos como MCMC intentan explorar el set típico en lugar de subir hasta la moda.
 
 ## Conclusión
 
-La maldición de la dimensionalidad es un fenómeno que afecta muchos problemas matemáticos. Geométricamente, el fenómeno puede resumirse como un melón en una caja multidimensionales donde hay más volumen de aire que de melón.
+La maldición de la dimensionalidad es un fenómeno que afecta muchos problemas matemáticos. Geométricamente, el fenómeno puede resumirse como un melón en una caja multidimensional donde hay más volumen de aire que de melón.
 
-En estadistica y aprendizaje automático, aumentar el número de variables de un problema puede parecer una buena idea pero, si no se acompaña de más observaciones, puede empeorar las cosas y convertir nuestro espacio en un desierto donde el aprendizaje y las inferencias estadísticas se complican.
+En estadística y aprendizaje automático, aumentar el número de variables de un problema puede parecer una buena idea pero, si no se acompaña de más observaciones, puede empeorar las cosas y convertir nuestro espacio en un desierto donde el aprendizaje y las inferencias estadísticas se complican.
 
 
 ## Referencias y gente hablando de lo mismo
 
-* [Typical Sets and the Curse of Dimensionality](http://mc-stan.org/users/documentation/case-studies/curse-dims.html)
+* [Typical Sets and the Curse of Dimensionality](https://mc-stan.org/users/documentation/case-studies/curse-dims.html)
 
 * [The Curse of Dimensionality in classification](http://www.visiondummy.com/2014/04/curse-dimensionality-affect-classification/)
 
