@@ -364,6 +364,7 @@ h2.writing-year {
 
 /* Long-form reading: serif, comfortable measure */
 .prose {
+    max-width: 38em; /* ~70 characters per line */
     margin: 0 auto;
     font-family: "Source Serif Pro", Georgia, serif;
     font-size: 18px;
