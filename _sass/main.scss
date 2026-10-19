@@ -12,7 +12,7 @@ body {
     color: #000;
     background-color: #fff;
     text-align: left;
-    overflow-x: hidden; 
+    overflow-x: clip; /* not hidden: hidden breaks position: sticky */
 }
 
 .maintext {
@@ -370,6 +370,73 @@ h2.writing-year {
     font-size: 18px;
     line-height: 1.65;
     color: #1a1a1a;
+}
+
+.prose {
+    position: relative;
+}
+
+/* Keep linked headings clear of the fixed navbar */
+.prose h2 {
+    scroll-margin-top: 80px;
+}
+
+/* Sticky table of contents in the left margin (see _includes/toc.html) */
+.toc {
+    display: none;
+    position: absolute;
+    right: calc(100% + 3em);
+    bottom: 0;
+    width: 13em;
+}
+
+@media (min-width: 1200px) {
+    .toc { display: block; }
+}
+
+.toc-inner {
+    position: sticky;
+    top: 90px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.toc-title {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 0.8em;
+}
+
+.toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #e5e5e5;
+}
+
+.toc li {
+    margin: 0;
+}
+
+.toc a {
+    display: block;
+    padding: 0.35em 0 0.35em 1em;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    color: #888;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: #333;
+}
+
+.toc a.active {
+    color: #1a1a1a;
+    border-left-color: #1a1a1a;
 }
 
 .prose h1 {

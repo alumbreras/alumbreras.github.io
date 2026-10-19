@@ -1,0 +1,41 @@
+{%- comment -%}
+Sticky table of contents in the left margin, built from the article's h2s.
+Shown on wide screens for articles with at least 3 sections; `toc: false` turns it off.
+{%- endcomment -%}
+{%- unless page.toc == false -%}
+<script>
+(function () {
+    var article = document.querySelector('article.prose');
+    if (!article) return;
+    var headings = [].slice.call(article.querySelectorAll(':scope > h2[id]'));
+    if (headings.length < 3) return;
+
+    var aside = document.createElement('aside');
+    aside.className = 'toc';
+    aside.setAttribute('aria-label', 'Contents');
+    var list = headings.map(function (h) {
+        return '<li><a href="#' + h.id + '">' + h.textContent + '</a></li>';
+    }).join('');
+    aside.innerHTML = '<nav class="toc-inner"><p class="toc-title">Contents</p><ol>' + list + '</ol></nav>';
+    // Start the TOC level with the first section, below the title
+    aside.style.top = headings[0].offsetTop + 'px';
+    article.appendChild(aside);
+
+    // Highlight the section being read
+    var links = aside.querySelectorAll('a');
+    function update() {
+        var current = 0;
+        headings.forEach(function (h, i) {
+            if (h.getBoundingClientRect().top < 160) current = i;
+        });
+        links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('load', function () {
+        aside.style.top = headings[0].offsetTop + 'px';
+        update();
+    });
+    update();
+})();
+</script>
+{%- endunless -%}
