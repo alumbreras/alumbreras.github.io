@@ -1,0 +1,26 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+
+<script>
+  // Old WordPress URLs (albertolumbreras.net/YYYY/MM/slug/) belong to the
+  // political blog that now lives at www.maldekstrakolono.net.
+  (function () {
+    var map = {{ site.data.maldekstra_redirects | jsonify }};
+    var m = location.pathname.match(/^\/(\d{4})\/(\d{2})\/([^\/]+)\/?$/);
+    if (!m) return;
+    var slug;
+    try { slug = decodeURIComponent(m[3]); } catch (e) { slug = m[3]; }
+    var key = m[1] + '/' + m[2] + '/' + slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+    var base = 'https://www.maldekstrakolono.net';
+    location.replace(base + (map[key] || '/'));
+  })();
+</script>
+
+<div class="page-narrow">
+  <h1 class="page-title">Page not found</h1>
+  <p class="page-intro">This page does not exist. You can go back to the <a href="{{ site.baseurl }}/">home page</a> or browse my <a href="{{ site.baseurl }}/writing.html">writing</a>.</p>
+</div>
